@@ -1,0 +1,67 @@
+<%
+  var entryCount = 0
+%>
+
+<main>
+  <div class="p2 h3 links-big serif">
+    <%- partial('_about.md') %>
+  </div>
+
+  <% public._data.entries.forEach((entry) => { %>
+    <%
+      entryCount += 1
+    %>
+    <% if (entry.image) { %>
+      <div class="p2 dn">
+        <div style="background: #000; padding-bottom: 50%;"></div>
+      </div>
+    <% } %>
+
+    <div class="p2 h3 serif psr">
+      <div class="psa t0 r0 mr2 mt3 dn">
+        <div class="label-small"><%- entryCount %></div>
+      </div>
+      <% if (entry.title) { %>
+        <div class="ml3"><%- entry.title %></div>
+      <% } %>
+      <% entry.projects.forEach((child) => { %>
+        <div class="links-big mr3">
+          <a href=""><%- child.title %></a> /&nbsp;<%- child.date %>
+        </div>
+      <% }) %>
+      <% if (entry.excerpt) { %>
+        <div class="ml3"><%- entry.excerpt %></div>
+      <% } %>
+    </div>
+  <% }) %>
+  
+  <div class="x xw">
+    <% for(var e in public.log._data.entries) { %>
+      <%
+        var entry = public.log._data.entries[e]
+        var date = entry.date.split('/').map(function(d) {
+          return '<span class="sans-bold">' + d + '</span>'
+        }).toString().replace(/,/g, '/')
+      %>
+      <div class="p2 c6" sm="c12">
+        <div class="ml3">
+          <%- date %>—
+        </div>
+        <div class="sans links-underline">
+          <%- partial('log/' + e) %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <div class="mt4 mb2 p2 tac no-indent">
+    <div style="max-width: 25rem; margin: 0 auto;">
+      <div class="sans-bold">Colophon</div>
+      <div class="sans links-underline"><%- partial('_colophon.md') %></div>
+      </div>
+  </div>
+
+  <div class="p2">
+    <%- partial('_mailinglist') %>
+  </div>
+</main>

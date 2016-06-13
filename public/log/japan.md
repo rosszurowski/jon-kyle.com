@@ -1,0 +1,1 @@
+Recently returned from a month in Japan—some imagery and words about [the trip here](http://repository.jon-kyle.com/japan). Did a [live set for Dublab.jp](http://dublab.com/deceptikon-jon-kyle-azzurro-dublabjp-radio-collective-live-tokyo-11-25-15/) while I was there, too.

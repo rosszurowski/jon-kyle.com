@@ -1,0 +1,1 @@
+Jon-Kyle lives in Los Angeles where he works on projects—you can follow him on [Twitter](http://twitter.com/jondashkyle) / [Github](http://github.com/jondashkyle) or send an [email](mailto:contact@jon-kyle.com).

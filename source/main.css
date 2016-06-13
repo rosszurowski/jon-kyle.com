@@ -1,0 +1,148 @@
+/**
+ * Dependencies
+ */
+@import './styles/reset';
+@import './styles/gr8';
+
+/**
+ * Typography
+ */
+
+body {
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/**
+ * Fonts
+ */
+
+.sans {
+  font-family: 'Titling Gothic FB Normal', sans-serif;
+  font-size: 0.85em;
+}
+
+.sans-light {
+  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+.sans-bold {
+  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+.serif {
+  font-family: 'Canela Web', mono;
+}
+
+/**
+ * Headings
+ */
+
+h3, .h3 {
+  line-height: 1;
+}
+
+/**
+ * Paragraphs
+ */
+
+p {
+  text-indent: 2rem;
+}
+
+div.no-indent p {
+  text-indent: 0;
+}
+
+p:first-child { margin-top: 0 }
+p:last-child { margin-bottom: 0 }
+
+.links-big a {
+  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+.links-underline a {
+  border-bottom: 1px solid #000;
+}
+
+.sans-bold a,
+.sans a {
+  font-size: 1em;
+}
+
+/**
+ * Anchors
+ */
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/**
+ * Colors
+ */
+.bg-dusty-rose { background-color: #fee }
+.color-dusty-rose { color: #fee }
+
+/**
+ * Labels
+ */
+.label-small {
+  color: #fee;
+  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-weight: 700;
+  background: #000;
+  font-size: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  border-radius: 50%;
+}
+
+/**
+ * Mailinglist
+ */
+
+input {
+  font-family: 'Titling Gothic FB Normal', Social, sans-serif /*!Persona*/;
+  font-weight: normal;
+  background: none;
+  border: 0;
+  display: block;
+  font-size: 1rem;
+  outline: 0;
+  font-weight: 300;
+  width: 100%;
+  margin: 0;
+  background: #1a1a1a;
+  color: #ffeeee !important;
+}
+
+input[type="submit"] {
+  cursor: pointer
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 238, 238, 0.5);
+}
+
+:-moz-placeholder {
+  color:  rgba(255, 238, 238, 0.5);  
+}
+
+::-moz-placeholder {
+  color: rgba(255, 238, 238, 0.5);  
+}
+
+:-ms-input-placeholder {  
+  color: rgba(255, 238, 238, 0.5); 
+}

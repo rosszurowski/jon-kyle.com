@@ -1,0 +1,3 @@
+Today marks the release of the new Anenon album, [Petrol](https://anenon.bandcamp.com/album/petrol), which I collaborated on with Brian Simon and contributed drums to.
+
+Select press: [The Wire](https://dl.dropboxusercontent.com/u/11683262/12675246_10207541563688784_1065133294_o.jpg),&nbsp;[Pitchfork](http://pitchfork.com/reviews/albums/21512-petrol/), [Fader](http://www.thefader.com/2016/01/20/anenon-interview-petrol). Video premiere: [Nowness](https://www.nowness.com/story/anenon-body).

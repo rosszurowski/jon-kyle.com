@@ -1,0 +1,41 @@
+/*
+        This font software is the property of Commercial Type.
+
+        You may not modify the font software, use it on another website, or install it on a computer.
+
+        License information is available at http://commercialtype.com/eula
+        For more information please visit Commercial Type at http://commercialtype.com or email us at info[at]commercialtype.com
+
+        Copyright (C) 2016 Schwartzco Inc.
+        License: 1605-CMYTIY     
+*/
+
+
+@font-face {
+  font-family: 'Canela Web';
+  src: url('fonts/Canela-Thin-Web.eot');
+  src: url('fonts/Canela-Thin-Web.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Canela-Thin-Web.woff2') format('woff2'),
+       url('fonts/Canela-Thin-Web.woff') format('woff');
+  font-weight:  100;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Canela-Thin-Web {
+  font-family: 'Canela Web';
+  font-weight:  100;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Titling Gothic FB Narrow';
+  src: url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.eot');
+  src: url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.eot?#iefix') format('embedded-opentype'),
+       url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.woff2') format('woff2'),
+       url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.woff') format('woff');
+  font-weight:  normal;
+  font-style:   normal;
+  font-stretch: normal;
+}

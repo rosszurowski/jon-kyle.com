@@ -1,3 +1,3 @@
 [Canela](https://commercialtype.com/catalog/canela/thin) by [Commercial Type](https://commercialtype.com)
 
-[Titling Gothic](http://www.fontbureau.com/fonts/TitlingGothicFB/) by [Font Bureau](http://www.fontbureau.com/fonts/TitlingGothicFB/)
+[Space Gothic](https://fonts.google.com/specimen/Space+Mono?category=Monospace) by [Colophon](http://www.colophon-foundry.org) for Google

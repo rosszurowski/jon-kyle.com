@@ -29,13 +29,13 @@
   font-stretch: normal;
 }
 
-@font-face {
-  font-family: 'Titling Gothic FB Narrow';
-  src: url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.eot');
-  src: url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.eot?#iefix') format('embedded-opentype'),
-       url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.woff2') format('woff2'),
-       url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.woff') format('woff');
-  font-weight:  normal;
-  font-style:   normal;
-  font-stretch: normal;
-}
+// @font-face {
+//   font-family: 'Titling Gothic FB Narrow';
+//   src: url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.eot');
+//   src: url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.eot?#iefix') format('embedded-opentype'),
+//        url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.woff2') format('woff2'),
+//        url('fonts/TitlingGothicFBNarrow/57199f8e-e11e-4d59-a4a7-8d1119437b10-1.woff') format('woff');
+//   font-weight:  normal;
+//   font-style:   normal;
+//   font-stretch: normal;
+// }

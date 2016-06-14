@@ -19,24 +19,22 @@ body {
  */
 
 .sans {
-  font-family: 'Titling Gothic FB Normal', sans-serif;
-  font-size: 0.85em;
+  font-family: 'Space Mono', sans-serif;
 }
 
 .sans-light {
-  font-family: 'Titling Gothic FB Narrow', sans-serif;
-  font-weight: 700;
-  font-size: 0.85em;
+  font-family: 'Space Mono', sans-serif;
+  font-weight: 200;
 }
 
 .sans-bold {
-  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-family: 'Space Mono', sans-serif;
   font-weight: 700;
-  font-size: 0.85em;
+  font-size: 0.95em;
 }
 
 .serif {
-  font-family: 'Canela Web', mono;
+  font-family: 'Canela Web', georgia, serif;
 }
 
 /**
@@ -63,9 +61,9 @@ p:first-child { margin-top: 0 }
 p:last-child { margin-bottom: 0 }
 
 .links-big a {
-  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-weight: 700;
-  font-size: 0.85em;
+  font-size: 0.95em;
 }
 
 .links-underline a {
@@ -97,7 +95,7 @@ a {
  */
 .label-small {
   color: #fee;
-  font-family: 'Titling Gothic FB Narrow', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-weight: 700;
   background: #000;
   font-size: 0.5rem;
@@ -113,7 +111,7 @@ a {
  */
 
 input {
-  font-family: 'Titling Gothic FB Normal', Social, sans-serif /*!Persona*/;
+  font-family: 'Space Mono', sans-serif;
   font-weight: normal;
   background: none;
   border: 0;

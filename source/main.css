@@ -61,9 +61,8 @@ p:first-child { margin-top: 0 }
 p:last-child { margin-bottom: 0 }
 
 .links-big a {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 700;
-  font-size: 0.95em;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 0.9em;
 }
 
 .links-underline a {

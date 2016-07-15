@@ -22,7 +22,7 @@ The site was a frameworkless single page app. We relied on [Browserify](http://b
 
 ### Participating Artists
 
-<ul class="x xw p1 lsn">
+<ul class="x xw lsn">
   <li class="c4">Anenon</li>
   <li class="c4">William Basinski</li>
   <li class="c4">Fatima Al Qadiri</li>

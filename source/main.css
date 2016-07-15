@@ -55,7 +55,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1rem 0;
   font-weight: 600;
 }
@@ -83,6 +83,22 @@ li:before {
   left: 0.5rem;
   height: 0.5rem;
   width: 0.5rem;
+}
+
+.lsn li {
+  padding-left: 0;
+}
+
+.lsn li:before {
+  display: none;
+}
+
+.list-archive > a {
+  border-top: 1px solid #000;
+}
+
+.list-archive > a:last-child {
+  border-bottom: 1px solid #000;
 }
 
 /**
@@ -184,15 +200,15 @@ input[type="submit"] {
 }
 
 :-moz-placeholder {
-  color:  rgba(0, 0, 0, 0.5);  
+  color:  rgba(0, 0, 0, 0.5);
 }
 
 ::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.5);  
+  color: rgba(0, 0, 0, 0.5);
 }
 
-:-ms-input-placeholder {  
-  color: rgba(0, 0, 0, 0.5); 
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /**

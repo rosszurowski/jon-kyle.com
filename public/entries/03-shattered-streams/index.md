@@ -1,37 +1,57 @@
-Shattered Streams was an experiment in musical ephemerality, presenting original music from 31 artists throughout May 2016. Each song was available to stream on a loop for a maximum period of 24 hours, degrading over that time until they simply disappeared.
+I’ve had ongoing collaborations with [RBMA](http://redbullmusicacademy.com) since 2015, when I performed at the RBMA Fest in New York.
+
+The most recent of these, **Shattered Streams**, was an experiment in musical ephemerality, presenting original music from 31 artists throughout May 2016. Each song was available to stream on a loop for a maximum period of 24 hours, degrading over that time until they simply disappeared.
 
 ----
 
-Inspired equally by the fleeting ecstasy of William Basinski’s Disintegration Loops and the modern emphasis on streaming-centric platforms conforming to listener’s usage and fidelity needs, Shattered Streams presented degradation of both audio and visuals to create an immersive yet ultimately finite listening experience.
-
-### Structure
-
-The site consisted of three primary views:
-
-![](frames.png)
-
-- **Index** was the primary landing page, consisting of a brief overview of the project, information on the currently active stream, and several options to choose the duration of your session.
-- **Calendar** contained the list of contributing artists and the corrosponding day their streams are active.
-- **Stream** was a full-frame animation loop feeding back in on itself. Paramaters were mapped to the amplitude of frequency ranges of the audio loop, which was degrading simultaneously.
-
-### Sound Design
-
-Something which communicated a degredation of access. We weren’t looking to make it sound “analog” or “digital”, which meant avoiding tropes like tape hiss or bit crunching.
+This project wasn’t about digital v. analog, or suggesting one way of listening is purer than another. Instead, it was a continuum of the conversations surrounding modern music consumption via streaming services in which a degradation of access, not quality, is encountered as the result of shifting licensing agreements and dropped connections.
 
 ### Audio
 
-Session length had a wide range of possible durations, starting with a minimum of a minute and ending with a maximum of 24 hours. This required the degredation of the audio not to be part of the track, but take place live in browser over the duration of your session.
+The site made heavy use of the web audio API to handle real-time signal processing in the browser. Users could select a listening session duration anywhere between a minute and twenty-four hours. It was important to communicate the idea of degradation without relying on analog auditory tropes like tape hiss.
 
-The Web Audio API which ships natively which each browser has matured within the past few years, and now supports complex signal processing chains.
+The final chain relies upon several convolvers with extreme impulse reactions each phasing in and out of each other, along with eq modulation and a touch of distortion.
 
-Degredation of the stream occurs by passing the audio signal through a series of convolvers with extreme impulse reaction samples. There are a few high/lowpass filters and a layer of distortion in the mix, too.
+### Visuals
 
-### Visual
-
-- Something which matched the audio, and the way in which it degraded.
-- Feedback loop
-- Six frame animations
+The audio stream was accompanied by 31 hand animated six frame loops which were fed through visual displacement and feedback processing, all of which was created by [Andrew Ohlmann](andrewohlmann.com). Parameters were frequency-mapped to the audio being played to create an identifiable cohesion within the chaos.
 
 ### Development
 
-The site was a frameworkless static single page app. We relied on [Browserify](http://browserify.org) to bundle everything up, and [PIXI](http://www.pixijs.com) was heavily used for the stream visuals.
+The site was a frameworkless single page app. We relied on [Browserify](http://browserify.org) to bundle everything up, and [PIXI](http://www.pixijs.com) was heavily used for the stream visuals.
+
+### Participating Artists
+
+<ul class="x xw p1 lsn">
+  <li class="c4">Anenon</li>
+  <li class="c4">William Basinski</li>
+  <li class="c4">Fatima Al Qadiri</li>
+  <li class="c4">Eluvium</li>
+  <li class="c4">Patten</li>
+  <li class="c4">Joey Anderson</li>
+  <li class="c4">Claude Speeed</li>
+  <li class="c4">White Visitation</li>
+  <li class="c4">Fennesz</li>
+  <li class="c4">Klara Lewis</li>
+  <li class="c4">Beatrice Dillon</li>
+  <li class="c4">Zebra Katz</li>
+  <li class="c4">Aurora Halal</li>
+  <li class="c4">EVOL</li>
+  <li class="c4">Jefre Cantu-Ledesma</li>
+  <li class="c4">M. Geddes Gengras</li>
+  <li class="c4">Mumdance</li>
+  <li class="c4">Kuedo</li>
+  <li class="c4">Sepalcure</li>
+  <li class="c4">Nkisi</li>
+  <li class="c4">Oren Ambarchi</li>
+  <li class="c4">3.33</li>
+  <li class="c4">Egyptrixx</li>
+  <li class="c4">John Roberts</li>
+  <li class="c4">Wolf Eyes</li>
+  <li class="c4">Tin Man</li>
+  <li class="c4">Hieroglyphic Being</li>
+  <li class="c4">Kara-Lis Coverdale</li>
+  <li class="c4">Ipek Gorgun</li>
+  <li class="c4">Aisha Devi</li>
+  <li class="c4">Lesley Flanigan</li>
+</ul>

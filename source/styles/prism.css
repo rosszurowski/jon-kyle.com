@@ -6,9 +6,10 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
+  font-size: 0.8rem;
   color: #000;
   background: none;
-  font-family: 'Space Mono', menlo, monaco, monospace;
+  font-family: menlo, monaco, monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -50,7 +51,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  
+
 }
 
 /* Inline code */

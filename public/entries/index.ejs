@@ -6,46 +6,22 @@
   const archive = public.entries._data.slice((secondaryCount + featuredCount), 100)
 %>
 
-<% featured.forEach(function(e) { %>
-  <%- 
-    partial('../_partials/entry-featured', {
-      path: e
-    })
+<% public.entries._data.map(function (path) { %>
+  <%
+    const entry = public.entries[path]
+    const data = entry._data
   %>
+  <a href="/entries/<%- path %>" class="x px1 sans">
+    <div class="c6 px1">
+      <strong><%- data.title %></strong>
+    </div>
+    <div class="c3 px1">
+      <%- data.category[0].toUpperCase() + data.category.slice(1) %>
+    </div>
+    <div class="c3 px1 tar">
+      <%- data.date %>
+    </div>
+  </a>
 <% }) %>
-
-<div class="x xw p1">
-  <% secondary.forEach(function(e) { %>
-    <% 
-      const entry = public.entries[e]
-      const data = entry._data 
-    %>
-    <a href="<%- e %>" class="p1 c6 sans">
-      <div class="c12 mb2">
-        <div class="psr" style="height: 0; padding-bottom: 56.25%">
-          <img
-            src="<%- e + '/thumbnail.jpg' %>"
-            class="psa t0 l0 r0 b0"
-            style="height: 100%; width: 100%;"
-          >
-        </div>
-      </div>
-      <div>
-        <div>
-          <strong><%- data.title %></strong>
-        </div>
-        <%- data.category[0].toUpperCase() + data.category.slice(1) %>, <%- data.date %>
-      </div>
-    </a>
-  <% }) %>
-</div>
-
-<% if (archive.length > 0) { %>
-  <div class="c12 p2">
-    <div class="h2 serif">Archive</div>
-  </div>
-
-  
-<% } %>
 
 <div class="mb4" md="mb2"></div>

@@ -2,7 +2,9 @@
  * Dependencies
  */
 @import './styles/reset';
+@import './styles/gr8-custom';
 @import './styles/gr8';
+@import './styles/prism';
 
 /**
  * Typography
@@ -19,17 +21,18 @@ body {
  */
 
 .sans {
-  font-family: 'Space Mono', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
 }
 
 .sans-light {
-  font-family: 'Space Mono', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 200;
 }
 
 .sans-bold {
-  font-family: 'Space Mono', sans-serif;
-  font-weight: 700;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
   font-size: 0.95em;
 }
 
@@ -37,12 +40,49 @@ body {
   font-family: 'Canela Web', georgia, serif;
 }
 
+.mono {
+  font-family: 'Source Code Pro', times;
+  font-weight: 300;
+}
+
 /**
  * Headings
  */
 
-h3, .h3 {
+h2, .h2 {
+  text-rendering: optimizeLegibility;
   line-height: 1;
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+/**
+ * Lists
+ */
+
+ul {
+}
+
+li {
+  list-style: none;
+  padding-left: 2rem;
+  position: relative;
+}
+
+li:before {
+  background: #000;
+  content: '';
+  text-align: center;
+  position: absolute;
+  border-radius: 50%;
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 0.5rem;
+  width: 0.5rem;
 }
 
 /**
@@ -51,6 +91,7 @@ h3, .h3 {
 
 p {
   text-indent: 2rem;
+  font-weight: inherit;
 }
 
 div.no-indent p {
@@ -60,9 +101,15 @@ div.no-indent p {
 p:first-child { margin-top: 0 }
 p:last-child { margin-bottom: 0 }
 
-.links-big a {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 0.9em;
+.links-sans a {
+  letter-spacing: -0.1rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.95em;
+}
+
+.links-serif a {
+  font-family: 'Canela Web', georgia, serif;
 }
 
 .links-underline a {
@@ -72,6 +119,10 @@ p:last-child { margin-bottom: 0 }
 .sans-bold a,
 .sans a {
   font-size: 1em;
+}
+
+strong {
+  font-weight: 600;
 }
 
 /**
@@ -88,6 +139,7 @@ a {
  */
 .bg-dusty-rose { background-color: #fee }
 .color-dusty-rose { color: #fee }
+.color-dusty-rose a { color: #fee }
 
 /**
  * Labels
@@ -95,7 +147,7 @@ a {
 .label-small {
   color: #fee;
   font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   background: #000;
   font-size: 0.5rem;
   height: 1rem;
@@ -110,18 +162,17 @@ a {
  */
 
 input {
-  font-family: 'Space Mono', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: normal;
   background: none;
   border: 0;
   display: block;
-  font-size: 1rem;
+  font-size: 2rem;
   outline: 0;
   font-weight: 300;
   width: 100%;
   margin: 0;
-  background: #1a1a1a;
-  color: #ffeeee !important;
+  color: #000;
 }
 
 input[type="submit"] {
@@ -129,17 +180,27 @@ input[type="submit"] {
 }
 
 ::-webkit-input-placeholder {
-  color: rgba(255, 238, 238, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 :-moz-placeholder {
-  color:  rgba(255, 238, 238, 0.5);  
+  color:  rgba(0, 0, 0, 0.5);  
 }
 
 ::-moz-placeholder {
-  color: rgba(255, 238, 238, 0.5);  
+  color: rgba(0, 0, 0, 0.5);  
 }
 
 :-ms-input-placeholder {  
-  color: rgba(255, 238, 238, 0.5); 
+  color: rgba(0, 0, 0, 0.5); 
+}
+
+/**
+ * Media
+ */
+.copy img {
+  margin: 1rem 0;
+  display: block;
+  height: auto;
+  max-width: 100%;
 }

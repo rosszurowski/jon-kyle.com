@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Harp has a build error with SASS. To fix:",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "pjax": "^0.2.3",
+    "prismjs": "^1.5.1"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
@@ -24,7 +27,7 @@
   },
   "scripts": {
     "deploy": "harp compile && node deploy",
-    "watch": "harp server . --port 8080 & npm run watch-js & npm run watch-css",
+    "start": "harp server . --port 8080 & npm run watch-js & npm run watch-css",
     "watch-css": "postcss -c postcss.config.json -w -m -o ./public/assets/bundle.css ./source/main.css",
     "build-css": "postcss -c postcss.config.json -o ./public/assets/bundle.css ./source/main.css",
     "watch-js": "watchify ./source/main.js -o ./public/assets/bundle.js -t [ babelify --presets [ es2015 stage-0 ] ]"

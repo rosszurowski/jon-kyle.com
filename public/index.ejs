@@ -3,39 +3,38 @@
 %>
 
 <main>
-  <div class="p2 h3 links-big serif">
+  <div class="p2 h2 links-sans serif">
     <%- partial('_about.md') %>
   </div>
 
-  <% public._data.entries.forEach((entry) => { %>
-    <%
-      entryCount += 1
-    %>
-    <% if (entry.image) { %>
-      <div class="p2 dn">
-        <div style="background: #000; padding-bottom: 50%;"></div>
-      </div>
-    <% } %>
-
-    <div class="p2 h3 serif psr">
-      <div class="psa t0 r0 mr2 mt3 dn">
-        <div class="label-small"><%- entryCount %></div>
-      </div>
-      <% if (entry.title) { %>
-        <div class="ml3"><%- entry.title %></div>
-      <% } %>
-      <% entry.projects.forEach((child) => { %>
-        <div class="links-big mr3">
-          <a href=""><%- child.title %></a> /&nbsp;<%- child.date %>
+  <div class="p3-5" sm="p0" md="p2">
+    <div data-rows class="py2 color-dusty-rose" style="background: #000;">
+      <% public._data.entries.forEach(function (entry) { %>
+        <%
+          entryCount += 1
+        %>
+        <div class="x p2 psr">
+          <div data-row="<%- entryCount %>">
+            <div class="dib tal">
+              <% entry.projects.forEach(function (child) { %>
+                <div class="h2 serif">
+                  <a href="<%- child.url %>"><%- child.title %></a> /&nbsp;<%- child.date %>
+                </div>
+              <% }) %>
+              <% if (entry.title) { %>
+                <div class="ml3 sans" sm="h5"><%- entry.title %></div>
+              <% } %>
+              <% if (entry.excerpt) { %>
+                <div class="ml3 sans" sm="h5"><%- entry.excerpt %></div>
+              <% } %>
+            </div>
+          </div>
         </div>
       <% }) %>
-      <% if (entry.excerpt) { %>
-        <div class="ml3"><%- entry.excerpt %></div>
-      <% } %>
     </div>
-  <% }) %>
+  </div>
   
-  <div class="x xw h6" sm="h5">
+  <div class="x xw h6 p1" sm="h5">
     <% for(var e in public.log._data.entries) { %>
       <%
         var entry = public.log._data.entries[e]
@@ -43,7 +42,7 @@
           return '<span class="sans-bold">' + d + '</span>'
         }).toString().replace(/,/g, '/')
       %>
-      <div class="p2 c6" sm="c12">
+      <div class="p1 c6" sm="c12">
         <div class="ml3">
           <%- date %>—
         </div>
@@ -54,14 +53,7 @@
     <% } %>
   </div>
 
-  <div class="mt4 mb2 p2 tac no-indent h6" sm="h5">
-    <div style="max-width: 25rem; margin: 0 auto;">
-      <div class="sans-bold">Colophon</div>
-      <div class="sans links-underline"><%- partial('_colophon.md') %></div>
-      </div>
-  </div>
-
-  <div class="p2">
+  <div class="mt4">
     <%- partial('_mailinglist') %>
   </div>
 </main>

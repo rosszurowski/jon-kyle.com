@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title><%- title %></title>
-  <style>
-    html { font-size: 2.8vmin; }
-  </style>
-
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i" rel="stylesheet">
-  
-  <link rel="stylesheet" href="assets/fonts.css">
-  <link rel="stylesheet" href="/assets/bundle.css">
-</head>
-<body class="<%- bgcolor %>">
+<%- partial('_partials/header') %>
   <%- yield %>
-  <script src="/assets/bundle.js"></script>
-</body>
-</html>
+<%- partial('_partials/footer') %>

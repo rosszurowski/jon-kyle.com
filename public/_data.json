@@ -4,24 +4,24 @@
       "projects": [
         {
           "title": "Freelance",
-          "link": "mailto: contact@jon-kyle.com",
+          "url": "mailto: contact@jon-kyle.com",
           "date": "’16–"
         }
       ],
-      "excerpt": "Now accepting projects."
+      "excerpt": "Now accepting projects"
     },
     {
       "image": "true",
       "projects": [
         {
           "title": "Cargo",
-          "link": "http://cargocollective.com",
+          "url": "http://cargocollective.com",
           "date": "’09–’16"
         },
         {
           "title": "Persona",
-          "link": "http://persona.co",
-          "date": "’15 – ’16"
+          "url": "http://persona.co",
+          "date": "’15–’16"
         }
       ],
       "excerpt": "Design & development"
@@ -31,7 +31,7 @@
       "projects": [
         {
           "title": "Anenon",
-          "link": "http://brianallensimon.com/",
+          "url": "http://brianallensimon.com/",
           "date": "’11 –"
         }
       ],
@@ -42,44 +42,46 @@
       "projects": [
         {
           "title": "Shattered Streams",
-          "link": "http://redbullmusicacademy.com/streams",
+          "url": "http://redbullmusicacademy.com/streams",
           "date": "’16"
         },
         {
           "title": "Endless 80’s NYC",
-          "link": "http://labels.redbullmusicacademy.com/",
+          "url": "http://labels.redbullmusicacademy.com/",
           "date": "’15"
         }
       ],
-      "excerpt": "Art sites for Red Bull Music Academy."
+      "excerpt": "Art sites for Red Bull Music Academy"
     },
+    {
+      "title": "Upcoming performance w/ Anenon",
+      "projects": [
+        {
+          "title": "The Broad",
+          "url": "http://www.thebroad.org/programs/summer-happenings-richard-hell-haxan-cloak-kaitlyn-aurelia-smith-mas-ysa-ryan-heffington",
+          "date": "July 30"
+        }
+      ]
+    }
+  ],
+  "hidden": [
     {
       "title": "Misc Mentions",
       "projects": [
         {
           "title": "The Wire Mag",
-          "link": "https://dl.dropboxusercontent.com/u/11683262/the-wire-anenon.jpg",
+          "url": "https://dl.dropboxusercontent.com/u/11683262/the-wire-anenon.jpg",
           "date": "’16"
         },
         {
           "title": "The Atlantic",
-          "link": "http://www.theatlantic.com/technology/archive/2013/09/between-broadcast-and-community-the-design-of-virtual-spaces/279763/",
+          "url": "http://www.theatlantic.com/technology/archive/2013/09/between-broadcast-and-community-the-design-of-virtual-spaces/279763/",
           "date": "’13"
         },
         {
           "title": "Creative Applications",
-          "link": "http://www.creativeapplications.net/sound/missing-by-the-xx-spatializing-sound-with-sonos/",
+          "url": "http://www.creativeapplications.net/sound/missing-by-the-xx-spatializing-sound-with-sonos/",
           "date": "’12"
-        }
-      ]
-    },
-    {
-      "title": "Upcoming Performances",
-      "projects": [
-        {
-          "title": "The Broad",
-          "link": "http://www.thebroad.org/programs/summer-happenings-richard-hell-haxan-cloak-kaitlyn-aurelia-smith-mas-ysa-ryan-heffington",
-          "date": "July 30<sup>th</sup>"
         }
       ]
     }

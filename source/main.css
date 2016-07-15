@@ -142,6 +142,52 @@ strong {
 }
 
 /**
+ * Videos
+ */
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.video {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.video-buffering:hover:before {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: 'play video';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.video-buffering video {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/**
  * Anchors
  */
 

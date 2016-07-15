@@ -2,3 +2,4 @@ node_modules/
 www/
 public/assets/fonts
 credentials.json
+*.mp4

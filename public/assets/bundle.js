@@ -803,10 +803,11 @@ codeEls.forEach(function (el) {
   _prismjs2.default.highlightElement(el);
 });
 
-var ratioWide = undefined;
+var ratioWide = void 0;
+
 var setRatioClass = function setRatioClass() {
   var ratio = window.innerWidth / window.innerHeight;
-  var newRatio = undefined;
+  var newRatio = void 0;
 
   if (ratio >= 1.3) {
     newRatio = true;
@@ -827,6 +828,34 @@ var setRatioClass = function setRatioClass() {
 
 setRatioClass();
 window.addEventListener('resize', setRatioClass, false);
+
+/**
+ * Videos
+ */
+var videoEls = Array.from(document.querySelectorAll('video'));
+
+videoEls.forEach(function (el) {
+  var containerEl = document.createElement('div');
+  var ratio = el.getAttribute('height') / el.getAttribute('width');
+  var frame = el.getAttribute('data-frame');
+
+  // Container Ratio
+  containerEl.classList.add('video-buffering', 'video');
+  Object.assign(containerEl.style, {
+    backgroundImage: 'url(' + frame + ')',
+    paddingBottom: ratio * 100 + '%'
+  });
+
+  // Wrap
+  el.parentNode.insertBefore(containerEl, el);
+  containerEl.appendChild(el);
+
+  // Play
+  containerEl.addEventListener('click', function (e) {
+    containerEl.classList.remove('video-buffering');
+    el.play();
+  });
+});
 
 /**
  * Homepage centering

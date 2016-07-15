@@ -9,10 +9,11 @@ codeEls.forEach(el => {
   Prism.highlightElement(el)
 })
 
-let ratioWide = undefined
+let ratioWide
+
 const setRatioClass = () => {
   const ratio = window.innerWidth / window.innerHeight
-  let newRatio = undefined
+  let newRatio
 
   if (ratio >= 1.3) {
     newRatio = true
@@ -33,6 +34,34 @@ const setRatioClass = () => {
 
 setRatioClass()
 window.addEventListener('resize', setRatioClass, false)
+
+/**
+ * Videos
+ */
+const videoEls = Array.from(document.querySelectorAll('video'))
+
+videoEls.forEach((el) => {
+  const containerEl = document.createElement('div')
+  const ratio = el.getAttribute('height') / el.getAttribute('width')
+  const frame = el.getAttribute('data-frame')
+
+  // Container Ratio
+  containerEl.classList.add('video-buffering', 'video')
+  Object.assign(containerEl.style, {
+    backgroundImage: `url(${frame})`,
+    paddingBottom: ratio * 100 + '%'
+  })
+
+  // Wrap
+  el.parentNode.insertBefore(containerEl, el)
+  containerEl.appendChild(el)
+
+  // Play
+  containerEl.addEventListener('click', e => {
+    containerEl.classList.remove('video-buffering')
+    el.play()
+  })
+})
 
 /**
  * Homepage centering

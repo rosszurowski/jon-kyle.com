@@ -1,10 +1,11 @@
-I’ve had ongoing collaborations with [RBMA](http://redbullmusicacademy.com) since 2015, when I performed at the RBMA Fest in New York.
 
-The most recent of these, **Shattered Streams**, was an experiment in musical ephemerality, presenting original music from 31 artists throughout May 2016. Each song was available to stream on a loop for a maximum period of 24 hours, degrading over that time until they simply disappeared.
+I’ve had ongoing collaborations with [RBMA](http://redbullmusicacademy.com) since 2015, when I performed at the RBMA Fest in New York. The most recent of these, **Shattered Streams**, was an experiment in musical ephemerality, presenting original music from 31 artists throughout May 2016. Each song was available to stream on a loop for a maximum period of 24 hours, degrading over that time until they simply disappeared.
 
 ----
 
 This project wasn’t about digital v. analog, or suggesting one way of listening is purer than another. Instead, it was a continuum of the conversations surrounding modern music consumption via streaming services in which a degradation of access, not quality, is encountered as the result of shifting licensing agreements and dropped connections.
+
+<video src="shattered.mp4" data-frame="snapshot.png" height="720" width="1152"></video>
 
 ### Audio
 
@@ -55,3 +56,7 @@ The site was a frameworkless single page app. We relied on [Browserify](http://b
   <li class="c4">Aisha Devi</li>
   <li class="c4">Lesley Flanigan</li>
 </ul>
+
+### Notes
+
+After the stream concluded, it was replaced by an archive page which is currently accessible by visiting [streams.redbullmusicacademy.com](http://streams.redbullmusicacademy.com). Special thanks to [Brian Allen Simon](http://brianallensimon.com) for initiating the project, and [Andrew Ohlmann](http://andrewohlmann.com).

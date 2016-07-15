@@ -1,0 +1,51 @@
+<%
+  const featuredCount = 1
+  const secondaryCount = 2
+  const featured = public.entries._data.slice(0, featuredCount)
+  const secondary = public.entries._data.slice(featuredCount, (secondaryCount + featuredCount))
+  const archive = public.entries._data.slice((secondaryCount + featuredCount), 100)
+%>
+
+<% featured.forEach(function(e) { %>
+  <%- 
+    partial('../_partials/entry-featured', {
+      path: e
+    })
+  %>
+<% }) %>
+
+<div class="x xw p1">
+  <% secondary.forEach(function(e) { %>
+    <% 
+      const entry = public.entries[e]
+      const data = entry._data 
+    %>
+    <a href="<%- e %>" class="p1 c6 sans">
+      <div class="c12 mb2">
+        <div class="psr" style="height: 0; padding-bottom: 56.25%">
+          <img
+            src="<%- e + '/thumbnail.jpg' %>"
+            class="psa t0 l0 r0 b0"
+            style="height: 100%; width: 100%;"
+          >
+        </div>
+      </div>
+      <div>
+        <div>
+          <strong><%- data.title %></strong>
+        </div>
+        <%- data.category[0].toUpperCase() + data.category.slice(1) %>, <%- data.date %>
+      </div>
+    </a>
+  <% }) %>
+</div>
+
+<% if (archive.length > 0) { %>
+  <div class="c12 p2">
+    <div class="h2 serif">Archive</div>
+  </div>
+
+  
+<% } %>
+
+<div class="mb4" md="mb2"></div>

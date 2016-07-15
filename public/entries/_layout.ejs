@@ -1,0 +1,21 @@
+<%
+  const index = current.path[1] === 'index'
+%>
+<%- partial('../_partials/header') %>
+
+<main>
+  <div style="max-width: 40rem; margin: 0 auto;">
+  <% if (index) { %>
+    <%- yield %>
+  <% } else { %>
+    <div class="mt3 p2 h2 serif">
+      <%- public.entries[current.path[1]]._data.title %>
+    </div>
+    <div class="copy p2 sans links-underline">
+      <%- yield.replace('<hr>', '') %>
+    </div>
+  <% } %>
+  </div>
+</main>
+
+<%- partial('../_partials/footer') %>

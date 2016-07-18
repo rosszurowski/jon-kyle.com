@@ -1,5 +1,5 @@
 node_modules/
 www/
-public/assets/fonts
+public/
 credentials.json
 *.mp4

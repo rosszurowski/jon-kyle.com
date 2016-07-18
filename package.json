@@ -28,8 +28,8 @@
   "scripts": {
     "deploy": "harp compile && node deploy",
     "start": "harp server . --port 8080 & npm run watch-js & npm run watch-css",
-    "watch-css": "postcss -c postcss.config.json -w -m -o ./public/assets/bundle.css ./source/main.css",
-    "build-css": "postcss -c postcss.config.json -o ./public/assets/bundle.css ./source/main.css",
+    "watch-css": "postcss -c postcss.config.json -w -o ./public/assets/bundle.css ./source/main.css",
+    "build-css": "postcss -c postcss.config.json -o./public/assets/bundle.css ./source/main.css",
     "watch-js": "watchify ./source/main.js -o ./public/assets/bundle.js -t [ babelify --presets [ es2015 stage-0 ] ]"
   },
   "author": "",

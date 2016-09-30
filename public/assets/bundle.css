@@ -1099,6 +1099,7 @@ body {
   font-family: 'Source Code Pro', times;
   font-weight: 300;
 }
+.lh1 { line-height: 1 }
 /**
  * Headings
  */
@@ -1244,7 +1245,10 @@ a {
 /**
  * Colors
  */
+.bg-black { background: #000 }
+.bg-white { background: #fff }
 .bg-dusty-rose { background-color: #fff }
+.tc-white { color: #fff }
 .color-dusty-rose { color: #fff }
 .color-dusty-rose a { color: #fff }
 /**

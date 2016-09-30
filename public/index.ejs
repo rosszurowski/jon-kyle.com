@@ -3,12 +3,20 @@
 %>
 
 <main>
+  <div class="bg-black x xac xjc" style="min-height: 50vh">
+    <div style="width: 100%; max-width: 25vh">
+      <div class="bg-white" style="position: relative; padding-bottom: 100%; height: 0;">
+        <img src="/assets/me.png" class="psa t0 l0" style="height: 100%; width: 100%" />
+      </div>
+    </div>
+  </div>
+
   <div class="p2 h2 links-sans serif">
     <%- partial('_about.md') %>
   </div>
 
   <div class="p3-5 pb0" sm="p0" md="p2 pb0">
-    <div data-rows class="py2 color-dusty-rose" style="background: #000;">
+    <div data-rows class="bg-black py2 color-dusty-rose">
       <% public._data.entries.forEach(function (entry) { %>
         <%
           entryCount += 1

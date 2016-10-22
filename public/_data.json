@@ -30,6 +30,17 @@
       "image": "true",
       "projects": [
         {
+          "title": "Hardly Everything",
+          "url": "http://hardlyeverything.com",
+          "date": "’16 –"
+        }
+      ],
+      "excerpt": "Your feed w/ a cadence"
+    },
+    {
+      "image": "true",
+      "projects": [
+        {
           "title": "Anenon",
           "url": "http://brianallensimon.com/",
           "date": "’11 –"
@@ -52,6 +63,17 @@
         }
       ],
       "excerpt": "Art sites for Red Bull Music Academy"
+    },
+    {
+      "image": "true",
+      "projects": [
+        {
+          "title": "asdf.cool",
+          "url": "http://asdf.cool",
+          "date": "’14–"
+        }
+      ],
+      "excerpt": "Your favorites"
     }
   ],
   "hidden": [

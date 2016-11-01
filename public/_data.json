@@ -76,6 +76,18 @@
       "excerpt": "Your favorites"
     }
   ],
+  "dates": [{
+    "title": "Bordeaux, FR",
+    "date": "12/13",
+    "excerpt": "Le Rocher de Palme",
+    "url": "https://www.lerocherdepalmer.fr/artistes/gogo.penguin/"
+  },
+  {
+    "title": "Den Haag, NL",
+    "date": "12/16",
+    "excerpt": "Rewire x Korzo",
+    "url": "http://www.korzo.nl/en/productions/rewire-x-korzo-4"
+  }],
   "hidden": [
     {
       "title": "Misc Mentions",

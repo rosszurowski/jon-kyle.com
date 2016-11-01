@@ -10,7 +10,7 @@
   </div>
 
   <div class="p3-5 pb0" sm="p0" md="p2 pb0">
-    <div data-rows class="bg-black py2 color-dusty-rose">
+    <div data-rows class="bg-black pt2 color-dusty-rose">
       <% public._data.entries.forEach(function (entry) { %>
         <%
           entryCount += 1
@@ -20,8 +20,12 @@
             <div class="dib tal">
               <% entry.projects.forEach(function (child) { %>
                 <div class="h2 serif">
-                  <a href="<%- child.url %>"><%- child.title %></a> /&nbsp;<%- child.date %>
+                  <a href="<%- child.url %>"><%- child.title %></a>
+                  <% if (child.date) { %> /&nbsp;<%- child.date %><% } %>
                 </div>
+                <% if (child.excerpt) { %>
+                  <div class="ml3 sans mb1" sm="h5"><%- child.excerpt %></div>
+                <% } %>
               <% }) %>
               <% if (entry.title) { %>
                 <div class="ml3 sans" sm="h5"><%- entry.title %></div>
@@ -33,7 +37,25 @@
           </div>
         </div>
       <% }) %>
-    </div>
+
+      <div class="x p1 psr">
+        <% public._data.dates.forEach(function (child) { %>
+          <a href="<%- child.url %>" class="c4 p1">
+            <div class="x xjb pt1" style="border-top: 1px solid #fff">
+              <div class="sans-bold">
+                <%- child.title %>
+              </div>
+              <% if (child.date) { %>
+                <div class="sans"><%- child.date %></div>
+              <% } %>
+            </div>
+            <% if (child.excerpt) { %>
+              <div class="sans" sm="h5"><%- child.excerpt %></div>
+            <% } %>
+          </a>
+        <% }) %>
+      </div>
+    </div> 
   </div>
 
   <div class="p3-5 pt0 list-archive" sm="p0" md="p2 pt0">

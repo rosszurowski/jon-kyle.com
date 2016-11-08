@@ -77,6 +77,11 @@
     }
   ],
   "dates": [{
+    "title": "Brussels, BE",
+    "date": "12/6",
+    "excerpt": "Bonnefooi",
+    "url": "https://www.facebook.com/events/112908552524290/"
+  },{
     "title": "Bordeaux, FR",
     "date": "12/13",
     "excerpt": "Le Rocher de Palme",
@@ -87,6 +92,12 @@
     "date": "12/16",
     "excerpt": "Rewire x Korzo",
     "url": "http://www.korzo.nl/en/productions/rewire-x-korzo-4"
+  },
+  {
+    "title": "London, UK",
+    "date": "12/18",
+    "excerpt": "Echoes",
+    "url": "http://www.soundcrashmusic.com/anenon/"
   }],
   "hidden": [
     {

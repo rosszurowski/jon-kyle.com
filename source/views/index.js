@@ -1,4 +1,6 @@
+const wrapper = require('../containers/wrapper')
+
 module.exports = [
-  [ '/404', require('./404') ],
-  [ '/', require('./home') ]
+  ['/404', wrapper(require('./404'))],
+  ['/', wrapper(require('./home'))]
 ]

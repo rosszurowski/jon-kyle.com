@@ -1,15 +1,17 @@
-var x = require('xtend')
-var xhr = require('xhr')
+const x = require('xtend')
+const xhr = require('xhr')
 
 module.exports = {
   state: {
     options: {
-      title: 'Choo Starter two'
+      title: 'jon-kyle',
+      bg: 'white',
+      tc: 'black'
     }
   },
   reducers: {
     options: function (state, data) {
-      return x(state.options, { options: data })
+      return { options: x(state.options, data) }
     }
   }
 }

@@ -1,3 +1,5 @@
 module.exports = [
-  require('./options')
+  require('./content'),
+  require('./options'),
+  require('./visitor')
 ]

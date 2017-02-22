@@ -4,10 +4,16 @@ var example = Widget()
 
 function View (state, prev, send) {
   return h`
-    <main class="ff-mono fs1 p2">
-      <span class="ff-mono">01-20-17</span>
-      <span>example heading to see how it feels</span>
-    </main>
+    <div>
+      <div>
+        <span>01-20-17</span>
+        <span>example heading to see how it feels</span>
+      </div>
+      <div>
+        <span>01-23-17</span>
+        <span>another head bc why not</span>
+      </div>
+    </div>
   `
 }
 

@@ -1,11 +1,11 @@
-var gr8 = require('gr8')
-var rst = require('recsst')
-var dev = require('gr8-dev')
-var h = require('bel')
+const gr8 = require('gr8')
+const rst = require('recsst')
+const dev = require('gr8-dev')
+const h = require('bel')
 
-var typography = require('./typography')
-var settings = require('./settings')
-var css = gr8(settings)
+const typography = require('./typography')
+const settings = require('./settings')
+const css = gr8(settings)
 
 css.add({
   prop: 'font-family',
@@ -27,12 +27,12 @@ css.add({
   vals: settings.colors
 })
 
-var custom = `
+const custom = `
   html { font-size: 15px }
 `
 
 function start () {
-  var style = h`<style></style>`
+  const style = h`<style></style>`
   style.innerHTML = custom
 
   dev.attach()
@@ -44,7 +44,7 @@ function start () {
 }
 
 function build () {
-  var built = rst.toString() +
+  const built = rst.toString() +
     css.toString() +
     custom
 

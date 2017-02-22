@@ -1,37 +1,37 @@
 {
-  "name": "jon-kyle.com",
+  "name": "starter-kit",
   "version": "1.0.0",
-  "description": "Harp has a build error with SASS. To fix:",
+  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "pjax": "^0.2.3",
-    "prismjs": "^1.5.1"
-  },
-  "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
-    "cssnext": "^1.8.4",
-    "gr8": "^1.0.4",
-    "postcss": "^5.0.21",
-    "postcss-browser-reporter": "^0.5.0",
-    "postcss-cli": "^2.5.2",
-    "postcss-cssnext": "^2.5.2",
-    "postcss-import": "^8.1.2",
-    "postcss-reporter": "^1.3.3",
-    "postcss-url": "^5.1.2",
-    "s3": "^4.4.0",
-    "standard": "^7.1.2",
-    "watchify": "^3.7.0"
-  },
   "scripts": {
-    "deploy": "harp compile && node deploy",
-    "start": "harp server . --port 8080 & npm run watch-js & npm run watch-css",
-    "watch-css": "postcss -c postcss.config.json -w -o ./public/assets/bundle.css ./source/main.css",
-    "build-css": "postcss -c postcss.config.json -o./public/assets/bundle.css ./source/main.css",
-    "watch-js": "watchify ./source/main.js -o ./public/assets/bundle.js -t [ babelify --presets [ es2015 stage-0 ] ]"
+    "build": "bin/build",
+    "start": "bin/start"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Jon-Kyle Mohr",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "browserify": "^14.0.0",
+    "budo": "^9.4.5",
+    "envify": "^4.0.0",
+    "es2020": "^1.1.9",
+    "postcss-clean": "^1.0.2",
+    "postcss-cli": "^2.6.0",
+    "uglifyify": "^3.0.4",
+    "yo-yoify": "^3.5.0"
+  },
+  "dependencies": {
+    "bel": "^4.5.1",
+    "cache-element": "^2.0.1",
+    "choo": "^4.1.0",
+    "fontfaceobserver": "^2.0.8",
+    "gr8": "^2.0.7",
+    "gr8-dev": "0.0.1",
+    "lilcss": "git+https://github.com/jongacnik/lilcss.git",
+    "nanomorph": "^2.1.3",
+    "object-values": "^1.0.0",
+    "recsst": "^1.1.1",
+    "xhr": "^2.3.3",
+    "xtend": "^4.0.1"
+  }
 }

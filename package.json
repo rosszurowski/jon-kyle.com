@@ -28,6 +28,7 @@
     "gr8": "^2.0.7",
     "gr8-dev": "0.0.1",
     "lilcss": "git+https://github.com/jongacnik/lilcss.git",
+    "marked": "^0.3.6",
     "nanomorph": "^2.1.3",
     "object-values": "^1.0.0",
     "recsst": "^1.1.1",

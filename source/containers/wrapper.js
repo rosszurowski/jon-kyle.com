@@ -9,7 +9,7 @@ const View = (view, opts) => (state, prev, send) => {
 
   return h`
     <div class="
-      ff-mono fs1 lh2
+      ff-sans fs1 lh2
       tc-${o.tc} bg-${o.bg}
       vhmn100
     ">

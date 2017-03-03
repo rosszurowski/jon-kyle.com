@@ -39,7 +39,8 @@ var View = (view, opts) => (state, prev, send) => {
   `
 
   state.location.params.page &&
-  ok(state.options.entriesActive).length <= 0
+  ok(state.options.entriesActive).length <= 0 &&
+  !state.options.justSorted
     ? send('entryActive', state.location.params.page)
     : ''
 

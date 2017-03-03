@@ -6,7 +6,12 @@ module.exports = {
     options: {
       filterActive: '',
       entryActive: '',
-      entriesActive: { } 
+      entriesActive: { },
+      justSorted: false,
+      entriesSort: {
+        key: 'date',
+        flip: false
+      }
     }
   },
   reducers: {
@@ -15,6 +20,7 @@ module.exports = {
       delete entriesActive[data]
       return {
         options: x(state.options, {
+          justSorted: false,
           entryActive: '',
           entriesActive: entriesActive
         })
@@ -23,10 +29,21 @@ module.exports = {
     entryActive: function (state, data) {
       return {
         options: x(state.options, {
+          justSorted: false,
           entryActive: data,
           entriesActive: x(state.options.entriesActive, {
             [data]: true
           })
+        })
+      }
+    },
+    entriesSort: function (state, data) {
+      return {
+        options: x(state.options, {
+          entryActive: '',
+          justSorted: true,
+          entriesActive: { },
+          entriesSort: x(state.options.entriesSort, data)
         })
       }
     },

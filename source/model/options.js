@@ -4,6 +4,8 @@ const xhr = require('xhr')
 module.exports = {
   state: {
     options: {
+      filterActive: '',
+      entryActive: '',
       entriesActive: { } 
     }
   },
@@ -13,6 +15,7 @@ module.exports = {
       delete entriesActive[data]
       return {
         options: x(state.options, {
+          entryActive: '',
           entriesActive: entriesActive
         })
       }
@@ -20,6 +23,7 @@ module.exports = {
     entryActive: function (state, data) {
       return {
         options: x(state.options, {
+          entryActive: data,
           entriesActive: x(state.options.entriesActive, {
             [data]: true
           })

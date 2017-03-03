@@ -33,13 +33,13 @@ var custom = `
     html { font-size: 12px }
   }
 
-  .copy *+* { margin-top: 1rem; }
+  .copy *+* { margin-top: 1.5rem; }
 
   pre {
     background: #000;
     display: block;
     color: #fff; 
-    padding: 1.5em;
+    padding: 1.5em 3rem;
   }
 
   code { font-family: ${settings.typography.mono} }
@@ -63,7 +63,43 @@ var custom = `
     color: #000;
     text-decoration: none;
     border-bottom: 1px solid #000;
-    padding-bottom: 0.15em;
+    padding-bottom: 0.15rem;
+  }
+
+  .bb1 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.15rem;
+  }
+
+  .bb1h:hover {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.15rem;
+  }
+
+  .bb1hc { 
+    position: relative;
+  }
+
+  .bb1ch:hover .bb1hc:after {
+    border-bottom: 1px solid #000;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.3rem;
+  }
+
+  .bm1hc {
+    position: relative;
+  }
+
+  .bm1ch:hover .bm1hc:after {
+    border-bottom: 1px solid #000;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.4rem;
   }
 
   .copy ul li {
@@ -72,21 +108,51 @@ var custom = `
     position: relative;
   }
 
-  .copy img {
-    height: auto;
-    max-width: 100%;
+  .copy p { padding-right: 10vw }
+  .copy p .image {
+    display: block;
+    width: calc(100% + 10vw)
+  }
+
+  @media (max-width: 767px) {
+    .copy p { padding-right: 0 }
+    .copy p .image { width: 100% }
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
   }
 
   .copy ul {
-    padding-left: 2em;
+    padding-left: 3em;
   }
 
   .copy ul li:before {
     content: '';
     position: absolute;
     top: 0.8em;
-    left: -2em;
-    width: 1em;
+    left: -3rem;
+    width: 1.5rem;
+    height: 1px;
+    background: #000;
+  }
+
+  .list ul {
+    padding-left: 1.5em;
+    list-style: none;
+  }
+
+  .list ul li { 
+    position: relative;
+  }
+
+  .list ul li:before {
+    content: '';
+    position: absolute;
+    top: 0.8em;
+    left: -1.5rem;
+    width: 0.75rem;
     height: 1px;
     background: #000;
   }
@@ -99,9 +165,26 @@ var custom = `
   .em {
     display: inline-block;
     vertical-align: middle;
-    width: 0.9rem;
+    width: 0.75rem;
     height: 1px;
     background: #000;
+  }
+
+  .em2 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.5em;
+    height: 1px;
+    background: #000;
+  }
+
+  .b1b {
+    outline: 1px solid #000;
+    outline-offset: -1px;
+  }
+
+  .imgb1 img {
+    border: 1px solid #000;
   }
 `
 
@@ -109,7 +192,11 @@ function start () {
   const style = h`<style></style>`
   style.innerHTML = custom
 
-  dev.attach()
+  dev.attach({
+    wrapClass: 'px0-5',
+    colClass: 'px0-5' 
+  })
+  
   css.attach()
   rst.attach()
   typography.start()

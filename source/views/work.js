@@ -16,9 +16,11 @@ function EntriesHeader (opts) {
     handleShowAll: () => { }
   }, opts)
 
-  var arrow = key => {
-    return h`<span class="ff-mono ${o.key === key ? 'op100' : 'op0'}">${!o.flip ? '↓' : '↑'}</span>`
-  }
+  var arrow = key => h`
+    <span class="ff-mono ${o.key === key ? 'op100' : 'op0'}">
+      <div class="arrow arrow-${!o.flip ? 'down' : 'up'}"></div>
+    </span>
+  `
 
   var expand = () => h`
     <div class="curp" onclick=${o.handleShowAll}>+</div>
@@ -123,16 +125,16 @@ function View (state, prev, send) {
             class="x xw c12 tc-black tdn ${active ? 'bm1ch' : 'bb1ch'}"
             onclick=${ev => handleEntryClick(ev, entry.path)}
           >
-            <div class="c2 p0-5" sm="dn">
+            <div class="c2 p0-5 oh toe wsnw" sm="dn">
               ${entry.type}
             </div>
-            <div class="c2 ff-mono p0-5" sm="c3">
+            <div class="c2 ff-mono p0-5 oh toe wsnw" sm="c3">
               ${date}
             </div>
-            <div class="c5 p0-5" sm="c5">
+            <div class="c5 p0-5 oh toe wsnw" sm="c5">
               <span class="${active ? 'bm1hc' : 'bb1hc'}">${entry.title}</span>
             </div>
-            <div class="c2 p0-5" sm="dn">
+            <div class="c2 p0-5 oh toe wsnw" sm="dn">
               ${entry.collaborator || entry.client}
             </div>
             <div class="c1 p0-5 tar">
@@ -143,7 +145,7 @@ function View (state, prev, send) {
             <div class="p0-5 c2" sm="c6">
               <div class="${entry.url ? '' : 'dn'}">
                 <a href="/${entry.url}" class="bb1h tc-black tdn">visit</a>
-                <span class="ff-mono tr-45">→</span>
+                <div class="arrow arrow-top-right"></div>
               </div>
               <div>
                 <a href="/${entry.path}" class="bb1h tc-black tdn">permalink</a>

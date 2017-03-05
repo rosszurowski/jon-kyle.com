@@ -223,6 +223,56 @@ var custom = `
   .imgb1 img {
     border: 1px solid #000;
   }
+
+  .arrow {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    transform-origin: 50% 50%;
+    margin-bottom: 6px;
+    margin-left: 3px;
+    height: 5px;
+    width: 5px;
+  }
+
+  .arrow:after {
+    background: #000;
+    content: '';
+    position: absolute;
+    top: 2px;
+    height: 1px;
+    width: 7px;
+  }
+
+  .arrow:before {
+    border: 1px solid #000;
+    border-left: 0;
+    border-bottom: 0;
+    content: '';
+    position: absolute;
+    transform-origin: 50% 50%;
+    transform: rotate(-135deg);
+    height: 5px;
+    width: 5px;
+  }
+
+  .arrow.arrow-up { transform: rotate(-90deg) }
+  .arrow.arrow-down { transform: rotate(90deg) }
+  .arrow.arrow-top-right { transform: rotate(135deg) }
+
+  .arrow.arrow-top-right { margin-left: 5px; margin-bottom: 7px }
+  .arrow.arrow-top-right:after { width: 9px }
+
+  .copy ul.columns {
+    padding-left: 0;
+    column-gap: 0;
+  }
+
+  .copy ul.columns li:before {
+    display: none;
+  }
+
+  .copy ul.columns br { display: none }
 `
 
 function start () {

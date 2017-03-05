@@ -9,11 +9,11 @@ function Header (o) {
   note.innerHTML = md.parse(o.note)
 
   return h`
-    <div class="x xw p0-5 usn" sm="p2-5">
-      <div class="p0-5 c4" sm="c6">
+    <div class="x xw p0-5 usn" sm="p1">
+      <div class="p0-5 c4" sm="c3">
         <a href="/" class="tdn tc-black">${o.name}</a>
       </div>
-      <div class="c2 p0-5" sm="c6">
+      <div class="c2 p0-5" sm="c3">
         ${ov(o.pages).map(page => h`
           <div>
             <a
@@ -25,19 +25,21 @@ function Header (o) {
           </div> 
         `)}
       </div>
-      <div class="c2 p0-5" sm="c6">
-        ${ov(o.filters).map(tag => h`
-          <div>
-            <a
-              href="/filter/${tag.filter}"
-              class="bb1h tdn tc-black ${o.filter === tag.filter ? 'bb1' : ''}"
-             >
-              ${tag.text}
-             </a>
-          </div> 
-        `)}
+      <div class="c2 p0-5 list" sm="c3">
+        <ul>
+          ${ov(o.filters).map(tag => h`
+            <li>
+              <a
+                href="/filter/${tag.filter}"
+                class="bb1h tdn tc-black ${o.filter === tag.filter ? 'bb1' : ''}"
+               >
+                ${tag.text}
+               </a>
+            </li> 
+          `)}
+        </ul>
       </div>
-      <div class="c2 co1 p0-5">
+      <div class="c2 co1 p0-5" sm="co0 c3">
         ${note}
       </div>
     </div> 

@@ -2,6 +2,6 @@ NODE_ENV=production browserify \
   source/index.js \
   -t envify \
   -g yo-yoify \
-  -g es2020 \
+  -g es2040 \
   -g uglifyify \
   > bundle.js

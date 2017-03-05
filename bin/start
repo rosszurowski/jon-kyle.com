@@ -1,5 +1,0 @@
-budo \
-  source/index.js:bundle.js \
-  --dir ./ \
-  --pushstate \
-  --live

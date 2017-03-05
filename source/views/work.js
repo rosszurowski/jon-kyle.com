@@ -44,7 +44,7 @@ function EntriesHeader (opts) {
           onclick=${() => o.handleClick('date')}
         >date ${arrow('date')}</span>
       </div>
-      <div class="p0-5 c7" sm="c9">
+      <div class="p0-5 c7" sm="c8">
         <span
           class="curp"
           onclick=${() => o.handleClick('title')}
@@ -131,7 +131,7 @@ function View (state, prev, send) {
             <div class="c2 ff-mono p0-5 oh toe wsnw" sm="c3">
               ${date}
             </div>
-            <div class="c5 p0-5 oh toe wsnw" sm="c5">
+            <div class="c5 p0-5 oh toe wsnw" sm="c8">
               <span class="${active ? 'bm1hc' : 'bb1hc'}">${entry.title}</span>
             </div>
             <div class="c2 p0-5 oh toe wsnw" sm="dn">
@@ -142,16 +142,16 @@ function View (state, prev, send) {
             </div>
           </a>
           <div class="c12 ${active ? 'x xw' : 'dn'}">
-            <div class="p0-5 c2" sm="c6">
+            <div class="p0-5 c2" sm="c3">
               <div class="${entry.url ? '' : 'dn'}">
-                <a href="/${entry.url}" class="bb1h tc-black tdn">visit</a>
+                <a href="${entry.url}" class="bb1h tc-black tdn">visit</a>
                 <div class="arrow arrow-top-right"></div>
               </div>
               <div>
                 <a href="/${entry.path}" class="bb1h tc-black tdn">permalink</a>
               </span>
             </div>
-            <div class="p0-5 c2 list" sm="c6">
+            <div class="p0-5 c2 list" sm="c7">
               ${entry.tags ? tags() : h`<div></div>`}
             </div>
             <div

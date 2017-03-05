@@ -26,9 +26,7 @@ var View = (view, opts) => (state, prev, send) => {
       vhmn100
     ">
       ${header}
-      ${Seperator()}
       ${view(state, prev, send)}
-      ${Seperator()}
     </div>
   `
 

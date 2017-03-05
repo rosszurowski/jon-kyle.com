@@ -4,6 +4,7 @@ var ok = require('object-keys')
 
 var Header = require('./header')
 var Seperator = require('../components/seperator')
+var ui = require('../methods/ui')
 
 var View = (view, opts) => (state, prev, send) => {
   var o = x({
@@ -11,6 +12,8 @@ var View = (view, opts) => (state, prev, send) => {
     tc: 'black',
     active: ''
   }, state.options, opts)
+
+  var isLoaded = ok(state.content).length > 0
 
   var header = state.content['site-header']
     ? Header(x(state.content['site-header'], {
@@ -30,12 +33,6 @@ var View = (view, opts) => (state, prev, send) => {
     </div>
   `
 
-  var loading = h`
-    <div class="ff-sans fs1 lh2 x xjc xac vw100 vh100">
-      <div>jon-kyle</div>
-    </div> 
-  `
-
   state.location.params.page &&
   ok(state.options.entriesActive).length <= 0 &&
   !state.options.justSorted
@@ -50,9 +47,13 @@ var View = (view, opts) => (state, prev, send) => {
     })
     : ''
 
-  return ok(state.content).length > 0
+  isLoaded
+    ? ui.removeLoader()
+    : ''
+
+  return isLoaded
     ? container
-    : loading
+    : h`<div></div>`
 }
 
 module.exports = View

@@ -26,7 +26,7 @@
     "cache-element": "^2.0.1",
     "choo": "^4.1.0",
     "fontfaceobserver": "^2.0.8",
-    "gr8": "^2.0.7",
+    "gr8": "^2.1.5",
     "gr8-dev": "0.0.1",
     "join-path": "^1.1.1",
     "lilcss": "git+https://github.com/jongacnik/lilcss.git",

@@ -108,14 +108,14 @@ var custom = `
     position: relative;
   }
 
-  .copy-indent p { padding-right: 10vw }
+  .copy-indent p, .copy-indent ul { padding-right: 10vw }
   .copy-indent p .image {
     display: block;
     width: calc(100% + 10vw)
   }
 
   @media (max-width: 767px) {
-    .copy-indent p { padding-right: 0 }
+    .copy-indent p, .copy-indent ul { padding-right: 0 }
     .copy-indent p .image { width: 100% }
   }
 
@@ -256,8 +256,8 @@ var custom = `
     width: 5px;
   }
 
-  .arrow.arrow-up { transform: rotate(-90deg) }
-  .arrow.arrow-down { transform: rotate(90deg) }
+  .arrow.arrow-up { transform: rotate(90deg) }
+  .arrow.arrow-down { transform: rotate(-90deg) }
   .arrow.arrow-top-right { transform: rotate(135deg) }
 
   .arrow.arrow-top-right { margin-left: 5px; margin-bottom: 7px }
@@ -272,7 +272,9 @@ var custom = `
     display: none;
   }
 
-  .copy ul.columns br { display: none }
+  .copy .columns br { display: none }
+  .tcg1 { column-gap: 1rem; margin-top: 0.5rem }
+  .tcg1 *+* { margin-top: 1rem }
 `
 
 function start () {

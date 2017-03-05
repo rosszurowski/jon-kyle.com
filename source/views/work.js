@@ -85,15 +85,15 @@ function View (state, prev, send) {
   var filter = state.location.params.filter || state.options.filter
 
   var entries = ov(state.content)
-    .filter(entry => !entry.hidden)
-    .filter(entry => !entry.draft)
+    .filter(entry => filter !== undefined ? true : !entry.filter)
+    .filter(entry => !entry.hidden && !entry.draft)
     .filter(entry => filterTag(entry, filter))
     .sort((a, b) => sortEntries(a, b, state.options.entriesSort))
     .map(entry => {
       var active = isEntryActive(entry.path)
 
       var text = () => {
-        var el = h`<div class="copy ${entry.style}"></div>`
+        var el = h`<div class="copy copy-indent ${entry.style}"></div>`
         el.innerHTML = md.parse(entry.text, entry.path)
         return el
       }
@@ -133,7 +133,7 @@ function View (state, prev, send) {
               <span class="${active ? 'bm1hc' : 'bb1hc'}">${entry.title}</span>
             </div>
             <div class="c2 p0-5" sm="dn">
-              ${entry.collaborator}
+              ${entry.collaborator || entry.client}
             </div>
             <div class="c1 p0-5 tar">
               ${active ? '×' : '+'}
@@ -152,7 +152,11 @@ function View (state, prev, send) {
             <div class="p0-5 c2 list" sm="c6">
               ${entry.tags ? tags() : h`<div></div>`}
             </div>
-            <div class="c8 p0-5" sm="c12">
+            <div
+              class="c8 p0-5"
+              sm="c12"
+              onclick=${ev => handleEntryContentClick(ev, entry)}
+            >
               ${text()}
             </div>
           </div>
@@ -197,6 +201,20 @@ function View (state, prev, send) {
     return isEntryActive(entry) 
       ? send('entryInactive', entry) 
       : send('entryActive', entry) 
+  }
+
+  function handleEntryContentClick (ev, entry) {
+    var el = ev.target
+    var video = el.getAttribute('data-video')
+    return video
+      ? el.parentNode.appendChild(h`
+        <video
+          src="${md.video(video, entry.path)}"
+          class="psa t0 l0 h100 w00"
+          autoplay
+        ></video>
+      `)
+      : ''
   }
 
   function handleTagClick (tag) {

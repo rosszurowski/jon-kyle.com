@@ -2,7 +2,12 @@ var h = require('bel')
 var ov = require('object-values')
 var x = require('xtend')
 
+var md = require('../methods/md')
+
 function Header (o) {
+  var note = h`<div class="copy"></div>`
+  note.innerHTML = md.parse(o.note)
+
   return h`
     <div class="x xw p0-5 usn" sm="p2-5">
       <div class="p0-5 c4" sm="c6">
@@ -33,7 +38,7 @@ function Header (o) {
         `)}
       </div>
       <div class="c2 co1 p0-5">
-        ${o.note}
+        ${note}
       </div>
     </div> 
   `

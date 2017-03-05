@@ -12,8 +12,8 @@ var View = (view, opts) => (state, prev, send) => {
     active: ''
   }, state.options, opts)
 
-  var header = state.content.about
-    ? Header(x(state.content.about, {
+  var header = state.content['site-header']
+    ? Header(x(state.content['site-header'], {
       active: o.active,
       filter: state.location.params.filter || state.options.filter
     }))
@@ -34,7 +34,7 @@ var View = (view, opts) => (state, prev, send) => {
 
   var loading = h`
     <div class="ff-sans fs1 lh2 x xjc xac vw100 vh100">
-      <div>loading</div>
+      <div>jon-kyle</div>
     </div> 
   `
 

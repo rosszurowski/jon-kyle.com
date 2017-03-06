@@ -172,6 +172,15 @@ var custom = `
     background: #000;
   }
 
+  .copy ul li > ul {
+    padding-left: 1.5rem;
+  }
+
+  .copy ul li > ul li:before {
+    left: -1.5rem;
+    width: 0.75rem;
+  }
+
   .list ul {
     padding-left: 1.5em;
     list-style: none;
@@ -275,6 +284,10 @@ var custom = `
   .copy .columns br { display: none }
   .tcg1 { column-gap: 1rem; margin-top: 0.5rem }
   .tcg1 *+* { margin-top: 1rem }
+
+  pre {
+    margin: 0;
+  }
 `
 
 function start () {

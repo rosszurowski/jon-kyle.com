@@ -88,9 +88,7 @@ function Entry (opts) {
         : ''
     },
     onexit: ev => {
-      return o.active
-        ? o.exit(ev, entry.path)
-        : ''
+      o.exit(ev, entry.path)
     }
   })
 }

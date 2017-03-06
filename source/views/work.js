@@ -88,28 +88,29 @@ function View (state, prev, send) {
   function entryEnter (ev, entry) {
     if (inView.indexOf(entry) < 0) {
       inView.push(entry) 
-      send('entryActive', inView[inView.length-1]) 
+      // send('entryActive', inView[inView.length-1]) 
       send('location:set', '/' + inView[inView.length-1])
     }
-    // console.log(entry, state.options.entryActive)
-    // return entry !== state.options.entryActive
-    //   ? send('entryActive', entry) 
-    //   : ''
   }
 
   function entryExit (ev, entry) {
     if (inView.indexOf(entry) >= 0) {
       inView.splice(inView.indexOf(entry), 1) 
-      send('entryActive', inView[inView.length-1]) 
-      send('location:set', '/' + inView[inView.length-1])
     }
   }
 
   function handleEntryClick (ev, entry) {
-    inView = [ ]
+    var show = () => {
+      send('entryActive', entry)
+    }
+
+    var hide = () => {
+      send('entryInactive', entry) 
+    }
+
     return isEntryActive(entry) 
-      ? send('entryInactive', entry) 
-      : send('entryActive', entry) 
+      ? hide()
+      : show() 
   }
 
   function handleEntryContentClick (ev, entry) {

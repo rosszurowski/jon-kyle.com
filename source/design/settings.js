@@ -6,6 +6,7 @@ exports.typography = {
 
 exports.colors = [
   { white: '#fff' },
+  { grey: '#999' },
   { black: '#000' }
 ]
 

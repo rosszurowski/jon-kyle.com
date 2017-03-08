@@ -39,21 +39,32 @@ function filterTag (entry, filter) {
 
 function View (state, prev, send) {
   var filter = state.location.params.filter || state.options.filter
+  var content = ov(state.content)
 
-  var entries = ov(state.content)
+  var entries = content
     .filter(entry => filter !== undefined ? true : !entry.filter)
     .filter(entry => !entry.hidden && !entry.draft)
     .filter(entry => filterTag(entry, filter))
     .sort((a, b) => sortEntries(a, b, state.options.entriesSort))
-    .map(entry => Entry({
-      entry: entry,
-      active: isEntryActive(entry.path),
-      handleClick: handleEntryClick,
-      handleContentClick: handleEntryContentClick,
-      getClosePath: getClosePath,
-      enter: entryEnter,
-      exit: entryExit
-    })()) 
+
+  if (
+    state.options.entryStart
+  ) {
+    var entry = entries.find(e => e.path === state.options.entryStart)
+    var position = entries.indexOf(entry)
+    entries.splice(position, 1)
+    entries.splice(0, 0, entry)
+  }
+
+  var elEntries = entries.map(entry => Entry({
+    entry: entry,
+    active: isEntryActive(entry.path),
+    handleClick: handleEntryClick,
+    handleContentClick: handleEntryContentClick,
+    getClosePath: getClosePath,
+    enter: entryEnter,
+    exit: entryExit
+  })())
    
   var entriesHeader = EntriesHeader (x({
     entriesActive: ok(state.options.entriesActive).length,
@@ -86,9 +97,8 @@ function View (state, prev, send) {
   }
 
   function entryEnter (ev, entry) {
-    if (inView.indexOf(entry) < 0) {
+    if (inView.indexOf(entry) < 0 && isEntryActive(entry)) {
       inView.push(entry) 
-      // send('entryActive', inView[inView.length-1]) 
       send('location:set', '/' + inView[inView.length-1])
     }
   }
@@ -101,10 +111,14 @@ function View (state, prev, send) {
 
   function handleEntryClick (ev, entry) {
     var show = () => {
-      send('entryActive', entry)
+      send('entryActive', {
+        entryClicked: true,
+        entryActive: entry
+      })
     }
 
     var hide = () => {
+      inView.splice(inView.indexOf(entry), 1) 
       send('entryInactive', entry) 
     }
 
@@ -145,9 +159,9 @@ function View (state, prev, send) {
   }
 
   return h`
-    <div class="p0-5" sm="p1">
+    <div class="p0-5" sm="p0">
       ${entriesHeader}
-      ${entries}
+      ${elEntries}
     </div>
   `
 }

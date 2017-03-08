@@ -36,7 +36,10 @@ var View = (view, opts) => (state, prev, send) => {
   state.location.params.page &&
   ok(state.options.entriesActive).length <= 0 &&
   !state.options.justSorted
-    ? send('entryActive', state.location.params.page)
+    ? send('entryActive', {
+        entryActive: state.location.params.page,
+        entryStart: state.location.params.page
+      })
     : ''
 
   state.location.params.filter !== state.options.filter &&

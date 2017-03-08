@@ -1,7 +1,11 @@
 
 function getDate (date) {
-  var parts = date.split('/')
-  return ['20' + parts[2], parts[0], parts[1]]
+  if (date) {
+    var parts = date.split('/')
+    return ['20' + parts[2], parts[0], parts[1]]
+  } else {
+    return ''
+  }
 }
 
 function sortByDate(a, b) {

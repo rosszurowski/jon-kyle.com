@@ -99,7 +99,7 @@ var custom = `
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0.4rem;
+    bottom: 0.45rem;
   }
 
   .copy ul li {
@@ -209,17 +209,17 @@ var custom = `
     display: inline-block;
     vertical-align: middle;
     width: 0.75rem;
+    margin-bottom: 0.1rem;
     height: 1px;
     background: #000;
   }
 
-  hr,
   .em2 {
     display: inline-block;
     vertical-align: middle;
     border: 0;
     width: 1.5em;
-    margin: 0;
+    margin-bottom: 0.1rem;
     height: 1px;
     background: #000;
   }

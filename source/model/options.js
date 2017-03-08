@@ -6,7 +6,9 @@ module.exports = {
     options: {
       filterActive: '',
       entryActive: '',
+      entryStart: '',
       entriesActive: { },
+      entryClicked: '',
       justSorted: false,
       entriesSort: {
         key: 'date',
@@ -30,9 +32,10 @@ module.exports = {
       return {
         options: x(state.options, {
           justSorted: false,
-          entryActive: data,
+          entryActive: data.entryActive,
+          entryStart: data.entryStart || state.options.entryStart,
           entriesActive: x(state.options.entriesActive, {
-            [data]: true
+            [data.entryActive]: true
           })
         })
       }
@@ -41,6 +44,7 @@ module.exports = {
       return {
         options: x(state.options, {
           entryActive: '',
+          entryStart: '',
           justSorted: true,
           entriesActive: { },
           entriesSort: x(state.options.entriesSort, data)

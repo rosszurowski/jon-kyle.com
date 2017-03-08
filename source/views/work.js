@@ -50,7 +50,7 @@ function View (state, prev, send) {
   if (
     state.options.entryStart
   ) {
-    var entry = entries.find(e => e.path === state.options.entryStart)
+    var entry = content.find(e => e.path === state.options.entryStart)
     var position = entries.indexOf(entry)
     entries.splice(position, 1)
     entries.splice(0, 0, entry)

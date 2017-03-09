@@ -11,22 +11,40 @@ md.setOptions({
   breaks: true
 })
 
+function parseOptions (str) {
+  var opts = str ? str.split('--') : [ ]
+  var result = { }
+
+  opts.forEach((opt, i) => {
+    var keyOpts = opt.trim().split(' ')
+    var key = keyOpts.splice(0, 1).join()
+
+    if (key === 'video') {
+      result.video = keyOpts.join()
+    } else if (key === 'style') {
+      result.style = keyOpts.join(' ')
+    } else {
+      result.ratio = key
+    }
+  })
+
+  return result
+}
+
 renderer.image = function(href, title, text) {
   var apiHref = api.endpoint() + href
-  var opts = text.split('!')
-  var ratio = opts[0]
-  var video = opts[1]
+  var opts = parseOptions(text)
 
   return text
-    ? `<span class="psr image ${video ? 'video' : ''}">
+    ? `<span class="psr image ${opts.video ? 'video' : ''} ${opts.style}">
         <span
           class="db psr c12 b1b"
-          style="padding-bottom: ${ratio}%"
+          style="padding-bottom: ${opts.ratio}%"
         >
           <img
             src="${apiHref}"
-            class="db psa t0 l0 w100 h100 ${video ? 'curp' : ''}"
-            ${video ? 'data-video="' + video + '"' : ''}
+            class="db psa t0 l0 w100 h100 ${opts.video ? 'curp' : ''}"
+            ${opts.video ? 'data-video="' + video + '"' : ''}
             ${this.options.xhtml ? '/>' : '>'}
         </span>
       </span>`

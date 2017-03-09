@@ -27,6 +27,13 @@ css.add({
   vals: settings.colors
 })
 
+css.add({
+  prop: ['padding-left', 'padding-right'],
+  prefix: 'pxvw',
+  unit: 'vw',
+  vals: [10, 15, 20]
+})
+
 var custom = `
   html { font-size: 15px }
   @media (max-width: 450px) {
@@ -207,19 +214,35 @@ var custom = `
 
   .em {
     display: inline-block;
-    vertical-align: middle;
+    position: relative;
+    vertical-align: bottom;
     width: 0.75rem;
-    margin-bottom: 0.1rem;
+  }
+
+  .em:before {
+    content: "";
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0;
+    right: 0;
     height: 1px;
     background: #000;
   }
 
   .em2 {
     display: inline-block;
-    vertical-align: middle;
+    position: relative;
+    vertical-align: bottom;
     border: 0;
     width: 1.5em;
-    margin-bottom: 0.1rem;
+  }
+
+  .em2:before {
+    content: "";
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0;
+    right: 0;
     height: 1px;
     background: #000;
   }

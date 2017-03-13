@@ -1,7 +1,7 @@
 const wrapper = require('../containers/wrapper')
 
 function work (active) {
-  return wrapper(require('./work'), { active: '/' })
+  return wrapper(require('./work'), { active: (active || '/') })
 }
 
 function about (active) {
@@ -19,5 +19,5 @@ module.exports = [
   ],
   ['/about', about()],
   ['/images', images()],
-  ['/filter/:filter', work()]
+  ['/filter/:filter', work('/filter/')]
 ]

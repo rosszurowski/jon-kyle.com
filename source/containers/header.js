@@ -23,13 +23,15 @@ function Tags (o) {
 
 function Pages (o) {
   return ov(o.pages).map(page => h`
-    <div>
-      <a
-        href="${page.url}"
-        class="bb1h tdn tc-black ${o.active === page.url ? 'bb1' : ''}"
-       >
-        ${page.text}
-       </a>
+    <div class="c2 p0-5">
+      <div>
+        <a
+          href="${page.url}"
+          class="bb1h tdn tc-black ${o.active === page.url ? 'bb1' : ''}"
+        >
+          ${page.text}
+        </a>
+      </div>
     </div> 
   `)
 }
@@ -39,22 +41,11 @@ function Header (o) {
   note.innerHTML = md.parse(o.note)
 
   return h`
-    <div class="x xw p0-5 usn" sm="p1">
+    <div class="x xw p1-5 usn" sm="p0-5">
       <div class="p0-5 c4" sm="c3">
         <a href="/" class="tdn tc-black">${o.name}</a>
       </div>
-      ${ov(o.pages).map(page => h`
-        <div class="c2 p0-5">
-          <div>
-            <a
-              href="${page.url}"
-              class="bb1h tdn tc-black ${o.active === page.url ? 'bb1' : ''}"
-             >
-              ${page.text}
-             </a>
-          </div>
-        </div> 
-      `)} 
+      ${Pages(o)} 
     </div> 
   `
 }

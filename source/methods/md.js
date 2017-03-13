@@ -44,7 +44,7 @@ renderer.image = function(href, title, text) {
           <img
             src="${apiHref}"
             class="db psa t0 l0 w100 h100 ${opts.video ? 'curp' : ''}"
-            ${opts.video ? 'data-video="' + video + '"' : ''}
+            ${opts.video ? 'data-video="' + opts.video + '"' : ''}
             ${this.options.xhtml ? '/>' : '>'}
         </span>
       </span>`

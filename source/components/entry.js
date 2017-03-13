@@ -28,11 +28,11 @@ function Row (opts) {
 
   var structure = () => h`
     <div class="x xw c12">
-      <div class="c2 p0-5 oh toe wsnw" sm="dn">
-        ${entry.type}
-      </div>
       <div class="c2 ff-mono p0-5 oh toe wsnw" sm="c3">
         ${entry.date ? date() : ''}
+      </div>
+      <div class="c2 p0-5 oh toe wsnw" sm="dn">
+        ${entry.type}
       </div>
       <div class="c7 p0-5 oh toe wsnw" sm="c8">
         <span class="${o.active ? 'bm1hc' : 'bb1hc'}">${entry.title}</span>${(entry.collaborator || entry.client) ? collaborator() : ''}

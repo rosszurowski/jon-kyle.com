@@ -29,17 +29,17 @@ function EntriesHeader (opts) {
 
   return h`
     <div class="x c12 usn">
-      <div class="p0-5 c2" sm="dn">
-        <span
-          class="curp"
-          onclick=${() => o.handleClick('type')}
-        >type ${arrow('type')}</span>
-      </div>
       <div class="p0-5 c2" sm="c3">
         <span
           class="curp"
           onclick=${() => o.handleClick('date')}
         >date ${arrow('date')}</span>
+      </div>
+      <div class="p0-5 c2" sm="dn">
+        <span
+          class="curp"
+          onclick=${() => o.handleClick('type')}
+        >type ${arrow('type')}</span>
       </div>
       <div class="p0-5 c7" sm="c8">
         <span

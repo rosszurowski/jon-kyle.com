@@ -159,7 +159,7 @@ function View (state, prev, send) {
   }
 
   return h`
-    <div class="p0-5" sm="p0">
+    <div class="p1-5" sm="p0-5">
       ${entriesHeader}
       ${elEntries}
     </div>

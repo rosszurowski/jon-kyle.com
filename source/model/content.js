@@ -9,6 +9,7 @@ var apiData = endpoint + 'data.json'
 module.exports = {
   state: {
     endpoint: endpoint,
+    loaded: false,
     content: { }
   },
   subscriptions: {
@@ -21,7 +22,10 @@ module.exports = {
   },
   reducers: {
     content: function (state, data) {
-      return { content: x(state.content, data) }
+      return {
+        loaded: true,
+        content: x(state.content, data)
+      }
     }
   }
 }

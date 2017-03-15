@@ -1,12 +1,13 @@
 var h = require('bel')
 
-function About (opts) {
+module.exports = Error
+
+function Error (opts) {
   var o = opts || { }
+
   return h`
     <div class="p1">
-      about
+      can not find entry
     </div>
   `
 }
-
-module.exports = About

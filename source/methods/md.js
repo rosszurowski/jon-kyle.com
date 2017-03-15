@@ -34,11 +34,18 @@ function parseOptions (str) {
 renderer.image = function(href, title, text) {
   var apiHref = api.endpoint() + href
   var opts = parseOptions(text)
+  var style = [
+    'db psr image',
+    opts.video ? 'video' : '',
+    opts.style ? opts.style : ''
+  ]
+    .join(' ')
+    .trim()
 
   return text
-    ? `<span class="psr image ${opts.video ? 'video' : ''} ${opts.style}">
+    ? `<span class="${style}">
         <span
-          class="db psr c12 b1b"
+          class="db psr c12 bg-black"
           style="padding-bottom: ${opts.ratio}%"
         >
           <img

@@ -6,7 +6,7 @@ module.exports = {
     visitor: {
       blocks: [
         'introduction',
-        'web-thoughts-pt-1'
+        'where-its-at-right-now'
       ]
     }
   },

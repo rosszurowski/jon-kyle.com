@@ -41,7 +41,7 @@ function Footer (state, emit) {
     var text = html`<div></div>`
     text.innerHTML = md.parse(content.footer)
     return html`
-      <div class="p1 copy">
+      <div class="p2 fs0-65 copy">
         ${text} 
       </div>
     `
@@ -63,7 +63,7 @@ function Featured (state, emit) {
             <div>
               ${entry.title}
             </div>
-            <div style="font-size: 0.65rem">
+            <div class="fs0-65">
               ${entry.subtitle}
             </div>
           </a>

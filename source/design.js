@@ -5,7 +5,7 @@ var lilcss = require('lilcss')
 
 var gr8css = gr8({
   lineHeight: [1, 1.25, 1.5, 2],
-  fontSize: [1, 1.5, 2, 3, 3.5],
+  fontSize: [0.65, 1, 1.5, 2, 3, 3.5],
   spacing: [0, 1, 2, 3, 4].map(size => {
     return { [size.toString().replace('.', '-')]: size / 2 }
   }),
@@ -89,6 +89,9 @@ var typography = `
   .copy > * {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .copy.indent > * {
     margin-left: 16.6666667%;
   }
 

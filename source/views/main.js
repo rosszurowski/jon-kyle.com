@@ -34,14 +34,59 @@ function Header (state, emit) {
   `
 }
 
+function Footer (state, emit) {
+  var content = state.content['site-meta'] || { }
+
+  if (content && content.footer) {
+    var text = html`<div></div>`
+    text.innerHTML = md.parse(content.footer)
+    return html`
+      <div class="p1 copy">
+        ${text} 
+      </div>
+    `
+  }
+}
+
+function Featured (state, emit) {
+  var entries = objectValues(state.content)
+    .filter(entry => !entry.hidden)
+    .filter(entry => entry.rank > 3)
+    .sort(sortEntriesByDate)
+    .map(function (entry) {
+      return html`
+        <div class="p1 c4">
+          <a
+            href="/${entry.id}"
+            class="db tc-black tdn b1b p1"
+          >
+            <div>
+              ${entry.title}
+            </div>
+            <div style="font-size: 0.65rem">
+              ${entry.subtitle}
+            </div>
+          </a>
+        </div>
+      `
+    })
+
+  return html`
+    <div class="x xw p1">
+      ${entries}
+    </div>
+  `
+}
+
 function List (state, emit) {
   var entries = objectValues(state.content)
     .filter(entry => !entry.hidden)
-    .sort(function(a, b) {
-      a = a.date.replace(/\//g, ':')
-      b = b.date.replace(/\//g, ':')
-      return a > b ? -1 : a < b ? 1 : 0
+    .filter(function (entry) {
+      return entry.rank
+        ? entry.rank < 3
+        : true
     })
+    .sort(sortEntriesByDate)
     .map(entry => Entry(entry, emit))
 
   return html`<div class="p1">${entries}</div>`
@@ -67,7 +112,7 @@ function Entry (state, emit) {
     <div>
       <a href=${url} class="x tc-black tdn hcbb1">
         <div class="c8 pl1 pr4" sm="c12 pr1">
-          <div class="indent">
+          <div class="line-indent">
             <span class="hbb1">${state.title}</span>
             ${isExternal ? external() : ''}
             ${state.collaborator ? collaborator() : ''} 
@@ -84,13 +129,25 @@ function Entry (state, emit) {
 
 function Main (state, emit) {
   return html`
-    <div>
+    <div onload=${handleLoad}>
       ${Header(state, emit)}
+      ${Featured(state, emit)}
       ${List(state, emit)}
+      ${Footer(state, emit)}
     </div>
   `
 
   function onclick () {
     emit('increment', 1)
   }
+
+  function handleLoad () {
+    window.scrollTo(0, 0)
+  }
+}
+
+function sortEntriesByDate (a, b) {
+  a = a.date.replace(/\//g, ':')
+  b = b.date.replace(/\//g, ':')
+  return a > b ? -1 : a < b ? 1 : 0
 }

@@ -38,7 +38,7 @@ renderer.image = function(href, title, text) {
   return text
     ? `<span class="psr image ${opts.video ? 'video' : ''} ${opts.style}">
         <span
-          class="db psr c12 b1b"
+          class="db psr c12"
           style="padding-bottom: ${opts.ratio}%"
         >
           <img

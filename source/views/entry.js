@@ -8,7 +8,7 @@ function Entry (state, emit) {
   var entry = state.content[state.params.wildcard]
 
   if (entry && entry.text) {
-    var content = html`<div class="p1 copy list"></div>`
+    var content = html`<div class="p1 copy indent list"></div>`
 
     content.innerHTML = markdown.parse(
       entry.text,
@@ -16,7 +16,7 @@ function Entry (state, emit) {
     )
 
     return html`
-      <div class="p1">
+      <div class="p1" onload=${handleLoad}>
         <div class="x xjb vhmn33">
           <div class="p1">
             # ${entry.title}
@@ -36,5 +36,9 @@ function Entry (state, emit) {
     `
   } else {
     return Err
+  }
+
+  function handleLoad () {
+    window.scrollTo(0, 0)
   }
 }

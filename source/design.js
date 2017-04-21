@@ -81,6 +81,8 @@ var custom = `
 
   ::-moz-selection { background: rgba(0, 0, 0, 0.5) }
   ::selection { background: rgba(0, 0, 0, 0.5) }
+
+  .b1b { border: 1px solid #000 }
 `
 
 var typography = `
@@ -122,7 +124,7 @@ var typography = `
     border-bottom: 1px solid #000;
   }
 
-  .indent {
+  .line-indent {
     text-indent: -1rem;
     margin-left: 1rem;
   }
@@ -151,6 +153,7 @@ var typography = `
   .image img,
   .image video {
     margin: 0;
+    max-width: 100%;
   }
 
   video { z-index: 3 }
@@ -252,15 +255,20 @@ var typography = `
   }
 `
 
-var lilgr8 = lilcss(gr8css.toString(), [
+var lilsrc = [
   'containers/*.js',
   'views/*.js',
   'index.js'
-])
+].map(p => 'source/' + p)
+
+var lilopts = {
+  ignore: ['psa', 'psr', 't0', 'b0', 'l0', 'r0']
+}
+
+var lilgr8 = lilcss(gr8css.toString(), lilsrc, lilopts)
 
 var built = [
   recsst.toString(),
-  // gr8css.toString(),
   lilgr8,
   custom,
   typography

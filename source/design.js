@@ -104,9 +104,9 @@ var typography = `
   .copy > *:first-child { margin-top: 0 }
   .copy > *:last-child { margin-bottom: 0 }
 
-  .copy h1,
-  .copy h2,
-  .copy h3 {
+  .copy.indent h1,
+  .copy.indent h2,
+  .copy.indent h3 {
     font-size: 1rem;
     font-weight: normal;
     margin-left: 0;
@@ -141,7 +141,6 @@ var typography = `
   }
 
   .copy a[href*="//"] {
-    display: inline-block;
     margin-right: 1rem;
   }
 

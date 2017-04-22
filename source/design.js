@@ -73,7 +73,7 @@ gr8css.add({
 })
 
 var custom = `
-  html { font-size: 22px }
+  html { font-size: 20px }
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

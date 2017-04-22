@@ -16,7 +16,7 @@ function Entry (state, emit) {
     )
 
     return html`
-      <div class="p1" onload=${handleLoad}>
+      <div class="p1 vhmn100" onload=${handleLoad}>
         <div class="x xjb vhmn33">
           <div class="p1">
             # ${entry.title}

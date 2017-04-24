@@ -1,18 +1,26 @@
 var html = require('bel')
 var md = require('marked')
 var objectValues = require('object-values')
+var api = require('../methods/api')
 
 module.exports = Main
 
 function Header (state, emit) {
   var content = state.content['site-meta'] || { }
+  var image = api + 'about/me.jpg'
 
   return html`
     <div class="p1 x xw vhmn33">
-      <div class="c8 p1" sm="c12">
-        ${content.name}
+      <div class="c1 p1" sm="c2">
+        <div
+          class="bgsc bgrn bgpc"
+          style="
+            background-image: url(${image});
+            padding-bottom: 100%;
+          "
+        ></div>
       </div>
-      <div class="c4 p1" sm="c12">
+      <div class="c4 p1 co7" sm="c10 co0">
         <div>
           <a
             href="mailto:${content.email}"

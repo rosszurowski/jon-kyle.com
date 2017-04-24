@@ -18,7 +18,7 @@ function Entry (state, emit) {
     return html`
       <div class="p1 vhmn100" onload=${handleLoad}>
         <div class="x xjb vhmn33">
-          <div class="p1">
+          <div class="p1 ff-mono">
             # ${entry.title}
           </div>
           <div class="p1 pt0-5 lh1">

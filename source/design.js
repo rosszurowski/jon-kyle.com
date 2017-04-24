@@ -107,6 +107,7 @@ var typography = `
   .copy.indent h1,
   .copy.indent h2,
   .copy.indent h3 {
+    font-family: ${type.mono};
     font-size: 1rem;
     font-weight: normal;
     margin-left: 0;

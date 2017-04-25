@@ -63,7 +63,7 @@ function Featured (state, emit) {
     .sort(sortEntriesByDate)
     .map(function (entry) {
       return html`
-        <div class="p1 c4" sm="c6">
+        <div class="p1 wr15" md="c6" sm="c12">
           <a
             href="/${entry.id}"
             class="db tc-black tdn b1b p1"

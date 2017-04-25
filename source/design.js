@@ -4,6 +4,11 @@ var recsst = require('recsst')
 var lilcss = require('lilcss')
 
 var gr8css = gr8({
+  breakpoints: {
+    lg: '1000px',
+    md: '767px',
+    sm: '500px'
+  },
   lineHeight: [1, 1.25, 1.5, 2],
   fontSize: [0.65, 1, 1.5, 2, 3, 3.5],
   spacing: [0, 1, 2, 3, 4].map(size => {
@@ -65,6 +70,15 @@ gr8css.add({
   vals: colors
 })
 
+// rag widths
+gr8css.add({
+  prop: 'width',
+  prefix: 'wr',
+  unit: 'rem',
+  vals: [0, 5, 10, 15, 20]
+})
+
+// viewport min heights
 gr8css.add({
   prop: 'min-height',
   prefix: 'vhmn',
@@ -83,6 +97,12 @@ var custom = `
   ::selection { background: rgba(0, 0, 0, 0.5) }
 
   .b1b { border: 1px solid #000 }
+
+  iframe {
+    border: 0;
+    height: 20rem;
+    width: 100%;
+  }
 `
 
 var typography = `

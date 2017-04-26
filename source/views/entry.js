@@ -18,15 +18,18 @@ function Entry (state, emit) {
     return html`
       <div class="p1 vhmn100" onload=${handleLoad}>
         <div class="x xjb vhmn33">
-          <div class="p1 ff-mono">
-            # ${entry.title}
+          <div class="p1 h1">
+            ${entry.title}
           </div>
           <div class="p1 pt0-5 lh1">
             <a href="/" class="tdn tc-black">←</a>
           </div>
         </div>
-        <div style="max-width: 38rem">
-          ${content}
+
+        <div class="c12 x xjc">
+          <div style="width: 38rem; max-width: 100%;">
+            ${content}
+          </div>
         </div>
         
         <div class="p1 pt0-5 lh1">

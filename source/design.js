@@ -111,9 +111,11 @@ var typography = `
     margin-bottom: 1rem;
   }
 
+  /*
   .copy.indent > * {
     margin-left: 16.6666667%;
   }
+  */
 
   @media (max-width: 767px) {
     .copy > * {
@@ -124,6 +126,7 @@ var typography = `
   .copy > *:first-child { margin-top: 0 }
   .copy > *:last-child { margin-bottom: 0 }
 
+  /*
   .copy.indent h1,
   .copy.indent h2,
   .copy.indent h3 {
@@ -135,6 +138,25 @@ var typography = `
 
   .copy h1:before { content: '# ' }
   .copy h2:before { content: '## ' }
+  */
+
+  .copy h2,
+  .copy h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    position: relative;
+  }
+
+  .copy h2:before,
+  .copy h3:before {
+    padding-right: 0.5rem;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  .copy h2:before { content: '## ' }
+  .copy h3:before { content: '## ' }
 
   .copy a {
     color: inherit;

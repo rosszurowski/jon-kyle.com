@@ -10,14 +10,15 @@ function commits (state, emitter) {
   xhr(endpoint, function (err, data, body) {
     if (!err && body) {
       var response = JSON.parse(body)
-        .map(function (commit) {
-          return {
-            date: commit.commiter.date,
-            message: commit.commit.message,
-            url: commit.html_url
-          }
-        })
-      console.log(response)
+      var result = response.map(function (entry) {
+        return {
+          date: entry.commit.committer.date,
+          message: entry.commit.message,
+          url: entry.html_url
+        }
+      })
+      state.commits = result
+      emitter.emit('render')
     }
   })
 }

@@ -170,6 +170,11 @@ var typography = `
     border-bottom: 1px solid #000;
   }
 
+  .bb1h:hover {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #000;
+  }
+
   .line-indent {
     text-indent: -1rem;
     margin-left: 1rem;

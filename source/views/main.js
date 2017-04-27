@@ -20,7 +20,17 @@ function Header (state, emit) {
           "
         ></div>
       </div>
-      <div class="c4 p1 co7" sm="c10 co0">
+      <div class="c4 co3" sm="co0 c10">
+        <div class="db">
+          <div>last updated</div>
+          <div>
+            <a href="/commits" class="tc-black tdn bb1h">
+              ${state.commits[0] ? state.commits[0].date : ''}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="c4 p1" sm="c10">
         <div>
           <a
             href="mailto:${content.email}"

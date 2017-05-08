@@ -7,7 +7,9 @@ function Main (view) {
     return html`
       <body class="fs1 ff-sans lh1-5 bg-white tc-black">
         ${view(state, emit)}
-        <div class="ff-mono"></div>
+        <div class="psa t0 l0 op0 ff-mono">
+          mono load
+        </div>
       </body>
     `
   }

@@ -24,7 +24,7 @@ function Header (state, emit) {
         <div class="db">
           <div>last updated</div>
           <div>
-            <a href="/commits" class="tc-black tdn bb1h">
+            <a href="/history" class="tc-black tdn bb1h">
               ${state.commits[0] ? state.commits[0].date : ''}
             </a>
           </div>
@@ -71,6 +71,7 @@ function Featured (state, emit) {
     .filter(entry => !entry.hidden)
     .filter(entry => entry.rank > 3)
     .sort(sortEntriesByDate)
+    .reverse()
     .map(function (entry) {
       return html`
         <div class="p1 wr15" md="c6" sm="c12">

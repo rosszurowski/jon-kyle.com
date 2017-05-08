@@ -185,6 +185,7 @@ var typography = `
     vertical-align: bottom;
     transform: rotate(-45deg);
     transform-origin: 0 0;
+    margin-left: 0.25rem;
     margin-right: 1rem;
   }
 

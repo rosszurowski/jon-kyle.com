@@ -188,11 +188,11 @@ var typography = `
     margin-right: 1rem;
   }
 
-  .copy a[href*="//"] {
+  .copy a[href*="//"]:hover {
     margin-right: 1rem;
   }
 
-  .copy a[href*="//"]:after {
+  .copy a[href*="//"]:hover:after {
     content: '→';
     display: inline-block;
     vertical-align: bottom;

@@ -19,6 +19,8 @@ function commits (state, emitter) {
           }
         })
         state.commits = result
+        
+        emitter.emit('commits:loaded')
         emitter.emit('render')
       }
     })

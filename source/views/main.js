@@ -11,7 +11,7 @@ function Header (state, emit) {
 
   return html`
     <div class="p1 x xw vhmn33">
-      <div class="c1 p1" sm="c2">
+      <div class="c1 p1" md="c2" sm="c4">
         <div
           class="bgsc bgrn bgpc"
           style="
@@ -20,31 +20,38 @@ function Header (state, emit) {
           "
         ></div>
       </div>
-      <div class="c4 co3" sm="co0 c10">
-        <div class="${state.commits.length > 0 ? 'db' : 'dn'}">
-          <div>last updated</div>
+      <div class="c4 co7" md="co3 c6" sm="co0 c12">
+        <div class="p1">
           <div>
-            <a href="/history" class="tc-black tdn bb1h">
-              ${state.commits[0] ? state.commits[0].date : ''}
+            <a
+              href="mailto:${content.email}"
+              class="tdn tc-black bb1h"
+            >
+              ${content.email}
             </a>
           </div>
+          <div>
+            <a
+              href="http://twitter.com/${content.twitter}"
+              class="tdn tc-black bb1h"
+            >twitter</a>,
+            <a
+              href="https://www.are.na/jon-kyle-mohr"
+              class="tdn tc-black bb1h"
+            >are.na</a>
+          </div>
         </div>
-      </div>
-      <div class="c4 p1" sm="c10">
-        <div>
+        <div class="p1">
           <a
-            href="mailto:${content.email}"
-            class="tdn tc-black"
+            href="/history"
+            class="tdn hcbb1 tc-black ${state.commits.length > 0 ? 'db' : 'dn'}"
           >
-            ${content.email}
-          </a>
-        </div>
-        <div>
-          <a
-            href="http://twitter.com/${content.twitter}"
-            class="tdn tc-black"
-          >
-            @${content.twitter}
+            <div>last updated</div>
+            <div>
+              <span class="hbb1">
+                ${state.commits[0] ? state.commits[0].date : ''}
+              </a>
+            </div>
           </a>
         </div>
       </div>

@@ -21,7 +21,7 @@ function Header (state, emit) {
         ></div>
       </div>
       <div class="c4 co3" sm="co0 c10">
-        <div class="db">
+        <div class="${state.commits.length > 0 ? 'db' : 'dn'}">
           <div>last updated</div>
           <div>
             <a href="/history" class="tc-black tdn bb1h">

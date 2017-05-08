@@ -22,6 +22,7 @@ function content (state, emitter) {
     })
 
     state.content = content
+    emitter.emit('commits:init')
     emitter.emit('render')
   })
 }

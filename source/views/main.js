@@ -122,8 +122,8 @@ function Entry (state, emit) {
   var isExternal = state.external && state.url
   var url = isExternal ? state.url : '/' + state.id
 
-  var collaborator = () => html`<span class="op25">w/ ${state.collaborator}</span>`
-  var client = () => html`<span class="op25">${state.client}</span>`
+  var collaborator = () => html`<span class="op25" style="margin-left: 0.25rem">w/ ${state.collaborator}</span>`
+  var client = () => html`<span class="op25" style="margin-left: 0.25rem">${state.client}</span>`
   var external = () => html`<span class="tr-45">→</span>`
 
   return html`

@@ -18,9 +18,6 @@ function Entry (state, emit) {
         <div class="p1 h1">
           ${state.title}
         </div>
-        <div class="p1 pt0-5 lh1">
-          <a href="/" class="tdn tc-black">←</a>
-        </div>
       </div>
 
       <div class="c12 x xjc">

@@ -22,7 +22,8 @@ function content (state, emitter) {
     })
 
     state.content = content
-    emitter.emit('commits:init')
+    
+    emitter.emit('content:loaded')
     emitter.emit('render')
   })
 }

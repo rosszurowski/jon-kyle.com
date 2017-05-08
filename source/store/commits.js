@@ -23,4 +23,9 @@ function commits (state, emitter) {
       }
     })
   })
+
+  // content > init
+  emitter.on('content:loaded', function () {
+    emitter.emit('commits:init')
+  })
 }

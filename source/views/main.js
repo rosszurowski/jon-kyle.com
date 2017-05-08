@@ -109,7 +109,7 @@ function List (state, emit) {
     .filter(entry => !entry.hidden)
     .filter(function (entry) {
       return entry.rank
-        ? entry.rank < 3
+        ? entry.rank <= 3
         : true
     })
     .sort(sortEntriesByDate)

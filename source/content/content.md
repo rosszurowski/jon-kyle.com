@@ -19,7 +19,7 @@
 
 - Commissioned sites, design and development, for [Red Bull Music Academy](http://labels.redbullmusicacademy.com/). [Endless 80s NYC](http://labels.redbullmusicacademy.com/), an anthology of 80s dance labels. [Shattered Streams](http://daily.redbullmusicacademy.com/specials/2016-shattered-streams/), a month-long experiment in musical ephemerality, presenting original music from William Basinski, Fennesz, Jefre Cantu-Ledesma, and more.
 
-- [2pac](http://2pac.com), [East of Borneo](http://eastofborneo.net), [Machine Project](http://machineproject.com), and Morphosis Architects with [Folder Studio](http://folderstudio.com) contributing to development.
+- [2pac](http://2pac.com), Morphosis Architects (Thom Mayne), [East of Borneo](http://eastofborneo.net), and [Machine Project](http://machineproject.com) with [Folder Studio](http://folderstudio.com) contributing to development.
 
 - [Hassan Rahim](http://hassanrahim.com) for Hassan Rahim, development.
 

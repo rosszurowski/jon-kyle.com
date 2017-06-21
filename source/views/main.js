@@ -8,7 +8,7 @@ function view (state, emit) {
   content.innerHTML = md(state.content)
 
   return html`
-    <div class="py2 px3 fs1 lh1-5">
+    <div class="pt2 pb4 px3 fs1 lh1-5">
       ${content}
     </div>
   `

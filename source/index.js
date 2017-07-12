@@ -1,21 +1,23 @@
 var html = require('choo/html')
 var choo = require('choo')
 
-var stores = require('./store')
-var views = require('./views')
-var main = require('./containers/main')
-
+var plugins = require('./plugins')
+var routes = require('./routes')
 var app = choo()
 
-// model
-stores.forEach(function(store) {
-  return app.use(store)
+// plugins
+Object.keys(plugins).forEach(function(plugin) {
+  app.use(plugins[plugin])
 })
 
 // routes
-views.forEach(function (route) {
-  return app.route(route.path, main(route.view))
+Object.keys(routes).forEach(function (route) {
+  if (routes[route].view) app.route(route, routes[route].view)
 })
 
-// init
-app.mount('body')
+// public
+if (module.parent) {
+  module.exports = app
+} else {
+  app.mount('body')
+}

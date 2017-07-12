@@ -31,8 +31,7 @@ var colors = [
 // fonts
 gr8css.add({
   prop: 'font-family',
-  vals: type,
-  hyphenate: true
+  vals: type
 })
 
 // backgrounds
@@ -162,7 +161,7 @@ var typography = `
 
 var lilsrc = [
   'containers/*.js',
-  'views/*.js',
+  'routes/*.js',
   'index.js'
 ].map(p => 'source/' + p)
 

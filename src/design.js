@@ -25,9 +25,9 @@ var type = {
 }
 
 var colors = {
-  white: '#fff',
-  black: '#000',
-  grey: '#333'
+  white: '#000',
+  black: '#fff',
+  grey: '#ccc'
 }
 
 // fonts
@@ -84,14 +84,14 @@ var custom = `
   }
 
   .copy a {
-    color: #fff;
+    color: ${colors.white};
     text-decoration: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid ${colors.grey};
     padding-bottom: 0.2rem;
   }
 
   .copy a:hover {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid ${colors.white};
   }
 
   h1, h2 {
@@ -126,7 +126,7 @@ var typography = `
   }
 
   .copy {
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.01rem;
     width: 100%;
     max-width: 35rem;
     margin-left: 6rem;
@@ -174,7 +174,7 @@ var lilsrc = [
   'containers/*.js',
   'routes/*.js',
   'index.js'
-].map(p => 'source/' + p)
+].map(p => 'src/' + p)
 
 var lilopts = {
   ignore: ['psa', 'psr', 't0', 'b0', 'l0', 'r0']

@@ -1,9 +1,9 @@
-## Jon-Kyle Mohr
+# Jon-Kyle Mohr
 
 - Accepting freelance projects
 - New York, NY until October
 - [contact@jon-kyle.com](contact@jon-kyle.com)
-- [Twitter](http://twitter.com/jondashkyle) / [Arena](https://www.are.na/jon-kyle-mohr/)
+- [Github](https://github.com/jondashkyle/jon-kyle.com), [Twitter](http://twitter.com/jondashkyle), [Arena](https://www.are.na/jon-kyle-mohr/)
 
 ## Ongoing Projects
 
@@ -27,4 +27,8 @@
 
 - Collaborating with [Anenon](http://brianallensimon.com) on drums, beginning in 2010. [Sagrada](http://nonprojects.net/catalog/sagrada), [Petrol](https://anenon.bandcamp.com/album/petrol). European tour 2016. RBMA Fest, MOCA, The Broad.
 
-- Interview: [Between Broadcast and Community: The Design of Virtual Spaces](https://www.theatlantic.com/technology/archive/2013/09/between-broadcast-and-community-the-design-of-virtual-spaces/279763/?utm_source=feed), The Atlantic
+- An interview, [Between Broadcast and Community: The Design of Virtual Spaces](https://www.theatlantic.com/technology/archive/2013/09/between-broadcast-and-community-the-design-of-virtual-spaces/279763/?utm_source=feed), The Atlantic
+
+## Colophon
+
+This page is set in Lars Light by [Bold Decisions](https://bold-decisions.biz). It is hosted on the distributed web with [Dat](http://datproject.org), permanently seeded with [dathttpd](https://github.com/beakerbrowser/dathttpd), and published to [#_hashbase](http://hashbase.io). The source is [available to you](https://github.com/jondashkyle/jon-kyle.com).

@@ -9,7 +9,9 @@ var gr8css = gr8({
     md: '767px',
     sm: '500px'
   },
-  lineHeight: [1, 1.25, 1.5, 2],
+  lineHeight: [1, 1.5].map(size => {
+    return { [size.toString().replace('.', '-')]: size * 1.1 }
+  }),
   fontSize: [1],
   spacing: [0, 1, 2, 3, 4].map(size => {
     return { [size.toString().replace('.', '-')]: size / 2 }
@@ -22,11 +24,11 @@ var type = {
   mono: '"Lars Mono", menlo, monaco, monospace'
 }
 
-var colors = [
-  { white: '#fff' },
-  { black: '#000' },
-  { grey: '#eee' }
-]
+var colors = {
+  white: '#fff',
+  black: '#000',
+  grey: '#333'
+}
 
 // fonts
 gr8css.add({
@@ -73,8 +75,8 @@ var custom = `
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ::-moz-selection { background: rgba(0, 0, 0, 0.5) }
-  ::selection { background: rgba(0, 0, 0, 0.5) }
+  ::-moz-selection { background: rgba(127, 127, 127, 0.5) }
+  ::selection { background: rgba(127, 127, 127, 0.5) }
 
   .copy > *+* {
     margin-top: 1.5rem;
@@ -82,13 +84,17 @@ var custom = `
   }
 
   .copy a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #333;
     padding-bottom: 0.2rem;
   }
 
-  h2 {
+  .copy a:hover {
+    border-bottom: 1px solid #fff;
+  }
+
+  h1, h2 {
     font-weight: normal;
     font-size: 1rem;
   }
@@ -109,9 +115,8 @@ var custom = `
     height: 0.75rem;
     width: 0.75rem;
     border-radius: 50%;
-    border: 1px solid #000;
+    border: 1px solid ${colors.white};
   }
-
 `
 
 var typography = `

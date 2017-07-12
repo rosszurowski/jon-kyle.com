@@ -9,7 +9,8 @@
     "watch-css": "watch 'node ./source/design.js > public/bundle.css' ./source",
     "build-js": "browserify source/index.js -t envify -t brfs -g yo-yoify -g es2040 -g uglifyify > public/bundle.js",
     "watch-js": "budo source/index.js:bundle.js --dir public --pushstate --live -- -t brfs -t [ envify --NODE_ENV development ]",
-    "start": "concurrently --kill-others \"npm run watch-js\" \"npm run watch-css\""
+    "start": "concurrently --kill-others \"npm run watch-js\" \"npm run watch-css\"",
+    "publish": "dat sync public"
   },
   "author": "Jon-Kyle Mohr",
   "license": "ISC",

@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node source/static && npm run build-css && npm run build-js",
-    "build-css": "node ./source/design.js | postcss --use autoprefixer --use postcss-clean > public/bundle.css",
-    "watch-css": "watch 'node ./source/design.js > public/bundle.css' ./source",
-    "build-js": "browserify source/index.js -t envify -t brfs -g yo-yoify -g es2040 -g uglifyify > public/bundle.js",
-    "watch-js": "budo source/index.js:bundle.js --dir public --pushstate --live -- -t brfs -t [ envify --NODE_ENV development ]",
+    "build": "node . && npm run build-css && npm run build-js",
+    "build-css": "node ./src/design.js | postcss --use autoprefixer --use postcss-clean > public/bundle.css",
+    "watch-css": "watch 'node ./src/design.js > public/bundle.css' ./src",
+    "build-js": "browserify src/index.js -t envify -t brfs -g yo-yoify -g es2040 -g uglifyify > public/bundle.js",
+    "watch-js": "budo src/index.js:bundle.js --dir public --pushstate --live -- -t brfs -t [ envify --NODE_ENV development ]",
     "start": "concurrently --kill-others \"npm run watch-js\" \"npm run watch-css\"",
     "publish": "dat sync public"
   },

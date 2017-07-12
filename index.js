@@ -2,16 +2,16 @@ var fs = require('fs')
 var npath = require('path')
 var createHTML = require('create-html')
 
-var app = require('./')
-var routes = require('./routes')
-var config = require('../config')
+var app = require('./src')
+var routes = require('./src/routes')
+var config = require('./config')
 
 var PUBLIC = config.public || 'public'
 
 // create pages
 Object.keys(routes).forEach(function (route) {
   if (routes[route].view) {
-    var index = npath.join(__dirname, '../', PUBLIC, route, 'index.html')
+    var index = npath.join(__dirname, PUBLIC, route, 'index.html')
     var output = createHTML({
       title: 'jon-kyle',
       script: '/bundle.js',

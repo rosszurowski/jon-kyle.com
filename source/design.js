@@ -1,4 +1,4 @@
-var html = require('bel')
+var html = require('choo/html')
 var gr8 = require('gr8')
 var recsst = require('recsst')
 var lilcss = require('lilcss')

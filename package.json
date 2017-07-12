@@ -31,6 +31,7 @@
     "bel": "^4.6.0",
     "choo": "^6.0.0-2",
     "create-html": "^3.1.0",
+    "escape-html": "^1.0.3",
     "fontfaceobserver": "^2.0.9",
     "gr8": "^2.1.5",
     "join-path": "^1.1.1",

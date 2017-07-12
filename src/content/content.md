@@ -1,9 +1,9 @@
 # Jon-Kyle Mohr
 
-- Accepting freelance projects
-- New York, NY until October
 - [contact@jon-kyle.com](contact@jon-kyle.com)
 - [Github](https://github.com/jondashkyle/jon-kyle.com), [Twitter](http://twitter.com/jondashkyle), [Arena](https://www.are.na/jon-kyle-mohr/)
+- Accepting freelance projects
+- New York, NY until October
 
 ## Ongoing Projects
 

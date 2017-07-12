@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-css && npm run build-js",
+    "build": "node source/static && npm run build-css && npm run build-js",
     "build-css": "node ./source/design.js | postcss --use autoprefixer --use postcss-clean > public/bundle.css",
     "watch-css": "watch 'node ./source/design.js > public/bundle.css' ./source",
     "build-js": "browserify source/index.js -t envify -t brfs -g yo-yoify -g es2040 -g uglifyify > public/bundle.js",

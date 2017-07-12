@@ -110,7 +110,7 @@ var custom = `
   li:before {
     content: '';
     position: absolute;
-    top: 0.4rem;
+    top: 0.45rem;
     left: 0;
     height: 0.75rem;
     width: 0.75rem;
@@ -126,8 +126,14 @@ var typography = `
   }
 
   .copy {
+    letter-spacing: 0.02rem;
     width: 100%;
-    max-width: 30rem;
+    max-width: 35rem;
+    margin-left: 6rem;
+  }
+
+  h1, h2 {
+    margin-left: -6rem;
   }
 
   .copy > *:first-child { margin-top: 0 }

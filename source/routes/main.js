@@ -20,6 +20,6 @@ function format (str) {
   } else {
     var el = html`<div class="copy"></div>`
     el.innerHTML = output
-    return el
+    return [...el.childNodes]
   }
 }

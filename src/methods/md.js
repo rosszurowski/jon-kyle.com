@@ -1,5 +1,5 @@
 var html = require('choo/html')
-var md = require('nano-markdown')
+var md = require('marked')
 
 module.exports = format
 

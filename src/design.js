@@ -27,7 +27,8 @@ var type = {
 var colors = {
   white: '#000',
   black: '#fff',
-  grey: '#ccc'
+  grey: '#ccc',
+  greyLight: '#eee'
 }
 
 // fonts
@@ -101,6 +102,28 @@ var custom = `
 
   h2:not(:first-child) { margin-top: 3rem }
 
+  code, pre {
+    font-family: 'Lars Mono', menlo, monaco, monospace;
+  }
+
+  code {
+    background: ${colors.greyLight};
+    border-radius: 3px;
+    padding: 0.2em;
+  }
+
+  pre {
+    background: ${colors.greyLight};
+    padding: 1rem 1.5rem;
+    border-radius: 3px;
+    overflow: scroll;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+  }
+
   li {
     padding-left: 1.5rem;
     list-style: none;
@@ -130,10 +153,22 @@ var typography = `
     width: 100%;
     max-width: 35rem;
     margin-left: 6rem;
+    white-space: breakword;
   }
 
   h1, h2 {
     margin-left: -6rem;
+  }
+
+  .back {
+    display: inline-block;
+    width: 6rem;
+  }
+
+  @media (max-width: 700px) {
+    .copy { margin-left: 0 }
+    h1, h2 { margin-left: 0 }
+    .back { width: auto; margin-right: 0.75rem }
   }
 
   .copy > *:first-child { margin-top: 0 }

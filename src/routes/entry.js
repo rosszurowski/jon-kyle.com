@@ -13,7 +13,7 @@ function view (state, emit) {
   function content () {
     return [
       md(state[state.route]),
-      html`<h2>← <a href="/">Index</a></h2>`
+      html`<h2><div class="back">←</div><a href="/">Index</a></h2>`
     ]
   }
 

@@ -15,8 +15,8 @@ Object.keys(routes).forEach(function (route) {
   if (routeExists(route)) {
     var dir = npath.join(__dirname, PUBLIC, route)
 
-		mkdirp(dir, function (err) {
-			if (err) return console.warn(err)
+    mkdirp(dir, function (err) {
+      if (err) return console.warn(err)
       var state = xtend({ }, app.state)
 
       // if there is content for the route, load and write it
@@ -40,10 +40,10 @@ Object.keys(routes).forEach(function (route) {
       })
 
       // write the index file
-			fs.writeFileSync(npath.join(dir, 'index.html'), output, { flag: 'w'})
+      fs.writeFileSync(npath.join(dir, 'index.html'), output, { flag: 'w'})
 
-			console.log(`built: ${route}`)
-		})
+      console.log(`built: ${route}`)
+    })
   } else {
     console.log(`error: ${route} does not have a view, or is dynamic`)
   }

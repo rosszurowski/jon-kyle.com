@@ -11,6 +11,11 @@ function content (state, emitter) {
 
   emitter.on(state.events.DOMCONTENTLOADED, load)
   emitter.on(state.events.NAVIGATE, load)
+  emitter.on(state.events.NAVIGATE, navigate)
+
+  function navigate () {
+    state.navigated = true
+  }
 
   function load (data) {
     var route = window.location.pathname.replace(/\/$/, '')

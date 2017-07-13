@@ -79,11 +79,6 @@ var custom = `
   ::-moz-selection { background: rgba(127, 127, 127, 0.5) }
   ::selection { background: rgba(127, 127, 127, 0.5) }
 
-  .copy > *+* {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
   .copy a {
     color: ${colors.white};
     text-decoration: none;
@@ -103,6 +98,7 @@ var custom = `
   h2:not(:first-child) { margin-top: 3rem }
 
   code, pre {
+    font-size: 1rem;
     font-family: 'Lars Mono', menlo, monaco, monospace;
   }
 
@@ -144,8 +140,8 @@ var custom = `
 
 var typography = `
   .copy > * {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.53rem;
   }
 
   .copy {
@@ -153,7 +149,8 @@ var typography = `
     width: 100%;
     max-width: 35rem;
     margin-left: 6rem;
-    white-space: breakword;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   h1, h2 {

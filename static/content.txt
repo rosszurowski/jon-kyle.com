@@ -7,7 +7,7 @@
 
 ## Ongoing Projects
 
-- Design and development (2009–2016) at [Cargo Collective](http://cargocollective.com) and [Persona](http://persona.co) for several years. Contributions to interface design, user customizable font-end architecture and other things.<br><br>
+- Design and development (2009–2016) at [Cargo Collective](http://cargocollective.com) and [Persona](http://persona.co) for several years. Contributions to interface design, user customizable front-end architecture and other things.<br><br>
 
 - [Hardly Everything](http://hardlyeverything.com), a private feed generator and bookmarking tool with an emphasis on data ownership.<br><br>
 

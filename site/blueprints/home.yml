@@ -1,0 +1,26 @@
+title: Home
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  text:
+    label: Text
+    type:  textarea
+
+  ongoing:
+    label: Ongoing Projects
+    type:  textarea
+
+  collaborations:
+    label: Collaborations
+    type:  textarea
+
+  misc:
+    label: Misc
+    type:  textarea
+
+  colophon:
+    label: Colophon
+    type:  textarea

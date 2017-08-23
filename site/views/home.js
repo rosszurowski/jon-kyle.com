@@ -18,21 +18,23 @@ function view (state, emit) {
   `
 
   function log () {
-    return html`
-      <div>
-        <h2>Log</h2>
-        <ul>
-          ${ov(state.page.children.entries.children).reverse().map(logItem)}
-        </ul>
-      </div>
-    `
+    return [
+      html`<h2>Log</h2>`,
+      html`<ul class="list-horiz">
+        ${ov(state.page.children.entries.children).reverse().map(logItem)}
+      </ul>`
+    ]
   }
 
   function logItem (props) {
     return html`
       <li>
-        <a href="${props.url}">${props.title}</a>
-        <span class="ffmono tc-grey">${props.date}</span>
+        <a href="${props.url}" class="x xjb c12">
+          <div>
+            ${props.title}
+          </div>
+          <div class="ffmono tc-grey">${props.date}</div>
+        </a>
       </li>
     `
   }

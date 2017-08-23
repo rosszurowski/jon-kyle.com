@@ -13,7 +13,7 @@ var gr8css = gr8({
     return { [size.toString().replace('.', '-')]: size * 1.1 }
   }),
   fontSize: [1],
-  spacing: [0, 1, 2, 3, 4].map(size => {
+  spacing: [0, 0.5, 1, 1.5, 2, 3, 4].map(size => {
     return { [size.toString().replace('.', '-')]: size / 2 }
   }),
   responsive: true
@@ -108,11 +108,14 @@ var custom = `
     padding: 0.2em;
   }
 
+  .copy > pre,
   pre {
     background: ${colors.greyLight};
     padding: 1rem 1.5rem;
     border-radius: 3px;
     overflow: scroll;
+    max-width: 100%;
+    width: auto;
   }
 
   pre code {
@@ -121,9 +124,9 @@ var custom = `
   }
 
   li {
-    padding-left: 1.5rem;
     list-style: none;
     position: relative;
+    padding-left: 1.5rem;
   }
 
   li:before {
@@ -136,6 +139,18 @@ var custom = `
     border-radius: 50%;
     border: 1px solid ${colors.white};
   }
+
+  ul.list-horiz { border-top: 1px solid #ddd; }
+  ul.list-horiz li:before { display: none; }
+  ul.list-horiz li { padding: 0 }
+  .copy ul.list-horiz a { padding: 0.5rem 0; }
+  .copy ul.list-horiz a:hover {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin-top: -1px;
+    position: static;
+    z-index: 2;
+  }
 `
 
 var typography = `
@@ -146,26 +161,34 @@ var typography = `
 
   .copy {
     letter-spacing: 0.01rem;
-    width: 100%;
-    max-width: 35rem;
-    margin-left: 6rem;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
+  .copy > * {
+    width: 100%;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h1, h2 {
-    margin-left: -6rem;
+    color: #999;
+    margin-left: 0;
   }
 
   .back {
     display: inline-block;
-    width: 6rem;
+    position: absolute;
+    left: 1.5rem;
+  }
+
+  .back a {
+    border-bottom: 0;
   }
 
   @media (max-width: 700px) {
-    .copy { margin-left: 0 }
-    h1, h2 { margin-left: 0 }
-    .back { width: auto; margin-right: 0.75rem }
+    .back { position: static; margin-right: 0.75rem }
   }
 
   .copy > *:first-child { margin-top: 0 }

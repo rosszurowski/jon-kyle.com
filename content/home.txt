@@ -12,9 +12,9 @@ text: # Jon-Kyle
 
 ongoing: ## Ongoing Projects
 
-- Design and development (2009–2016) at [Cargo Collective](http://cargocollective.com) and [Persona](http://persona.co) for several years. Contributions to interface design, user customizable front-end architecture and other things.<br><br>
+- Design and development (2009–2016) at [Cargo Collective](http://cargocollective.com) and [Persona](http://persona.co) for several years. Contributions to interface design, user customizable front-end architecture, etc.<br><br>
 
-- [Hardly Everything](http://hardlyeverything.com), a private feed generator and bookmarking tool with an emphasis on data ownership.<br><br>
+- [Hardly Everything](http://hardlyeverything.com), a private feed and bookmarking tool, emphasis on cadence and data ownership.<br><br>
 
 - [A line moving across a window once every year](http://a-line-moving-across-a-window-once-every-year.com/)
 
@@ -22,9 +22,9 @@ ongoing: ## Ongoing Projects
 
 collaborations: ## Collaborations
 
-- Commissioned sites, design and development, for [Red Bull Music Academy](http://labels.redbullmusicacademy.com/). [Endless 80s NYC](http://labels.redbullmusicacademy.com/), an anthology of 80s dance labels. [Shattered Streams](http://daily.redbullmusicacademy.com/specials/2016-shattered-streams/), a month-long experiment in musical ephemerality, presenting original music from William Basinski, Fennesz, Jefre Cantu-Ledesma, and more.<br><br>
+- Commissioned sites, design and development, for [Red Bull Music Academy](http://labels.redbullmusicacademy.com/). [Endless 80s NYC](http://labels.redbullmusicacademy.com/), an anthology of 80s dance labels. [Shattered Streams](http://daily.redbullmusicacademy.com/specials/2016-shattered-streams/), a month-long experiment in musical ephemerality, presenting original music from William Basinski, Fennesz, and more.<br><br>
 
-- [2pac](http://2pac.com), Morphosis Architects (Thom Mayne), [East of Borneo](http://eastofborneo.net), and [Machine Project](http://machineproject.com) with [Folder Studio](http://folderstudio.com). Contributing to development.<br><br>
+- [2pac](http://2pac.com), Morphosis Architects (Thom Mayne), [East of Borneo](http://eastofborneo.net), and [Machine Project](http://machineproject.com) with [Folder Studio](http://folderstudio.com) (development.)<br><br>
 
 - Guest art direction and development for Bloomberg, [The Ether Thief](https://www.bloomberg.com/features/2017-the-ether-thief/) about the Ethereum DAO exploit.<br><br>
 

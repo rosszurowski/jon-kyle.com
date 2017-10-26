@@ -3,10 +3,12 @@ title: Jon-Kyle
 ----
 
 text: # Jon-Kyle
+- Los Angeles, Calif.
 - [contact@jon-kyle.com](contact@jon-kyle.com)
-- [Github](https://github.com/jondashkyle/jon-kyle.com), [Twitter](http://twitter.com/jondashkyle), [Arena](https://www.are.na/jon-kyle-mohr/)
+- [Github](https://github.com/jondashkyle/jon-kyle.com), [Twitter](http://twitter.com/jondashkyle), [Arena](https://www.are.na/jon-kyle-mohr/)<br><br>
+
+-  Proponent of p2p web and an advocate for abundance
 - Accepting freelance projects
-- New York, NY until October
 
 ----
 

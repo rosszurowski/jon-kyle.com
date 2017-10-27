@@ -23,6 +23,13 @@ ul li { margin-left: 1.2rem }
 .fwb { font-weight: 700 }
 .tac { text-align: center }
 
+hr {
+  height: 1px;
+  width: 100%;
+  background: #000;
+  border: 0;
+}
+
 .x { display: flex }
 .xw { flex-wrap: wrap }
 .x1 { flex: 1 }

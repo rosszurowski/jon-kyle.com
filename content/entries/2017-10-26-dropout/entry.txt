@@ -1,0 +1,28 @@
+title: Dropout
+
+----
+
+date: 2017-11-26
+
+----
+
+text: 
+I’ve been on the internet since I was seven or eight. Got my own machine when I was around ten, a hand-me-down. That’s also around when I stopped going to school. We lived in a small town of around 2500. With a connection the browser was truly my window to the world.
+
+The internet felt really big then.
+
+I’ve been going offline here and there recently. I’ll connect for a minute to load my inbox in the morning, then go offline and reconnect to send them.
+
+I’ll work on a project, making notes as I run into problems instead of searching for an answer immediately. After they accumulate for a while I’ll go online to find the answers. The answers tend to stick better that way, too.
+
+Growing up with a connection from a very young age, and being connected all day (and sometimes all night) the internet became integral to how my brain works. Turning it off feels like a lobotomy, but having a constant connection feels like running my faucet all day, even though I only fill my cup a few times.
+
+During the times when I find myself wandering online I’ll sometimes come across something interesting. But even if I care about it deeply, my attention will drift. Not so much an accident as it is the result of effective interface design.
+
+When I came across these things I wanted a way to save them to read offline. I don’t want to use a platform. I don’t want to use an app.
+
+I put together `dropout` for myself, but you can also use it, both as a command line interface and js module. All it does right now is save a url as static html/json for later offline access and personal archive.
+
+You can install it via `npm install dropout -g`. Head to the repository to [scope the source and view documentation](https://github.com/jondashkyle/dropout).
+
+As always, very excited about future networks and hope to see you there.

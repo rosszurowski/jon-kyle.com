@@ -15,11 +15,11 @@ I’ve been going offline here and there recently. I’ll connect for a minute t
 
 I’ll work on a project, making notes as I run into problems instead of searching for an answer immediately. After they accumulate for a while I’ll go online to find the answers. The answers tend to stick better that way, too.
 
-Growing up with a connection from a very young age, and being connected all day (and sometimes all night) the internet became integral to how my brain works. Turning it off feels like a lobotomy, but having a constant connection feels like running my faucet all day, regardless of filling my cup.
+Growing up with a connection from a very young age, and being connected all day (and sometimes all night) the internet became integral to how my brain works. Turning it off feels like a lobotomy, but having a constant connection is sort of like running my faucet all day, regardless of if I’m filling my cup.
 
-When I find myself wandering online I’ll come across something interesting. But even if I care about it deeply, my attention will drift. Not so much an accident as it is the result of effective interface design and years of personal exposure.
+When I find myself wandering online I’ll sometimes come across something interesting. But even if I care about it deeply, my attention will drift. Not an accident so much as it is the result of effective design and years of personal exposure.
 
-When I came across these things I wanted a way to save them to read offline. I don’t want to use a platform. I don’t want to use an app.
+When coming across these things I wanted a way to save them to read offline. Didn’t want to use a platform. Didn’t want to use an app. Just wanted a tool.
 
 I put together `dropout` for myself, but you can also use it, both as a command line interface and js module. All it does right now is save a url as static html/json for later offline access and personal archive.
 

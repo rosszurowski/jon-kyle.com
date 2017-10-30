@@ -90,8 +90,21 @@ var custom = `
     border-bottom: 1px solid ${colors.white};
   }
 
-  .copy figure { width: 100%; max-width: 100%; }
+  .copy figure, .copy .embed-responsive { width: 100%; max-width: 100%; }
   .copy img { max-width: 100%; display: block; }
+
+  .embed-responsive { position: relative }
+  .embed-responsive > * {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+  }
+
+  .embed-responsive-16by9 {
+    padding-bottom: 56.25%
+  }
 
   .copy figure a { border: none }
 
@@ -259,7 +272,7 @@ var lilsrc = [
 ].map(p => 'site/' + p)
 
 var lilopts = {
-  ignore: ['psa', 'psr', 't0', 'b0', 'l0', 'r0']
+  ignore: ['psa', 'psr', 't0', 'b0', 'l0', 'r0', 'h100', 'w100', 'curp']
 }
 
 var lilgr8 = lilcss(gr8css.toString(), lilsrc, lilopts)

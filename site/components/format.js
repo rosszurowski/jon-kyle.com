@@ -1,10 +1,25 @@
 var html = require('choo/html')
-var md = require('markdown-it')()
+var md = require('markdown-it')({ html: true })
 var implicitFigures = require('markdown-it-implicit-figures')
  
 md.use(implicitFigures, {
   dataType: true,
 })
+
+md.use(require('markdown-it-video', {
+  youtube: { width: 640, height: 390 },
+  vimeo: { width: 500, height: 281 }
+}))
+
+md.use(require('markdown-it-html5-embed'), {
+  html5embed: {
+    useImageSyntax: true,
+    useLinkSyntax: true,
+    inline: true,
+    attributes: {
+      video: 'preload="metadata"'
+    }
+}})
 
 module.exports = format
 

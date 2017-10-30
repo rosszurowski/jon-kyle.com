@@ -1,10 +1,15 @@
-var html = require('bel')
-var md = require('marked')
+var html = require('choo/html')
+var md = require('markdown-it')()
+var implicitFigures = require('markdown-it-implicit-figures')
+ 
+md.use(implicitFigures, {
+  dataType: true,
+})
 
 module.exports = format
 
 function format (str) {
-  var output = md(str || '')
+  var output = md.render(str || '')
   if (typeof window === 'undefined') {
     var wrapper = new String(output)
     wrapper.__encoded = true

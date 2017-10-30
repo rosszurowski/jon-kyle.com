@@ -90,6 +90,11 @@ var custom = `
     border-bottom: 1px solid ${colors.white};
   }
 
+  .copy figure { width: 100%; max-width: 100%; }
+  .copy img { max-width: 100%; display: block; }
+
+  .copy figure a { border: none }
+
   hr {
     height: 1px;
     width: 100%;

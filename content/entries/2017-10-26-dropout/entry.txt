@@ -29,4 +29,18 @@ As always, very excited about future networks and hope to see you there.
 
 ---
 
+## Update 10/29/2017
+
+The response to releasing this, though modest, was [unanticipated and appreciated](https://twitter.com/jondashkyle/status/923948416723324928) for what it is. Thanks!
+
+To make it more widely usable, I created a full webapp providing you an interface for managing your offline library. It runs in [Beaker Browser](beakerbrowser.com) and saves your data to a Dat Archive, which remain as static files on your machine.
+
+[![](dropout-beaker-2.png)](http://dropout.jon-kyle.com)
+
+To give it a try, simply navigate to [dropout.jon-kyle.com](https://dropout.jon-kyle.com). Additional documentation is waiting for you [in the repository](https://github.com/jondashkyle/dropout-app).
+
+In addition to being immediately useful, I hope this provides a useful example of how to use Choo and Beaker to create a fully functional webapp, emphasizing the ideas expressed above.
+
+---
+
 1. I like what [Graham Mckay](https://misfitsarchitecture.com/2017/10/19/naked-houses/) recently noted on Misfits’ Architecture about Gustave Flaubert, unbookmarking and the propagation of good ideas.

@@ -39,6 +39,8 @@
     "gr8": "^2.1.5",
     "join-path": "^1.1.1",
     "lilcss": "0.0.0",
+    "markdown-it": "^8.4.0",
+    "markdown-it-implicit-figures": "^0.6.0",
     "marked": "^0.3.6",
     "nano-markdown": "^1.2.0",
     "nanocomponent": "^6.2.0",

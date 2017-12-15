@@ -74,6 +74,12 @@ var custom = `
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings:"kern" 1; 
+    -ms-font-feature-settings:"kern" 1; 
+    -o-font-feature-settings:"kern" 1; 
+    -webkit-font-feature-settings:"kern" 1; 
+    font-feature-settings:"kern" 1;
+    font-kerning: normal;
   }
 
   ::-moz-selection { background: rgba(127, 127, 127, 0.5) }
@@ -162,7 +168,7 @@ var custom = `
     height: 0.75rem;
     width: 0.75rem;
     border-radius: 50%;
-    border: 1px solid ${colors.white};
+    background: ${colors.grey};
   }
 
   ol li:before {

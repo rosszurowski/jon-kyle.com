@@ -1,9 +1,8 @@
 title: Platform Death
-
 ----
-
+view: entry
+----
 date: 2017-08-10
-
 ----
 
 text: The other week there were rumors about [Soundcloud shutting down](https://techcrunch.com/2017/07/12/soundshroud/). They cut 40 percent of their staff, and word was that they’d run out of money within 100 days.

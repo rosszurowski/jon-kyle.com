@@ -1,6 +1,6 @@
 var html = require('choo/html')
 var Content = require('../components/content')
-var wrapper = require('../containers/wrapper')
+var wrapper = require('../components/wrapper')
 
 var content = new Content()
 

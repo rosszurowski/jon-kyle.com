@@ -1,77 +1,8 @@
-var html = require('choo/html')
-var gr8 = require('gr8')
-var recsst = require('recsst')
-var lilcss = require('lilcss')
+var options = require('./options')
 
-var gr8css = gr8({
-  breakpoints: {
-    lg: '1000px',
-    md: '767px',
-    sm: '500px'
-  },
-  lineHeight: [1, 1.5].map(size => {
-    return { [size.toString().replace('.', '-')]: size * 1.1 }
-  }),
-  fontSize: [1],
-  spacing: [0, 0.5, 1, 1.5, 2, 3, 4].map(size => {
-    return { [size.toString().replace('.', '-')]: size / 2 }
-  }),
-  responsive: true
-})
-
-var type = {
-  sans: '"Lars Sans", sans-serif',
-  mono: '"Lars Mono", menlo, monaco, monospace'
-}
-
-var colors = {
-  white: '#000',
-  black: '#fff',
-  grey: '#ccc',
-  greyLight: '#eee'
-}
-
-// fonts
-gr8css.add({
-  prop: 'font-family',
-  vals: type
-})
-
-// backgrounds
-gr8css.add({
-  prop: 'background-color',
-  prefix: 'bg',
-  hyphenate: true,
-  vals: colors
-})
-
-// colors
-gr8css.add({
-  prop: 'color',
-  prefix: 'tc',
-  hyphenate: true,
-  vals: colors
-})
-
-// rag widths
-gr8css.add({
-  prop: 'width',
-  prefix: 'wr',
-  unit: 'rem',
-  vals: [0, 5, 10, 15, 20]
-})
-
-// viewport min heights
-gr8css.add({
-  prop: 'min-height',
-  prefix: 'vhmn',
-  unit: 'vh',
-  vals: [0, 25, 33, 50, 66, 75]
-})
-
-var custom = `
-  html { font-size: 100% }
+module.exports = `
   html {
+    font-size: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings:"kern" 1; 
@@ -86,14 +17,14 @@ var custom = `
   ::selection { background: rgba(127, 127, 127, 0.5) }
 
   .copy a {
-    color: ${colors.white};
+    color: ${options.colors.white};
     text-decoration: none;
-    border-bottom: 1px solid ${colors.grey};
+    border-bottom: 1px solid ${options.colors.grey};
     padding-bottom: 0.2rem;
   }
 
   .copy a:hover {
-    border-bottom: 1px solid ${colors.white};
+    border-bottom: 1px solid ${options.colors.white};
   }
 
   .copy figure, .copy .embed-responsive { width: 100%; max-width: 100%; }
@@ -117,7 +48,7 @@ var custom = `
   hr {
     height: 1px;
     width: 100%;
-    background: ${colors.grey};
+    background: ${options.colors.grey};
     border: 0;
   }
 
@@ -134,14 +65,14 @@ var custom = `
   }
 
   code {
-    background: ${colors.greyLight};
+    background: ${options.colors.greyLight};
     border-radius: 3px;
     padding: 0.2em;
   }
 
   .copy > pre,
   pre {
-    background: ${colors.greyLight};
+    background: ${options.colors.greyLight};
     padding: 1rem 1.5rem;
     border-radius: 3px;
     overflow: scroll;
@@ -157,7 +88,7 @@ var custom = `
   li {
     list-style: none;
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.5rem !important;
   }
 
   ul li:before {
@@ -168,7 +99,7 @@ var custom = `
     height: 0.75rem;
     width: 0.75rem;
     border-radius: 50%;
-    background: ${colors.grey};
+    background: ${options.colors.grey};
   }
 
   ol li:before {
@@ -196,9 +127,7 @@ var custom = `
     position: static;
     z-index: 2;
   }
-`
-
-var typography = `
+  
   .copy > * {
     margin-top: 1.5rem;
     margin-bottom: 1.53rem;
@@ -255,39 +184,13 @@ var typography = `
 
   @font-face {
     font-family: 'Lars Sans';
-    src: url('/assets/Lars-Light.eot');
-    src: url('/assets/Lars-Light.eot?#iefix') format('embedded-opentype'),
-         url('/assets/Lars-Light.woff2') format('woff2'),
-         url('/assets/Lars-Light.woff') format('woff');
+    src: url('/assets/fonts/Lars-Light.woff2') format('woff2'),
+         url('/assets/fonts/Lars-Light.woff') format('woff');
   }
 
   @font-face {
     font-family: 'Lars Mono';
-    src: url('/assets/Lars-Mono.eot');
-    src: url('/assets/Lars-Mono.eot?#iefix') format('embedded-opentype'),
-         url('/assets/Lars-Mono.woff2') format('woff2'),
-         url('/assets/Lars-Mono.woff') format('woff');
+    src: url('/assets/fonts/Lars-Mono.woff2') format('woff2'),
+         url('/assets/fonts/Lars-Mono.woff') format('woff');
   }
 `
-
-var lilsrc = [
-  'containers/*.js',
-  'components/*.js',
-  'views/*.js',
-  'index.js'
-].map(p => 'site/' + p)
-
-var lilopts = {
-  ignore: ['psa', 'psr', 't0', 'b0', 'l0', 'r0', 'h100', 'w100', 'curp']
-}
-
-var lilgr8 = lilcss(gr8css.toString(), lilsrc, lilopts)
-
-var built = [
-  recsst.toString(),
-  lilgr8,
-  custom,
-  typography
-].join(' ')
-
-process.stdout.write(built)

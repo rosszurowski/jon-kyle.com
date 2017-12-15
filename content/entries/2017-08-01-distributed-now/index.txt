@@ -1,9 +1,8 @@
 title: Distributed Now
-
 ----
-
+view: entry
+----
 date: 2017-08-01
-
 ----
 
 text: There was supposed to be a big push yesterday for Net Neutrality. In practice, Google posted a modest blog entry, and a few sites displayed lo-res images. It’s impossible to know how long the open web will last, but clearly the situation as we have known it [is not improving](https://www.are.na/jon-kyle-mohr/tech-ethnography). 

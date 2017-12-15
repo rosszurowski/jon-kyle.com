@@ -1,16 +1,16 @@
-var html = require('choo/html')
+var locksley = require('locksley')
 var choo = require('choo')
-var config = require('./app')
 
-// wrap choo in cms
-var app = config(choo())
+require('./src/design')
 
-// plugins
-app.use(require('./plugins/scroll'))
+var content = locksley.readSiteSync('./content', {
+  parent: '/content'
+})
 
-// public
-if (module.parent) {
-  module.exports = app
-} else {
-  app.mount('main')
-}
+var app = choo()
+
+app.use(require('./src/plugins/content')(content))
+app.use(require('./src/plugins/scroll'))
+
+if (module.parent) module.exports = app
+else app.mount('body')

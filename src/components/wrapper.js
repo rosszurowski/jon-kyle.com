@@ -5,12 +5,12 @@ module.exports = Main
 function Main (view) {
   return function (state, emit) {
     return html`
-      <main class="fs1 ffsans p2 lh1-5 bg-black tc-white" sm="p0">
+      <body class="fs1 ff-sans p2 lh1-5 bgc-black fc-white" sm="p0">
         ${view(state, emit)}
         <div class="psa t0 l0 op0 ff-mono">
           mono load
         </div>
-      </main>
+      </body>
     `
   }
 }

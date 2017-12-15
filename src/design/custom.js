@@ -118,7 +118,7 @@ module.exports = `
 
   ul.list-horiz { border-top: 1px solid #ddd; }
   ul.list-horiz li:before { display: none; }
-  ul.list-horiz li { padding: 0 }
+  ul.list-horiz li { padding: 0 !important }
   .copy ul.list-horiz a { padding: 0.5rem 0; }
   .copy ul.list-horiz a:hover {
     border-top: 1px solid #000;

@@ -1,9 +1,8 @@
 title: Dropout
-
 ----
-
+view: entry
+----
 date: 2017-11-26
-
 ----
 
 text: 

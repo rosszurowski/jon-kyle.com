@@ -8,10 +8,10 @@ function plugin (content) {
     state.content = { }
     content.forEach(function (route) {
       var view = views[route.view] || views.default
+      state.content[route.url] = route
       app.route(route.url, function (state, emit) {
         return view(xtend({ page: route }, state), emit)
       })
-      console.log(route)
     })
   }
 }

@@ -10,6 +10,7 @@ function view (state, emit) {
     <div class="pt2 pb4 px3 fs1 lh1-5 copy">
       ${md(state.page.text)}
       ${md(state.page.ongoing)}
+      ${log()}
       ${md(state.page.collaborations)}
       ${md(state.page.misc)}
       ${md(state.page.colophon)}
@@ -17,11 +18,18 @@ function view (state, emit) {
   `
 
   function log () {
+    var entries = ov(state.content['/entries'].pages)
+      .map(function (page) {
+        return state.content[page.url]
+      })
+      .filter(function (page) {
+        return page
+      })
+      .reverse()
+      .map(logItem)
     return [
       html`<h2>Log</h2>`,
-      html`<ul class="list-horiz">
-        ${ov(state.page.children.entries.children).reverse().map(logItem)}
-      </ul>`
+      html`<ul class="list-horiz">${entries}</ul>`
     ]
   }
 
@@ -32,7 +40,7 @@ function view (state, emit) {
           <div>
             ${props.title}
           </div>
-          <div class="ffmono tc-grey">${props.date}</div>
+          <div class="ff-mono tc-grey">${props.date}</div>
         </a>
       </li>
     `

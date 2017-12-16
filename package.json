@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "cd public && python -m SimpleHTTPServer 8080",
-    "build": "npm run build-css && npm run build-js && enoki build -o public/",
-    "build-css": "node site/design | postcss --use autoprefixer --use postcss-clean > public/bundle.css",
+    "serve": "cd dist && python -m SimpleHTTPServer 8080",
+    "build": "npm run build-css && npm run build-js && enoki build -o dist/",
+    "build-css": "node site/design | postcss --use autoprefixer --use postcss-clean > dist/bundle.css",
     "watch-css": "watch 'node site/design > site/assets/bundle.css' site/design/",
-    "build-js": "browserify site/index.js -t require-globify -t enoki/transform -t envify -g yo-yoify -g es2040 > public/bundle.js",
+    "build-js": "browserify site/index.js -t require-globify -t enoki/transform -t envify -g yo-yoify -g es2040 > dist/bundle.js",
     "start": "concurrently --kill-others \"enoki dev\" \"npm run watch-css\"",
-    "publish": "dat sync public --no-ignoreHidden"
+    "publish": "dat sync dist --no-ignoreHidden"
   },
   "author": "Jon-Kyle Mohr",
   "license": "ISC",

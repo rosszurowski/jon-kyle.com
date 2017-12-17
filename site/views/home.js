@@ -1,42 +1,25 @@
-var html = require('choo/html')
+var wrapper = require('../containers/wrapper')
 var md = require('../components/format')
 var ov = require('object-values')
-var wrapper = require('../containers/wrapper')
+var html = require('choo/html')
+
+var log = require('../components/log')
+var Content = require('../components/content')
+var content = new Content()
 
 module.exports = wrapper(view)
 
 function view (state, emit) {
+  var entries = ov(state.content.children.entries.children).reverse()
+  var entry = entries.slice(0, 1)[0]
+
   return html`
-    <div class="pt2 pb4 px3 fs1 lh1-5 copy">
-      ${md(state.page.text)}
-      ${md(state.page.ongoing)}
-      ${log()}
-      ${md(state.page.collaborations)}
-      ${md(state.page.misc)}
-      ${md(state.page.colophon)}
+    <div>
+      ${content.render(entry)} 
+      <div class="p1 pb0" style="margin-bottom: -1px;">
+        ${log(entries)}
+      </div>
     </div>
   `
-
-  function log () {
-    return [
-      html`<h2>Log</h2>`,
-      html`<ul class="list-horiz">
-        ${ov(state.page.children.entries.children).reverse().map(logItem)}
-      </ul>`
-    ]
-  }
-
-  function logItem (props) {
-    return html`
-      <li>
-        <a href="${props.url}" class="x xjb c12">
-          <div>
-            ${props.title}
-          </div>
-          <div class="ffmono tc-grey">${props.date}</div>
-        </a>
-      </li>
-    `
-  }
 }
 

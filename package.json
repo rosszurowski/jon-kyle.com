@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "cd dist && python -m SimpleHTTPServer 8080",
-    "build": "npm run build-css && npm run build-js && enoki build -o dist/",
+    "build": "node scripts/build.js && npm run build-css && npm run build-js && enoki build -o dist/",
     "build-css": "node site/design | postcss --use autoprefixer --use postcss-clean > dist/bundle.css",
     "watch-css": "watch 'node site/design > site/assets/bundle.css' site/design/",
     "build-js": "browserify site/index.js -t require-globify -t enoki/transform -t envify -g yo-yoify -g es2040 > dist/bundle.js",

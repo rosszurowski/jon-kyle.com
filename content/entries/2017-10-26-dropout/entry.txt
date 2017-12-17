@@ -1,9 +1,11 @@
 title: Dropout
-
 ----
-
-date: 2017-11-26
-
+date: 17-10-26
+----
+description: A tool for habit forming
+----
+tags:
+  - www
 ----
 
 text: 

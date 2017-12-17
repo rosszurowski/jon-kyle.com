@@ -11,6 +11,19 @@ module.exports = class Content extends Nanocomponent {
   }
 
   load (element) {
+    this.format()
+  }
+
+  afterupdate () {
+    this.format()
+  }
+
+  unload (element) {
+
+  }
+
+  format () {
+    var element = this.element
     var videos = [...element.querySelectorAll('video')]
       .forEach(function (video) {
         var el = video.parentNode
@@ -54,20 +67,21 @@ module.exports = class Content extends Nanocomponent {
       })
   }
 
-  unload (element) {
-
-  }
-
   createElement (props) {
     this.props = props
     this.text = format(props.text)
     return html`
-      <div class="pt2 pb4 px3 fs1 lh1-5 copy" sm="px1-5">
-        <div style="min-height: 25vh">
-          <h1>${props.title}</h1>
+      <div class="fs1 lh1-5" sm="px1">
+        <div class="x" style="min-height: 25vh">
+          <div class="p1 ffmono w20" sm="c3">${props.date}</div>
+          <div class="p1 xx">${props.title}</div>
+          <div class="px1">
+            ${props.tags ? props.tags.join(', ') : ''}
+          </div>
         </div>
-        ${this.text}
-        <h2><a href="/"><div class="back">←</div>Index</a></h2>
+        <div class="p1 copy">
+          ${this.text}
+        </div>
       </div>
     `
   }

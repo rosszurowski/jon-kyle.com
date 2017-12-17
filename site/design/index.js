@@ -5,16 +5,15 @@ var lilcss = require('lilcss')
 
 var gr8css = gr8({
   breakpoints: {
-    lg: '1000px',
-    md: '767px',
-    sm: '500px'
+    md: '100px',
+    sm: '650px'
   },
   lineHeight: [1, 1.5].map(size => {
     return { [size.toString().replace('.', '-')]: size * 1.1 }
   }),
   fontSize: [1],
   spacing: [0, 0.5, 1, 1.5, 2, 3, 4].map(size => {
-    return { [size.toString().replace('.', '-')]: size / 2 }
+    return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
   }),
   responsive: true
 })
@@ -28,7 +27,8 @@ var colors = {
   white: '#000',
   black: '#fff',
   grey: '#ccc',
-  greyLight: '#eee'
+  greylight: '#eee',
+  greydark: '#999'
 }
 
 // fonts
@@ -61,6 +61,13 @@ gr8css.add({
   vals: [0, 5, 10, 15, 20]
 })
 
+gr8css.add({
+  prop: 'width',
+  prefix: 'w',
+  unit: '%',
+  vals: [20]
+})
+
 // viewport min heights
 gr8css.add({
   prop: 'min-height',
@@ -70,8 +77,8 @@ gr8css.add({
 })
 
 var custom = `
-  html { font-size: 100% }
   html {
+    font-size: 100% ;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings:"kern" 1; 
@@ -82,18 +89,25 @@ var custom = `
     font-kerning: normal;
   }
 
+  html, body { overflow-x: hidden }
+
   ::-moz-selection { background: rgba(127, 127, 127, 0.5) }
   ::selection { background: rgba(127, 127, 127, 0.5) }
+
+  .copy-links a {
+    color: ${colors.white};
+    text-decoration: none;
+  }
 
   .copy a {
     color: ${colors.white};
     text-decoration: none;
-    border-bottom: 1px solid ${colors.grey};
+    border-bottom: 1px solid ${colors.white};
     padding-bottom: 0.2rem;
   }
 
-  .copy a:hover {
-    border-bottom: 1px solid ${colors.white};
+  figure {
+    margin: 0;
   }
 
   .copy figure, .copy .embed-responsive { width: 100%; max-width: 100%; }
@@ -117,8 +131,9 @@ var custom = `
   hr {
     height: 1px;
     width: 100%;
-    background: ${colors.grey};
+    background: ${colors.white};
     border: 0;
+    margin: 0;
   }
 
   h1, h2 {
@@ -126,7 +141,10 @@ var custom = `
     font-size: 1rem;
   }
 
-  h2:not(:first-child) { margin-top: 3rem }
+
+  .tch-parent:hover .tch-white {
+    color: ${colors.white};
+  }
 
   code, pre {
     font-size: 1rem;
@@ -134,14 +152,14 @@ var custom = `
   }
 
   code {
-    background: ${colors.greyLight};
+    background: ${colors.greylight};
     border-radius: 3px;
     padding: 0.2em;
   }
 
   .copy > pre,
   pre {
-    background: ${colors.greyLight};
+    background: ${colors.greylight};
     padding: 1rem 1.5rem;
     border-radius: 3px;
     overflow: scroll;
@@ -157,18 +175,41 @@ var custom = `
   li {
     list-style: none;
     position: relative;
-    padding-left: 1.5rem;
+  }
+
+  .ti2 {
+    text-indent: -2rem;
+    padding-left: 2rem;
+  }
+
+  .circle {
+    display: inline-block;
+    margin: 0 0.5rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    background: ${colors.white};
   }
 
   ul li:before {
     content: '';
     position: absolute;
-    top: 0.45rem;
+    top: 0.5rem;
     left: 0;
     height: 0.75rem;
     width: 0.75rem;
     border-radius: 50%;
-    background: ${colors.grey};
+    background: ${colors.white};
+  }
+
+  ul li {
+    padding-left: 2rem;
+  }
+
+  ol li {
+    position: relative;
+    padding-left: 2rem;
+    list-style: none;
   }
 
   ol li:before {
@@ -178,6 +219,7 @@ var custom = `
     left: 0;
   }
 
+
   ol li:nth-child(1):before { content: '1' }
   ol li:nth-child(2):before { content: '2' }
   ol li:nth-child(3):before { content: '3' }
@@ -185,15 +227,20 @@ var custom = `
   ol li:nth-child(5):before { content: '5' }
   ol li:nth-child(6):before { content: '6' }
 
-  ul.list-horiz { border-top: 1px solid #ddd; }
+  ul.list-horiz { border-top: 1px solid ${colors.white} }
   ul.list-horiz li:before { display: none; }
-  ul.list-horiz li { padding: 0 }
-  .copy ul.list-horiz a { padding: 0.5rem 0; }
-  .copy ul.list-horiz a:hover {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+  ul.list-horiz li { padding: 0; text-indent: 0; }
+  ul.list-horiz li a {
+    color: ${colors.white};
+    text-indent: 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid ${colors.white};
     margin-top: -1px;
-    position: static;
+  }
+  ul.list-horiz li a:hover {
+    border-top: 1px solid ${colors.white};
+    border-bottom: 1px solid ${colors.white};
+    position: relative;
     z-index: 2;
   }
 `
@@ -212,14 +259,11 @@ var typography = `
 
   .copy > * {
     width: 100%;
-    max-width: 28rem;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 32rem;
   }
 
-  h1, h2 {
-    color: #999;
-    margin-left: 0;
+  h2 {
+    margin-left: 2rem;
   }
 
   .back {
@@ -230,10 +274,6 @@ var typography = `
 
   .back a {
     border-bottom: 0;
-  }
-
-  @media (max-width: 700px) {
-    .back { position: static; margin-right: 0.75rem }
   }
 
   .copy > *:first-child { margin-top: 0 }
@@ -285,7 +325,8 @@ var lilgr8 = lilcss(gr8css.toString(), lilsrc, lilopts)
 
 var built = [
   recsst.toString(),
-  lilgr8,
+  // lilgr8,
+  gr8css.toString(),
   custom,
   typography
 ].join(' ')

@@ -1,9 +1,9 @@
 title: Platform Death
-
 ----
-
-date: 2017-08-10
-
+date: 17-08-10
+----
+tags:
+  - www
 ----
 
 text: The other week there were rumors about [Soundcloud shutting down](https://techcrunch.com/2017/07/12/soundshroud/). They cut 40 percent of their staff, and word was that they’d run out of money within 100 days.
@@ -26,4 +26,4 @@ Anyway, the [response](https://twitter.com/jondashkyle/status/885945354507751426
 
 After sharing the Soundcloud project, I started working on a way to expand on the included simple html and json page. This led to working on a few ideas I’ve had in mind for a while, and that has taken form as [Enoki](https://enoki.site/). I’m looking forward to sharing more about that soon.
 
-- I also suggest reading [Mat Dryhurst’s interview in Wire](https://www.thewire.co.uk/in-writing/interviews/robert-barry-talks-to-mat-dryhurst-about-soundcloud) for a more involved set of ideas about Soundcloud and ownership.
+1. I also suggest reading [Mat Dryhurst’s interview in Wire](https://www.thewire.co.uk/in-writing/interviews/robert-barry-talks-to-mat-dryhurst-about-soundcloud) for a more involved set of ideas about Soundcloud and ownership.

@@ -75,7 +75,7 @@ module.exports = class Content extends Nanocomponent {
         <div class="x" style="min-height: 25vh">
           <div class="p1 ffmono w20" sm="c3">${props.date}</div>
           <div class="p1 xx">${props.title}</div>
-          <div class="px1">
+          <div class="p1">
             ${props.tags ? props.tags.join(', ') : ''}
           </div>
         </div>

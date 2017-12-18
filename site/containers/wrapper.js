@@ -61,18 +61,21 @@ function Main (view) {
 
     function footer () {
       return html`
-        <div class="x xw">
-          <div class="p1 copy-links c2" sm="c3">
+        <div class="x xw p0-5">
+          <div class="p0-5 copy-links c2" sm="c3">
             <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(state.page.path , state.page.view + '.txt')}">View source</a>
           </div>
-          <div class="p1 copy-links c2" sm="c3">
+          <div class="p0-5 copy-links c2" sm="c3">
             <a href="mailto:contact@jon-kyle.com">Email</a>
           </div>
-          <div class="p1 copy-links c4" sm="c3">
+          <div class="p0-5 copy-links c4" sm="c3">
             <a href="http://twitter.com/jondashkyle">Follow</a>
           </div>
-          <div class="p1 copy-links c4 tar" sm="c12 tal">
+          <div class="p0-5 copy-links c4 tar" sm="c12 tal">
             Last updated on <span class="ffmono">${formatDate(manifest.updated)}</span>
+          </div>
+          <div class="c12 p0-5 wwbw" sm="c12">
+            <div class="ti2">dat://7ab5ad001ae720e877fe038ac830e2ca2b87a6beac66d56aed0549619cb2ec6e</div>
           </div>
         </div>
       `

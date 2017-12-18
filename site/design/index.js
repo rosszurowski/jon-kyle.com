@@ -219,7 +219,6 @@ var custom = `
     left: 0;
   }
 
-
   ol li:nth-child(1):before { content: '1' }
   ol li:nth-child(2):before { content: '2' }
   ol li:nth-child(3):before { content: '3' }
@@ -243,6 +242,8 @@ var custom = `
     position: relative;
     z-index: 2;
   }
+
+  .wwbw { word-wrap: break-word }
 `
 
 var typography = `

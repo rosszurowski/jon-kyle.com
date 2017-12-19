@@ -29,7 +29,7 @@ function Main (view) {
         title: 'Index',
         url: '/'
       }, {
-        title: 'Archive',
+        title: 'Log',
         url: '/entries'
       }, {
         title: 'About',

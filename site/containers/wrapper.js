@@ -61,21 +61,17 @@ function Main (view) {
 
     function footer () {
       return html`
-        <div class="x xw p0-5">
-          <div class="p0-5 copy-links c2" sm="c3">
-            <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(state.page.path , state.page.view + '.txt')}">View source</a>
+        <div class="x xw py1 lh1-5">
+          <div class="c6">
+            <div class="px1 copy-links c12">
+              <a href="mailto:contact@jon-kyle.com">Email</a>, <a href="http://twitter.com/jondashkyle">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(state.page.path , state.page.view + '.txt')}">Source</a>
+            </div>
+            <div class="px1 copy-links c12">
+              Updated <span class="ffmono">${formatDate(manifest.updated)}</span>
+            </div>
           </div>
-          <div class="p0-5 copy-links c2" sm="c3">
-            <a href="mailto:contact@jon-kyle.com">Email</a>
-          </div>
-          <div class="p0-5 copy-links c4" sm="c3">
-            <a href="http://twitter.com/jondashkyle">Follow</a>
-          </div>
-          <div class="p0-5 copy-links c4 tar" sm="c12 tal">
-            Last updated on <span class="ffmono">${formatDate(manifest.updated)}</span>
-          </div>
-          <div class="c12 p0-5 wwbw" sm="c12">
-            <div class="ti2">dat://7ab5ad001ae720e877fe038ac830e2ca2b87a6beac66d56aed0549619cb2ec6e</div>
+          <div class="c6 px1 wwbw" sm="c12">
+            <div class="ti2 ffmono">dat://7ab5ad001ae720e877fe038ac830e2ca2b87a6beac66d56aed0549619cb2ec6e</div>
           </div>
         </div>
       `
@@ -90,5 +86,9 @@ function formatDate (str) {
   var month = date.getMonth()
   var year = date.getFullYear().toString().substring(2)
 
-  return [year, month, day].join('-')
+  return [year, pad(month), pad(day)].join('-') + ' @ ' + [pad(date.getHours()), pad(date.getMinutes()), pad(date.getSeconds())].join(':') + 'PST'
+}
+
+function pad (n) {
+  return ('0' + n).slice(-2)
 }

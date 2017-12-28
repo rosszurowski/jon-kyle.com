@@ -62,7 +62,7 @@ function Main (view) {
     function footer () {
       return html`
         <div class="x xw py1 lh1-5">
-          <div class="c6">
+          <div class="c6" sm="c12">
             <div class="px1 copy-links c12">
               <a href="mailto:contact@jon-kyle.com">Email</a>, <a href="http://twitter.com/jondashkyle">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(state.page.path , state.page.view + '.txt')}">Source</a>
             </div>

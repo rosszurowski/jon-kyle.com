@@ -141,7 +141,6 @@ var custom = `
     font-size: 1rem;
   }
 
-
   .tch-parent:hover .tch-white {
     color: ${colors.white};
   }
@@ -264,7 +263,9 @@ var typography = `
   }
 
   h2 {
-    margin-left: 2rem;
+    border-bottom: 1px solid ${colors.grey};
+    padding-bottom: 0.5em;
+    padding-top: 1.5em;
   }
 
   .back {

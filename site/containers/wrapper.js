@@ -86,7 +86,7 @@ function formatDate (str) {
   var month = date.getMonth()
   var year = date.getFullYear().toString().substring(2)
 
-  return [year, pad(month), pad(day)].join('-') + ' @ ' + [pad(date.getHours()), pad(date.getMinutes()), pad(date.getSeconds())].join(':') + 'PST'
+  return [year, pad(month+1), pad(day)].join('-') + ' @ ' + [pad(date.getHours()), pad(date.getMinutes()), pad(date.getSeconds())].join(':') + 'UTC'
 }
 
 function pad (n) {

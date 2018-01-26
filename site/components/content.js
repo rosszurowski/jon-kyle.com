@@ -71,16 +71,17 @@ module.exports = class Content extends Nanocomponent {
     this.props = props
     this.text = format(props.text)
     return html`
-      <div class="fs1 lh1-5" sm="px1">
-        <div class="x" style="min-height: 25vh">
-          <div class="p1 ffmono w20" sm="c3">${props.date}</div>
-          <div class="p1 xx">${props.title}</div>
-          <div class="p1">
-            ${props.tags ? props.tags.join(', ') : ''}
+      <div class="fs1 lh1-5">
+        <div class="x xw" style="min-height: 25vh">
+          <div class="c3 p1" sm="c12">
+            <div>${props.title}</div>
+            <div class="ffmono">${props.date}</div>
           </div>
-        </div>
-        <div class="p1 copy">
-          ${this.text}
+          <div class="c9 p1" sm="c12">
+            <div class="copy">
+              ${this.text}
+            </div>
+          </div>
         </div>
       </div>
     `

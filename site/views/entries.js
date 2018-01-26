@@ -13,7 +13,7 @@ function view (state, emit) {
   var entries = ov(state.content.children.entries.children).reverse()
 
   return html`
-    <div class="px1" style="margin: -1px 0;">
+    <div>
       ${log(entries)}
     </div>
   `

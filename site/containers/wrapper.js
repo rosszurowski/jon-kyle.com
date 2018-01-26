@@ -7,16 +7,14 @@ module.exports = Main
 function Main (view) {
   return function (state, emit) {
     return html`
-      <main class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white" sm="p0">
+      <main class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
         <div class="x c12" style="min-height: 25vh">
-          <div class="c2 p1" sm="c3">Jon-Kyle</div>
+          <div class="c3 p1" sm="c3">Jon-Kyle</div>
           ${navigation()}
         </div>
-        <div class="co2 xx" sm="co0">
-          <div class="px1"><hr></div>
+        <div class="xx">
           ${view(state, emit)}
         </div>
-        <div class="px1"><hr></div>
         ${footer()}
         <div class="psa t0 r0 op0 ff-mono">
           mono load
@@ -28,9 +26,6 @@ function Main (view) {
       var links = [{
         title: 'Index',
         url: '/'
-      }, {
-        title: 'Log',
-        url: '/entries'
       }, {
         title: 'About',
         url: '/about'
@@ -61,12 +56,12 @@ function Main (view) {
 
     function footer () {
       return html`
-        <div class="x xw py1 lh1-5">
+        <div class="x xw py1 lh1-5 bg-white tc-black">
           <div class="c6" sm="c12">
-            <div class="px1 copy-links c12">
-              <a href="mailto:contact@jon-kyle.com">Email</a>, <a href="http://twitter.com/jondashkyle">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(state.page.path , state.page.view + '.txt')}">Source</a>
+            <div class="px1 c12">
+              <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>, <a href="http://twitter.com/jondashkyle"  class="tc-black tdn">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(state.page.path , state.page.view + '.txt')}"  class="tc-black tdn">Source</a>
             </div>
-            <div class="px1 copy-links c12">
+            <div class="px1 c12">
               Updated <span class="ffmono">${formatDate(manifest.updated)}</span>
             </div>
           </div>

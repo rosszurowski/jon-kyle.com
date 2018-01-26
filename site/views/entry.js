@@ -14,9 +14,9 @@ function view (state, emit) {
   var entry = state.page
 
   return html`
-    <div>
+    <div style="border-top: 1px solid transparent">
       ${content.render(entry)} 
-      <div class="p1 pb0" style="margin-bottom: -1px;">
+      <div>
         ${log(entries, entry.url)}
       </div>
     </div>

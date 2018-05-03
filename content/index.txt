@@ -1,5 +1,7 @@
 title: Jon-Kyle
 ----
+view: home
+----
 colophon:
 
 This page is set in Lars Light by [Bold Decisions](https://bold-decisions.biz). It is hosted on the distributed web with [Dat](http://datproject.org), permanently seeded with [dathttpd](https://github.com/beakerbrowser/dathttpd), and published to [#_hashbase](http://hashbase.io). The source is [available to you](https://github.com/jondashkyle/jon-kyle.com).

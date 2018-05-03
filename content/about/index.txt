@@ -1,5 +1,6 @@
 title: About
-
+----
+view: about
 ----
 
 text: Los Angeles, Calif.

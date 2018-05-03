@@ -352,4 +352,4 @@ var built = [
   typography
 ].join(' ')
 
-process.stdout.write(built)
+module.exports = built

@@ -88,7 +88,9 @@ module.exports = class Content extends Nanocomponent {
   }
 
   update (props) {
-    return props.text !== this.props.text ||
+    return (
+      props.url !== this.props.url ||
       props.title !== this.props.title
+    )
   }
 }

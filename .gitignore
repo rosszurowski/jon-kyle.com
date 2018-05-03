@@ -3,6 +3,7 @@ node_modules
 public
 bundles
 dist
+dat.json
 .dat
 .log
 Lars-*

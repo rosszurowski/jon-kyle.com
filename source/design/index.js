@@ -11,7 +11,7 @@ var gr8css = gr8({
   lineHeight: [1, 1.5].map(size => {
     return { [size.toString().replace('.', '-')]: size * 1.1 }
   }),
-  fontSize: [{ 1: 1.25 }],
+  fontSize: [{ 1: 1 }],
   spacing: [0, 0.5, 1, 1.5, 2, 3, 4].map(size => {
     return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
   }),
@@ -278,7 +278,7 @@ var typography = `
 
   .copy > * {
     width: 100%;
-    max-width: 40rem;
+    max-width: 30rem;
   }
 
   h2 {

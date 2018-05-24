@@ -28,7 +28,9 @@ function main (state, emit) {
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
       <div class="x c12" style="min-height: 25vh">
-        <div class="c3 p1" sm="c3">Jon-Kyle</div>
+        <div class="c3 p1 copy-links" sm="c3">
+          <a href="/">Jon-Kyle</a>
+        </div>
         ${navigation()}
       </div>
       <div class="xx">
@@ -78,7 +80,7 @@ function main (state, emit) {
       <div class="x xw py1 lh1-5 bg-white tc-black">
         <div class="c6" sm="c12">
           <div class="px1 c12">
-            <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>, <a href="http://twitter.com/jondashkyle"  class="tc-black tdn">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.path , page.view + '.txt')}"  class="tc-black tdn">Source</a>
+            <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>, <a href="http://twitter.com/jondashkyle"  class="tc-black tdn">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>
           </div>
           <div class="px1 c12">
             Updated <span class="ffmono">${formatDate(manifest.updated)}</span>

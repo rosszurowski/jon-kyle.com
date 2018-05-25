@@ -1,3 +1,4 @@
+var loadCss = require('fg-loadcss').loadCSS
 var html = require('choo/html')
 var css = require('sheetify')
 var choo = require('choo')

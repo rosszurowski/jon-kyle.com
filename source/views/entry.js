@@ -18,7 +18,8 @@ function view (state, emit) {
       <div>
         ${log({
           entries: entries, 
-          active: entry.url
+          active: entry.url,
+          selected: state.ui.listSelected
         }, emit)}
       </div>
     </div>

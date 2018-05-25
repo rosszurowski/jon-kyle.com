@@ -58,7 +58,7 @@ function log (state, emit) {
 
       scroller.on('end', function () {
         setTimeout(function () {
-          emit('ui', { listSelected: '', render: false })
+          emit('ui', { listSelected: '' })
           emit('pushState', props.url)
         }, 1)
       })

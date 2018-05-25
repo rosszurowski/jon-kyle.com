@@ -1,4 +1,4 @@
-var Nanocomponent = require('nanocomponent')
+var Nanocomponent = require('choo/component')
 var html = require('choo/html')
 var path = require('path')
 var format = require('../components/format')
@@ -10,19 +10,11 @@ module.exports = class Content extends Nanocomponent {
     this.text = ''
   }
 
-  load (element) {
-    this.format()
-  }
-
-  afterupdate () {
-    this.format()
-  }
-
   unload (element) {
 
   }
 
-  format () {
+  formatContent () {
     var element = this.element
     var videos = [...element.querySelectorAll('video')]
       .forEach(function (video) {
@@ -65,6 +57,14 @@ module.exports = class Content extends Nanocomponent {
           }
         }
       })
+  }
+
+  load (element) {
+    this.formatContent()
+  }
+
+  afterupdate () {
+    this.formatContent()
   }
 
   createElement (props) {

@@ -1,26 +1,31 @@
+var scrollTo = require('scroll-to')
 var ov = require('object-values')
 var html = require('choo/html')
 var format = require('../components/format')
 
 module.exports = log
 
-function log (entries, activeUrl) {
+function log (state, emit) {
   return html`
-    <ul class="list-horiz lh1-5">
-      ${entries.map(logItem)}
+    <ul class="list-horiz lh1-5 ${state.selected ? 'pen' : ''}">
+      ${state.entries.map(logItem)}
     </ul>
   `
 
   function logItem (props, i) {
-    var active = activeUrl === props.url
+    var selected = state.selected === props.url
     var text = props.text.slice(0).split('\n\n').slice(0, 2).join('\n\n')
     return html`
-      <li>
-        <a href="${props.url}" class="db tdn py1 oh" style="height: 10.25rem;">
-          <div class="x">
+      <li id="${props.url}" class="${selected ? 'selected' : ''}">
+        <a
+          href="${props.url}"
+          class="db tdn py1 oh"
+          style="height: 10.25rem;"
+          onclick=${handleClick}
+        >
+          <div class="x pen">
             <div class="c3 px1" sm="c6">
               <div>
-                ${active ? html`<div class="px1 psa t0" style="left: -2rem; width: 2rem">→</div>` : ''}
                 ${props.title}
               </div>
               <div class="ffmono">${props.date}</div>
@@ -34,6 +39,30 @@ function log (entries, activeUrl) {
         </a>
       </li>
     `
+
+    function handleClick (event) {
+      var box = event.target.getBoundingClientRect()
+      var offset = window.scrollY - (window.innerHeight * 0.25) + box.top
+      var duration = (Math.floor(Math.abs(window.scrollY - (offset))) * 3)
+
+      // skip if no offset
+      if (!offset) return
+
+      var scroller = scrollTo(0, offset, {
+        ease: 'outQuint',
+        duration: duration
+      })
+
+      event.preventDefault()
+      emit('ui', { listSelected: props.url })
+
+      scroller.on('end', function () {
+        setTimeout(function () {
+          emit('ui', { listSelected: '', render: false })
+          emit('pushState', props.url)
+        }, 1)
+      })
+    }
   }
 }
 

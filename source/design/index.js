@@ -247,6 +247,7 @@ var custom = `
     transition: transform 0.25s ease;
   }
 
+  ul.list-horiz li.selected,
   ul.list-horiz li:hover {
     transform: translateY(-2rem);
   }

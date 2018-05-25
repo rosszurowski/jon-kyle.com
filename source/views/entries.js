@@ -13,7 +13,7 @@ function view (state, emit) {
 
   return html`
     <div>
-      ${log(entries)}
+      ${log(entries, state.ui.listSelected, emit)}
     </div>
   `
 }

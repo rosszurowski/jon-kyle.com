@@ -16,7 +16,10 @@ function view (state, emit) {
     <div style="border-top: 1px solid transparent">
       ${content.render(entry)} 
       <div>
-        ${log(entries, entry.url)}
+        ${log({
+          entries: entries, 
+          active: entry.url
+        }, emit)}
       </div>
     </div>
   `

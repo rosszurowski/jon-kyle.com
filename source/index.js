@@ -7,6 +7,7 @@ css('./design/index.js')
 
 // plugins
 app.use(require('enoki/choo')())
+app.use(require('./plugins/ui'))
 app.use(require('./plugins/scroll'))
 
 // routes

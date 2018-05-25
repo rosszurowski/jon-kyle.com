@@ -27,11 +27,13 @@ function main (state, emit) {
 
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
-      <div class="x c12" style="min-height: 25vh">
-        <div class="c3 p1 copy-links" sm="c3">
-          <a href="/">Jon-Kyle</a>
+      <div class="c12" style="min-height: 25vh">
+        <div class="x c12 psf t0 l0 r0 z3">
+          <div class="c3 p1 copy-links" sm="c3">
+            <a href="/">Jon-Kyle</a>
+          </div>
+          ${navigation()}
         </div>
-        ${navigation()}
       </div>
       <div class="xx">
         ${view(state, emit)}
@@ -77,7 +79,7 @@ function main (state, emit) {
 
   function footer () {
     return html`
-      <div class="x xw py1 lh1-5 bg-white tc-black">
+      <div class="x xw py1 lh1-5 bg-white tc-black vhmn75">
         <div class="c6" sm="c12">
           <div class="px1 c12">
             <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>, <a href="http://twitter.com/jondashkyle"  class="tc-black tdn">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>

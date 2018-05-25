@@ -43,6 +43,7 @@
     "object-values": "^1.0.0",
     "recsst": "^1.1.2",
     "require-globify": "^1.4.1",
+    "scroll-to": "0.0.2",
     "simplemde": "^1.11.2",
     "tags-input": "^1.1.1",
     "xhr": "^2.4.0",

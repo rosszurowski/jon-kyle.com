@@ -14,7 +14,7 @@ function log (state, emit) {
 
   function logItem (props, i) {
     var selected = state.selected === props.url
-    var text = props.text.slice(0).split('\n\n').slice(0, 2).join('\n\n')
+    var text = props.text.slice(0).split('\n\n').slice(0, 4).join('\n\n')
     return html`
       <li id="${props.url}" class="${selected ? 'selected' : ''}">
         <a
@@ -43,10 +43,13 @@ function log (state, emit) {
     function handleClick (event) {
       var box = event.target.getBoundingClientRect()
       var offset = window.scrollY - (window.innerHeight * 0.25) + box.top
-      var duration = (Math.floor(Math.abs(window.scrollY - (offset))) * 3)
+      var duration = (Math.floor(Math.abs(window.scrollY - (offset))) * 2)
 
       // skip if no offset
       if (!offset) return
+
+      if (duration > 500) duration = 500
+      if (duration < 250) duration = 250
 
       var scroller = scrollTo(0, offset, {
         ease: 'outQuint',

@@ -234,7 +234,7 @@ var custom = `
   ol li:nth-child(6):before { content: '6' }
 
   ul.list-horiz {
-    padding-top: 2rem;
+    padding-top: 1.65rem;
     overflow: hidden;
     border-bottom: 1px solid ${colors.white};
   }
@@ -249,13 +249,13 @@ var custom = `
 
   ul.list-horiz li.selected,
   ul.list-horiz li:hover {
-    transform: translateY(-2rem);
+    transform: translateY(-1.65rem);
   }
 
   ul.list-horiz li > a {
     height: 12.25rem;
     overflow: hidden;
-    margin-bottom: -2rem;
+    margin-bottom: -1.65rem;
     background: ${colors.black};
     color: ${colors.white};
     text-indent: 0;
@@ -267,8 +267,8 @@ var custom = `
 
 var typography = `
   .copy > * {
-    margin-top: 1.5rem;
-    margin-bottom: 1.53rem;
+    margin-top: 1.65rem;
+    margin-bottom: 1.65rem;
   }
 
   .copy {

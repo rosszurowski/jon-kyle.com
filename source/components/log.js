@@ -20,7 +20,7 @@ function log (state, emit) {
         <a
           href="${props.url}"
           class="db tdn py1 oh"
-          style="height: 10.25rem;"
+          style="height: 8.5rem;"
           onclick=${handleClick}
         >
           <div class="x pen">

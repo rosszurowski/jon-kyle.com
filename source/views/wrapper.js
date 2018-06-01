@@ -1,5 +1,7 @@
 var html = require('choo/html')
 var path = require('path')
+
+var Mailinglist = require('../components/mailinglist')
 var manifest = require('../../manifest')
 var views = require('./')
 
@@ -8,15 +10,9 @@ module.exports = main
 function main (state, emit) {
   var page = state.content[state.href || '/']
 
-  // loading
-  if (!state.site.loaded) {
-    return renderLoading(state, emit)
-  }
-
-  // 404
-  if (!page) {
-    return renderNotFound(state, emit)
-  }
+  // loading / 404
+  if (!state.site.loaded) return renderLoading(state, emit)
+  if (!page) return renderNotFound(state, emit)
 
   // view
   var view = views[page.view] || views.default
@@ -28,11 +24,14 @@ function main (state, emit) {
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
       <div class="c12" style="min-height: 25vh">
-        <div class="x c12 psf t0 l0 r0 z3">
-          <div class="c3 p1 copy-links" sm="c3">
+        <div class="x c12 py1 psf t0 l0 r0 z3">
+          <div class="c3 px1 copy-links" sm="c3">
             <a href="/">Jon-Kyle</a>
           </div>
           ${navigation()}
+          <div class="psr copy-links" sm="c3">
+            ${state.cache(Mailinglist, 'mailinglist').render()}
+          </div>
         </div>
       </div>
       <div class="xx">
@@ -52,6 +51,10 @@ function main (state, emit) {
     }, {
       title: 'About',
       url: '/about'
+    }, {
+      title: 'Projects',
+      url: '/projects',
+      active: false
     }]
 
     return links.map(link)
@@ -64,15 +67,16 @@ function main (state, emit) {
         ? false
         : page.path.indexOf(props.url) >= 0
 
+    if (props.active === false) return
+
     return html`
-      <div class="c2 p1 psr copy-links" sm="c3">
-        ${active ? html`<span class="dib p1 psa t0" style="left: -2rem; width: 2rem">→</span>` : ''}
+      <div class="psr copy-links mr0-5">
         <a
           href="${props.url}"
-          class="tdn tc-white"
+          class="tdn tc-white ${active ? 'bb1-black' : ''}"
         >
           ${props.title}
-        </a>
+        </a>,
       </div>
     `
   }
@@ -82,7 +86,7 @@ function main (state, emit) {
       <div class="x xw py1 lh1-5 bg-white tc-black vhmn75">
         <div class="c6" sm="c12">
           <div class="px1 c12">
-            <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>, <a href="http://twitter.com/jondashkyle"  class="tc-black tdn">Follow</a>, <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>
+            <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>,  <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>
           </div>
           <div class="px1 c12">
             Updated <span class="ffmono">${formatDate(manifest.updated)}</span>

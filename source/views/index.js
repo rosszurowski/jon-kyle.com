@@ -3,5 +3,6 @@ module.exports = {
   default: require('./default'),
   entries: require('./entries'),
   entry: require('./entry'),
-  home: require('./home')
+  home: require('./home'),
+  projects: require('./projects')
 }

@@ -263,6 +263,13 @@ var custom = `
   }
 
   .wwbw { word-wrap: break-word }
+
+  ::-webkit-input-placeholder { color: #000; }
+  ::-moz-placeholder { color: #000; }
+  :-ms-input-placeholder { color: #000; }
+  :-moz-placeholder { color: #000; opacity: 1; }
+  ::-moz-placeholder { color: #000; opacity: 1; }
+  :placeholder-shown { color: #000; opacity: 1; }
 `
 
 var typography = `

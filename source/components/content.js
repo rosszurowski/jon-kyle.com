@@ -1,3 +1,4 @@
+var MonoImage = require('monoimage')
 var Nanocomponent = require('choo/component')
 var mediumZoom = require('medium-zoom')
 var html = require('choo/html')
@@ -5,7 +6,7 @@ var path = require('path')
 var format = require('../components/format')
 
 module.exports = class Content extends Nanocomponent {
-  constructor () {
+  constructor (name, state, emit) {
     super()
     this.props = { }
     this.text = ''
@@ -18,16 +19,29 @@ module.exports = class Content extends Nanocomponent {
   formatImages () {
     var element = this.element
     var url = this.props.url
+    var auto = [...element.querySelectorAll('.imgs-auto p')]
+      .forEach(function (container) {
+        unwrap(container)
+      })
     var images = [...element.querySelectorAll('img')]
       .forEach(function (image) {
-        var src = image.getAttribute('src')
-        var ratio = image.getAttribute('alt')
-        if (isAbsolute(src)) return
-        image.setAttribute('src', '/content' + url + '/' + src)
-        mediumZoom(image, {
-          background: 'rgba(0, 0, 0, 1)',
-          container: element
-        })
+        var parent = image.parentNode
+        var src = image.getAttribute('data-src')
+        var ratio = getRatio(src)
+        // add mono image
+        parent.insertBefore(new MonoImage().render({
+          sizes: { 100: isAbsolute(src) ? src : '/content' + url + '/' + src },
+          dimensions: { ratio: ratio },
+        }, {
+          onload: function (_img) {
+            mediumZoom(_img, {
+              background: 'rgba(0, 0, 0, 1)',
+              container: element
+            })
+          }
+        }), image)
+        // remove old
+        parent.removeChild(image)
       })
   }
 
@@ -121,4 +135,25 @@ module.exports = class Content extends Nanocomponent {
 function isAbsolute (str) {
   var r = new RegExp('^(?:[a-z]+:)?//', 'i')
   return r.test(str)
+}
+
+function unwrap(wrapper) {
+  var docFrag = document.createDocumentFragment()
+  while (wrapper.firstChild) {
+    var child = wrapper.removeChild(wrapper.firstChild)
+    if (child.nodeType === 1)  {
+      var container = document.createElement('div')
+      container.appendChild(child)
+      docFrag.appendChild(container)
+    }
+  }
+  wrapper.parentNode.replaceChild(docFrag, wrapper)
+}
+
+function getRatio (src) {
+  try {
+    return parseInt(src.split('_')[1].replace(/\.[^/.]+$/, ""))
+  } catch (err) {
+    return 100
+  }
 }

@@ -116,11 +116,20 @@ var custom = `
 
   figure { margin: 0; }
 
+  .copy .imgs-auto,
   .copy figure,
   .copy img,
   .copy .embed-responsive {
     width: 100%;
     max-width: 50rem;
+  }
+
+  .copy img { display: block }
+  .copy .monoimage { background: #eee }
+
+  .copy blockquote {
+    border-left: 1px solid #000;
+    padding-left: 2rem;
   }
 
   .embed-responsive { position: relative }
@@ -138,6 +147,22 @@ var custom = `
 
   .copy figure a { border: none }
 
+  .imgs-auto {
+    display: flex;
+    margin: -0.5rem;
+  }
+
+  .imgs-auto > * {
+    flex: 1;
+    margin: 0.5rem;
+  }
+
+  figcaption {
+    color: #999;
+    font-size: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
   hr {
     height: 1px;
     width: 100%;
@@ -146,7 +171,7 @@ var custom = `
     margin: 0;
   }
 
-  h1, h2 {
+  h1, h2, h3 {
     font-weight: normal;
     font-size: 1rem;
   }
@@ -292,9 +317,13 @@ var typography = `
   }
 
   h2 {
-    border-bottom: 1px solid ${colors.grey};
+    border-bottom: 1px solid #000;
     padding-bottom: 0.5em;
     padding-top: 1.5em;
+  }
+
+  h3 {
+    color: #999;
   }
 
   .back {
@@ -323,6 +352,18 @@ var typography = `
     transform: rotate(-45deg);
   }
   */
+
+  .navigation {
+    transition: 250ms ease-out opacity;
+  }
+
+  .medium-zoom--open .navigation {
+    opacity: 0;
+  }
+
+  .medium-zoom--open .navigation .pea {
+    pointer-events: none;
+  }
 
   @font-face {
     font-family: 'Lars Sans';

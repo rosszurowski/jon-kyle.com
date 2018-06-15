@@ -4,7 +4,6 @@ var html = require('choo/html')
 
 var log = require('../components/log')
 var Content = require('../components/content')
-var content = new Content()
 
 module.exports = view
 
@@ -14,7 +13,7 @@ function view (state, emit) {
 
   return html`
     <div style="border-top: 1px solid transparent">
-      ${content.render(entry)} 
+      ${state.cache(Content, 'content').render(entry)} 
       <div>
         ${log({
           entries: entries, 

@@ -1,4 +1,5 @@
 var Nanocomponent = require('choo/component')
+var mediumZoom = require('medium-zoom')
 var html = require('choo/html')
 var path = require('path')
 var format = require('../components/format')
@@ -14,8 +15,25 @@ module.exports = class Content extends Nanocomponent {
 
   }
 
-  formatContent () {
+  formatImages () {
     var element = this.element
+    var url = this.props.url
+    var images = [...element.querySelectorAll('img')]
+      .forEach(function (image) {
+        var src = image.getAttribute('src')
+        var ratio = image.getAttribute('alt')
+        if (isAbsolute(src)) return
+        image.setAttribute('src', '/content' + url + '/' + src)
+        mediumZoom(image, {
+          background: 'rgba(0, 0, 0, 1)',
+          container: element
+        })
+      })
+  }
+
+  formatVideos () {
+    var element = this.element
+    var url = this.props.url
     var videos = [...element.querySelectorAll('video')]
       .forEach(function (video) {
         var el = video.parentNode
@@ -24,6 +42,9 @@ module.exports = class Content extends Nanocomponent {
         var ext = path.extname(src)
         var basename = path.basename(src, ext)
         var thumbnail = element.querySelector(`figure img[src*=${basename}]`)
+
+        // set attribute for the source
+        video.setAttribute('src', '/content' + url + '/' + src)
 
         var container = html`
           <div
@@ -60,11 +81,13 @@ module.exports = class Content extends Nanocomponent {
   }
 
   load (element) {
-    this.formatContent()
+    this.formatImages()
+    this.formatVideos()
   }
 
   afterupdate () {
-    this.formatContent()
+    this.formatImages()
+    this.formatVideos()
   }
 
   createElement (props) {
@@ -93,4 +116,9 @@ module.exports = class Content extends Nanocomponent {
       props.title !== this.props.title
     )
   }
+}
+
+function isAbsolute (str) {
+  var r = new RegExp('^(?:[a-z]+:)?//', 'i')
+  return r.test(str)
 }

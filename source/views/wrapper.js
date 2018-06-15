@@ -24,13 +24,15 @@ function main (state, emit) {
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
       <div class="c12" style="min-height: 25vh">
-        <div class="x c12 py1 psf t0 l0 r0 z3">
+        <div class="x c12 py1 psf t0 l0 r0 z3 pen">
           <div class="c3 px1 copy-links" sm="c3">
-            <a href="/">Jon-Kyle</a>
+            <a href="/" class="pea">Jon-Kyle</a>
           </div>
-          ${navigation()}
-          <div class="psr copy-links" sm="c3">
-            ${state.cache(Mailinglist, 'mailinglist').render()}
+          <div class="x px1">
+            ${navigation()}
+            <div class="psr copy-links pea" sm="c3">
+              ${state.cache(Mailinglist, 'mailinglist').render()}
+            </div>
           </div>
         </div>
       </div>
@@ -73,7 +75,7 @@ function main (state, emit) {
       <div class="psr copy-links mr0-5">
         <a
           href="${props.url}"
-          class="tdn tc-white ${active ? 'bb1-black' : ''}"
+          class="pea tdn tc-white ${active ? 'bb1-black' : ''}"
         >
           ${props.title}
         </a>,

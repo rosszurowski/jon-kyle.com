@@ -114,12 +114,14 @@ var custom = `
     padding-bottom: 0.2rem;
   }
 
-  figure {
-    margin: 0;
-  }
+  figure { margin: 0; }
 
-  .copy figure, .copy .embed-responsive { width: 100%; max-width: 100%; }
-  .copy img { max-width: 100%; display: block; }
+  .copy figure,
+  .copy img,
+  .copy .embed-responsive {
+    width: 100%;
+    max-width: 50rem;
+  }
 
   .embed-responsive { position: relative }
   .embed-responsive > * {
@@ -249,7 +251,7 @@ var custom = `
 
   ul.list-horiz li.selected,
   ul.list-horiz li:hover {
-    transform: translateY(-1.65rem);
+    transform: translateY(-1.64rem);
   }
 
   ul.list-horiz li > a {

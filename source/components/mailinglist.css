@@ -5,6 +5,7 @@
 :host input {
   border: 0;
   box-shadow: none;
+  background: none;
 }
 
 :host input:not([value=""]):invalid {

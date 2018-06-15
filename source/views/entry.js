@@ -9,7 +9,7 @@ var content = new Content()
 module.exports = view
 
 function view (state, emit) {
-  var entries = state.page('/entries').pages().toArray().reverse()
+  var entries = state.page('/entries').pages().visible().toArray().reverse()
   var entry = state.page().value()
 
   return html`

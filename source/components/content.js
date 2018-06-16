@@ -27,10 +27,22 @@ module.exports = class Content extends Nanocomponent {
       .forEach(function (image) {
         var parent = image.parentNode
         var src = image.getAttribute('data-src')
+        var source = isAbsolute(src) ? src : '/content' + url + '/' + src
         var ratio = getRatio(src)
+
+        // skip if not ratio
+        if (!ratio) {
+          image.setAttribute('src', source)
+          mediumZoom(image, {
+            background: 'rgba(0, 0, 0, 1)',
+            container: element
+          })
+          return
+        }
+
         // add mono image
         parent.insertBefore(new MonoImage().render({
-          sizes: { 100: isAbsolute(src) ? src : '/content' + url + '/' + src },
+          sizes: { 100: source },
           dimensions: { ratio: ratio },
         }, {
           onload: function (_img) {
@@ -154,6 +166,6 @@ function getRatio (src) {
   try {
     return parseInt(src.split('_')[1].replace(/\.[^/.]+$/, ""))
   } catch (err) {
-    return 100
+    return false
   }
 }

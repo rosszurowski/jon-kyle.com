@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "content": "enoki content",
     "start": "enoki content -w & watchify source/index.js -o bundles/bundle.js -t sheetify -p [ css-extract -o bundles/bundle.css ] source/index.js",
     "dev": "enoki content --watch & budo source/index.js --dir -s bundles/bundle.js -P -- -t sheetify -p [ css-extract -o bundles/bundle.css ]",
     "build": "enoki content && browserify source/index.js -o bundles/bundle.js -t yo-yoify -t  [ sheetify -u sheetify-cssnext ] -g es2040 -p [ css-extract -o bundles/bundle.css ] -p tinyify"
@@ -29,6 +30,7 @@
     "fg-loadcss": "^2.0.1",
     "fontfaceobserver": "^2.0.9",
     "gr8": "^2.1.5",
+    "intersection-observer": "^0.5.0",
     "join-path": "^1.1.1",
     "lilcss": "0.0.0",
     "markdown-it": "^8.4.0",
@@ -38,7 +40,7 @@
     "markdown-it-video": "^0.5.1",
     "marked": "^0.3.6",
     "medium-zoom": "^0.4.0",
-    "monoimage": "^0.1.1",
+    "monoimage": "^0.1.2",
     "nano-markdown": "^1.2.0",
     "nanocomponent": "^6.4.2",
     "nanomorph": "^4.0.4",

@@ -116,6 +116,7 @@ var custom = `
 
   figure { margin: 0; }
 
+  .copy hr,
   .copy .imgs-auto,
   .copy figure,
   .copy img,
@@ -147,9 +148,10 @@ var custom = `
 
   .copy figure a { border: none }
 
-  .imgs-auto {
+  .copy .imgs-auto {
     display: flex;
     margin: -0.5rem;
+    width: auto;
   }
 
   .imgs-auto > * {
@@ -371,6 +373,15 @@ var typography = `
     src: url('/assets/Lars-Light.eot?#iefix') format('embedded-opentype'),
          url('/assets/Lars-Light.woff2') format('woff2'),
          url('/assets/Lars-Light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Lars Sans';
+    font-style: italic;
+    src: url('/assets/Lars-LightItalic.eot');
+    src: url('/assets/Lars-LightItalic.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lars-LightItalic.woff2') format('woff2'),
+         url('/assets/Lars-LightItalic.woff') format('woff');
   }
 
   @font-face {

@@ -1,3 +1,5 @@
+require('intersection-observer')
+
 var raw = require('choo/html/raw')
 var md = require('markdown-it')({ html: true })
 var iterator = require('markdown-it-for-inline')

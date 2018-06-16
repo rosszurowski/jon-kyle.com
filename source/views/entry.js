@@ -8,8 +8,15 @@ var Content = require('../components/content')
 module.exports = view
 
 function view (state, emit) {
-  var entries = state.page('/entries').pages().visible().toArray().reverse()
   var entry = state.page().value()
+  var entries = state.page('/entries')
+    .pages()
+    .visible()
+    .toArray()
+    .reverse()
+    .filter(function (props) {
+      return props.name !== entry.name
+    })
 
   return html`
     <div style="border-top: 1px solid transparent">

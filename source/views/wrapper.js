@@ -24,13 +24,13 @@ function main (state, emit) {
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
       <div class="c12" style="min-height: 25vh">
-        <div class="x c12 py1 psf t0 l0 r0 z3 pen navigation">
-          <div class="c3 px1 copy-links" sm="c3">
+        <div class="x c12 py1 psf t0 l0 r0 z3 pen navigation" sm="psa">
+          <div class="c3 px1 copy-links" sm="xx">
             <a href="/" class="pea">Jon-Kyle</a>
           </div>
           <div class="x px1">
             ${navigation()}
-            <div class="psr copy-links pea" sm="c3">
+            <div class="psr copy-links pea">
               ${state.cache(Mailinglist, 'mailinglist').render()}
             </div>
           </div>
@@ -48,11 +48,14 @@ function main (state, emit) {
 
   function navigation () {
     var links = [{
-      title: 'Index',
+      title: 'Log',
       url: '/'
     }, {
       title: 'About',
       url: '/about'
+    }, {
+      title: 'Jpgs',
+      url: '/images'
     }, {
       title: 'Projects',
       url: '/projects',

@@ -23,7 +23,7 @@ module.exports = class Content extends Nanocomponent {
       .forEach(function (container) {
         unwrap(container)
       })
-    var images = [...element.querySelectorAll('img')]
+    var images = [...element.querySelectorAll('.copy img')]
       .forEach(function (image) {
         var parent = image.parentNode
         var src = image.getAttribute('data-src')
@@ -117,12 +117,13 @@ module.exports = class Content extends Nanocomponent {
   }
 
   createElement (props) {
+    var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
     this.props = props
     this.text = format(props.text)
     return html`
       <div class="fs1 lh1-5">
-        <div class="x xw" style="min-height: 25vh">
-          <div class="c3 p1" sm="c12">
+        <div class="x xw psr" style="min-height: 25vh">
+          <div class="c3 p1 psr" sm="c12">
             <div>${props.title}</div>
             <div class="ffmono">${props.date}</div>
           </div>
@@ -131,9 +132,18 @@ module.exports = class Content extends Nanocomponent {
               ${this.text}
             </div>
           </div>
+          ${thumb ? createThumb() : ''}
         </div>
       </div>
     `
+
+    function createThumb () {
+      return html`
+        <div class="psa t0 r0 p1">
+          <img src="${thumb}" class="entry-thumb">
+        </div>
+      `
+    }
   }
 
   update (props) {

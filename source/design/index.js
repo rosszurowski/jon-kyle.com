@@ -12,7 +12,7 @@ var gr8css = gr8({
     return { [size.toString().replace('.', '-')]: size * 1.1 }
   }),
   fontSize: [{ 1: 1 }],
-  spacing: [0, 0.5, 1, 1.5, 2, 3, 4].map(size => {
+  spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
     return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
   }),
   responsive: true
@@ -89,7 +89,10 @@ var custom = `
     font-kerning: normal;
   }
 
-  html, body { overflow-x: hidden }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
   ::-moz-selection { background: rgba(127, 127, 127, 0.5) }
   ::selection { background: rgba(127, 127, 127, 0.5) }
@@ -291,7 +294,23 @@ var custom = `
     border-top: 1px solid ${colors.white};
   }
 
+  .entry-thumb {
+    height: 5.25rem;
+    width: auto;
+  }
+
+  @media (max-width: 900px) {
+    .entry-thumb { display: none }
+  }
+
   .wwbw { word-wrap: break-word }
+
+  .psst {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  input { outline: 0 }
 
   ::-webkit-input-placeholder { color: #000; }
   ::-moz-placeholder { color: #000; }

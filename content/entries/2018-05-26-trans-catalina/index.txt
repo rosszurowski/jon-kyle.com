@@ -8,6 +8,8 @@ tags:
   - hike
   - travel
 ----
+thumb: thumb.jpg
+----
 text:
 
 Since moving back to Los Angeles from an extended stay in New York I’ve been out in the forest often. I was there frequently before leaving, too, but it’s different now.
@@ -15,6 +17,8 @@ Since moving back to Los Angeles from an extended stay in New York I’ve been o
 While away I began reading about through-hiking, making your own gear (MYOG), literally watching people just walk around mountains, all to supplement the extreme lack of open undeveloped space. Researching hikes to do once returning home led to rediscovering a multi-day hike across Catalina Island, located just off the coast.
 
 Never having attempted a multi-day hike before, and having little camping experience, there were all kinds of assumptions surrounding how involved an attempt would be. Living in semi-rural Tennessee and unschooling when young didn’t provide a wide variety of offline activities. Days were spent online for several hours. One of my favorite alternatives was going on (really) long walks through undeveloped subdivisons.
+
+![Gradating from subdivision to moved earth in suburban Tennessee (Google Maps)](sutherland_53.jpg)
 
 We lived on the edge of one such development. Walking to the end of the road resembled scrubbing a frozen infrastructural timelapse. First houses, then houses without roofs, then houses without siding, then frames of houses, then foundations, then street signs and sewer covers, then paved road, then smoothed dirt, leading to raw abandoned piles of moved earth.
 
@@ -28,17 +32,17 @@ Normally there is a two night minimum stay for campgrounds. To bypass this, simp
 
 ![Intricately traced SVG created by Jon](tct.svg)
 
-[Blackjack](https://www.visitcatalinaisland.com/camping-boating/primitive-camping/blackjack), [Two Harbors](https://www.visitcatalinaisland.com/camping-and-boating/two-harbors-camping/two-harbors-campground), and [Parsons Landing](https://www.visitcatalinaisland.com/camping-boating/primitive-camping/parsons-landing) are the standard camps for the TCT. With it being our first go prevailing wisdom won out.
+We departed on May 8th to complete the trail in three nights / four days. [Blackjack](https://www.visitcatalinaisland.com/camping-boating/primitive-camping/blackjack), [Two Harbors](https://www.visitcatalinaisland.com/camping-and-boating/two-harbors-camping/two-harbors-campground), and [Parsons Landing](https://www.visitcatalinaisland.com/camping-boating/primitive-camping/parsons-landing) are the standard camps for the TCT. With it being our first go prevailing wisdom won out.
 
 Both Blackjack and Two Harbors have potable water on site. For Parsons Landing you’ll want to reserve a locker with 2 gallons of water and firewood. You can do that at the Guest Services building in Two Harbors. Between booking the campsites and the ferry tickets, it was somewhat expensive compared to a typical trip. Definitely worth it, though.
 
 Also, to be comfortable, keep your pack weight down. I was just a little shy of 20lbs at the trailhead, and am aiming closer to 15 next time. For more on my pack just scroll down the page.
 
-## Day One: Avalon to Black Jack, 15 miles
+## Day One, Avalon → Black Jack, 15 miles
 
 We took the 6:30am Catalina Express from Long Beach. Leaving that early on a weekday didn’t require booking tickets beforehand, though there are few reasons not to.
 
-It takes around an hour and a half to traverse the San Pedro channel. Once arriving in Avalon we waited around to check in, but it turns out this isn’t necessary as the permit is only for the stretch between Two Harbors and Parsons, though a paper map is nice to have.
+It takes around an hour and a half to traverse the San Pedro channel. Once arriving in Avalon we waited around to check in, but it turns out this isn’t necessary as the permit is only for the stretch between Two Harbors and Parsons, but a paper map is nice to have, even if there are little Instagram icons all over it.
 
 ![Avalon with all it’s infrastructure](01-climbing-out_75.jpg)
 
@@ -116,7 +120,7 @@ After getting a fire going I finished setting up camp. This was the first time I
 2. We didn’t realize it, but there is a point to fill up on water halfway through the hike. Check the map before setting out.
 3. Campsite number three has pleasant shade in the afternoon.
 
-## Day Two: Black Jack to Two Harbors, 12.5 miles
+## Day Two, Black Jack → Two Harbors, 12.5 miles
 
 The day started with Jon tapping on my tent. “Not to freak you out, but there is a bison right next to the campsite.”
 
@@ -202,7 +206,7 @@ I set up my net-tent sans-tarp to have a view of the harbor and evening sky. Whi
 2. Pace yourself up the climb after Little Harbor, it’s deceptively long. Fortunately the air is much cooler here than the valley.
 3. If staying at Two Harbors, try to get campsites #1–5. They’re right on the water. #6 is next to the toilets. Skip that. #11 is nice, and where we ended up, as the wind was really howling at the first 5 and we didn’t want to wake up in the harbor.
 
-## Day Three: Two Harbors to Parson’s Landing, 7 miles
+## Day Three, Two Harbors → Parson’s Landing, 7 miles
 
 Breakfast came and went quickly, followed by a stop at Island Services to pick up the permit and reserve our locker with water and firewood for Parsons Landing. Seeing as there would be a fire, we grabbed some bites from the grocery store for grilling later that evening.
 
@@ -230,7 +234,7 @@ After the worst of it things start to level off, and we were pleasantly surprise
 
 {/imgs-auto}
 
-A few miles pass and you’re up there, truly. This peak is just shy of being the highest point on the island, the first being close to Blackjack and providing space for the airport’s [VOR station](https://en.wikipedia.org/wiki/VHF_omnidirectional_range). This was such a welcome break form the climb up, and we hung out in the clouds for a while. Good thing considering how intense the trail down to Parsons was about to be.
+A few miles pass and you’re up there. [Stony Peak](https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox=DY3012) is the second highest point on the west side of the island, the first being Silver Peak. This was such a welcome break form the climb up, and we hung out in the clouds for a while. Good thing considering how intense the trail down to Parsons was about to be.
 
 {imgs-auto}
 
@@ -268,7 +272,7 @@ We got into Parsons. The verdict? Totally amazing. Our campsite was on the sand,
 
 {/imgs-auto}
 
-The fire turned out great despite the breezy conditions. Eight dogs and tomato paste down. We turned in after finishing the Jack and hoped for the best come morning.
+The fire turned out great despite the breezy conditions. Eight dogs and tomato paste down. We turned in after finishing the whiskey and hoped for the best come morning.
 
 ### Tips
 
@@ -277,9 +281,9 @@ The fire turned out great despite the breezy conditions. Eight dogs and tomato p
 3. Bring trekking poles for heading down to Parsons—shit is no joke!
 4. Ensure your tent is properly staked with heavy rocks once at camp. The wind really picks up as the sun sets.
 
-## Day Four: Parsons to Lands End to Two Harbors, 16 miles
+## Day Four, Parsons → West End → Two Harbors, 16 miles
 
-Technically, the terminus of the TCT is at Parsons, but this is a recent revision. The original end is at Starlight Beach, another 4 miles out towards the eastern tip of Catalina. After packing up camp we decided to drop our packs in one of the metal food boxes, bring some water and snacks, and head for a quick 8 mile jaunt to Lands End, which is, yeah, the end of the island out near Starlight.
+Technically, the terminus of the TCT is at Parsons, but this is a recent revision. The original end is at Starlight Beach, another 4 miles out towards the western tip of Catalina. After packing up camp we decided to drop our packs in one of the metal food boxes, bring some water and snacks, and head for a quick 8 mile jaunt to West End, which is, yeah, the end of the island out near Starlight.
 
 {imgs-auto}
 
@@ -347,9 +351,9 @@ Having seen Catalina from Los Angeles for so long, I’m glad to have gotten out
 
 - [Socal Hiker](https://socalhiker.net/hiking-trans-catalina-trail/)
 
-## Gear
+## Equipment
 
-Ok, a quick rundown of the gear. While in New York I started to research ultralight gear. I got very into it. What really got me going was the Make Your Own Gear (MYOG) community. My first project was a [Ray-Way backpack kit](http://www.rayjardine.com/ray-way/Backpack-Kit/index.htm).
+Ok, a quick rundown of what was brought. While in New York I started to research ultralight gear. I got very into it. What really got me going was the Make Your Own Gear (MYOG) community. My first project was a [Ray-Way backpack kit](http://www.rayjardine.com/ray-way/Backpack-Kit/index.htm).
 
 {imgs-auto}
 

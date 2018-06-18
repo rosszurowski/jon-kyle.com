@@ -6,4 +6,7 @@ dist
 dat.json
 .dat
 .log
+
+# files
 Lars-*
+*.jpg

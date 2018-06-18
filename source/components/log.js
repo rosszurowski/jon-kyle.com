@@ -15,6 +15,7 @@ function log (state, emit) {
   function logItem (props, i) {
     var selected = state.selected === props.url
     var text = props.text.slice(0).split('\n\n').slice(0, 4).join('\n\n')
+    var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
     return html`
       <li id="${props.url}" class="${selected ? 'selected' : ''}">
         <a
@@ -23,7 +24,7 @@ function log (state, emit) {
           style="height: 8.5rem;"
           onclick=${handleClick}
         >
-          <div class="x pen">
+          <div class="x pen psr">
             <div class="c3 px1" sm="c6">
               <div>
                 ${props.title}
@@ -35,10 +36,19 @@ function log (state, emit) {
                 ${format(text)}
               </div>
             </div>
+            ${thumb ? createThumb() : ''}
           </div>
         </a>
       </li>
     `
+
+    function createThumb () {
+      return html`
+        <div class="psa t0 r0 mr1">
+          <img src="${thumb}" class="entry-thumb">
+        </div>
+      `
+    }
 
     function handleClick (event) {
       var box = event.target.getBoundingClientRect()

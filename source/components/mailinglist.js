@@ -55,7 +55,7 @@ module.exports = class Subscribe extends Nanocomponent {
         <div class="psr">
           <input
             id="field_0"
-            class="lh1-5 fs1 ffsans p0 m0 ${this.state.value ? 'psa w100' : ''}"
+            class="lh1-5 fs1 ffsans p0 m0 psa w100}"
             name="embedded_form_subscription[field_0]"
             type="email"
             value="${this.state.value}"
@@ -63,7 +63,7 @@ module.exports = class Subscribe extends Nanocomponent {
             oninput=${this.handleInput}
             required
           >
-          <div class="pr0-5" style="color: rgba(255, 255, 255, 0)">${this.state.value}</div>
+          <div class="pr0-5" style="color: rgba(255, 255, 255, 0)">${this.state.value || 'Mailing list'}</div>
         </div>
         <button type="submit" class="lh1-5 ${this.state.value ? 'db' : 'dn'}">→</button>
         <input

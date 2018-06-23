@@ -2,18 +2,15 @@ var md = require('../components/format')
 var ov = require('object-values')
 var html = require('choo/html')
 
-var log = require('../components/log')
 var Content = require('../components/content')
+var libEntries = require('../lib/entries')
+var log = require('../components/log')
 
 module.exports = view
 
 function view (state, emit) {
   var entry = state.page().value()
-  var entries = state.page('/entries')
-    .pages()
-    .visible()
-    .toArray()
-    .reverse()
+  var entries = libEntries.getAll(state)
     .filter(function (props) {
       return props.name !== entry.name
     })
@@ -22,11 +19,7 @@ function view (state, emit) {
     <div style="border-top: 1px solid transparent">
       ${state.cache(Content, 'content').render(entry)} 
       <div>
-        ${log({
-          entries: entries, 
-          active: entry.url,
-          selected: state.ui.listSelected
-        }, emit)}
+        ${log(state, emit)}
       </div>
     </div>
   `

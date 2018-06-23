@@ -55,7 +55,8 @@ function main (state, emit) {
       url: '/about'
     }, {
       title: 'Jpgs',
-      url: '/images'
+      url: '/images',
+      active: false
     }, {
       title: 'Projects',
       url: '/projects',

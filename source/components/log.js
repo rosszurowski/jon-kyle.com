@@ -1,23 +1,39 @@
 var scrollTo = require('scroll-to')
 var ov = require('object-values')
 var html = require('choo/html')
+
 var format = require('../components/format')
+var libEntries = require('../lib/entries')
 
 module.exports = log
 
-function log (state, emit) {
+function log (state, emit, opts) {
+  var entries = libEntries.getAll(state)
+  var items = {
+    entry: logEntry,
+    update: logUpdate
+  }
+
   return html`
     <ul class="list-horiz lh1-5 ${state.selected ? 'pen' : ''}">
-      ${state.entries.map(logItem)}
+      ${entries.map(props => items[props.type](props))}
     </ul>
   `
 
-  function logItem (props, i) {
+  function logUpdate (props, i) {
+    return html`
+      <li id="update-${props.date}" class="bt1-white">
+        <div class="p1">${props.text}</a>
+      </li>
+    `
+  }
+
+  function logEntry (props, i) {
     var selected = state.selected === props.url
     var text = props.text.slice(0).split('\n\n').slice(0, 4).join('\n\n')
     var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
     return html`
-      <li id="${props.url}" class="${selected ? 'selected' : ''}">
+      <li id="${props.url}" class="entry ${selected ? 'selected' : ''}">
         <a
           href="${props.url}"
           class="db tdn py1 oh"

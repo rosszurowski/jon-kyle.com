@@ -76,6 +76,26 @@ gr8css.add({
   vals: [0, 25, 33, 50, 66, 75]
 })
 
+
+var borderWeights = [0, 1, 2]
+var borders = {}
+borderWeights.forEach(border => {
+  Object.keys(colors).forEach(key => {
+    borders[border + '-' + key] = `${border}px solid ${colors[key]}`
+  })
+})
+
+gr8css.add({
+  prop: [
+    'border',
+    'border-top',
+    'border-right',
+    'border-bottom',
+    'border-left'
+  ],
+  vals: borders
+})
+
 var custom = `
   html {
     font-size: 100% ;
@@ -280,7 +300,7 @@ var custom = `
   }
 
   ul.list-horiz li.selected,
-  ul.list-horiz li:hover {
+  ul.list-horiz li.entry:hover {
     transform: translateY(-1.64rem);
   }
 

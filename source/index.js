@@ -1,3 +1,4 @@
+var loadCss = require('fg-loadcss').loadCSS
 var html = require('choo/html')
 var css = require('sheetify')
 var choo = require('choo')
@@ -7,6 +8,7 @@ css('./design/index.js')
 
 // plugins
 app.use(require('enoki/choo')())
+app.use(require('./plugins/ui'))
 app.use(require('./plugins/scroll'))
 
 // routes

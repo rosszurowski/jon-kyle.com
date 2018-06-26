@@ -3,6 +3,11 @@ node_modules
 public
 bundles
 dist
+dat.json
 .dat
 .log
+
+# files
 Lars-*
+*.jpg
+*.mp4

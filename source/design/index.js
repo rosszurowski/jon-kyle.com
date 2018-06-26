@@ -11,8 +11,8 @@ var gr8css = gr8({
   lineHeight: [1, 1.5].map(size => {
     return { [size.toString().replace('.', '-')]: size * 1.1 }
   }),
-  fontSize: [{ 1: 1.25 }],
-  spacing: [0, 0.5, 1, 1.5, 2, 3, 4].map(size => {
+  fontSize: [{ 1: 1 }],
+  spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
     return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
   }),
   responsive: true
@@ -76,6 +76,26 @@ gr8css.add({
   vals: [0, 25, 33, 50, 66, 75]
 })
 
+
+var borderWeights = [0, 1, 2]
+var borders = {}
+borderWeights.forEach(border => {
+  Object.keys(colors).forEach(key => {
+    borders[border + '-' + key] = `${border}px solid ${colors[key]}`
+  })
+})
+
+gr8css.add({
+  prop: [
+    'border',
+    'border-top',
+    'border-right',
+    'border-bottom',
+    'border-left'
+  ],
+  vals: borders
+})
+
 var custom = `
   html {
     font-size: 100% ;
@@ -89,7 +109,10 @@ var custom = `
     font-kerning: normal;
   }
 
-  html, body { overflow-x: hidden }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
   ::-moz-selection { background: rgba(127, 127, 127, 0.5) }
   ::selection { background: rgba(127, 127, 127, 0.5) }
@@ -114,12 +137,24 @@ var custom = `
     padding-bottom: 0.2rem;
   }
 
-  figure {
-    margin: 0;
+  figure { margin: 0; }
+
+  .copy hr,
+  .copy .imgs-auto,
+  .copy figure,
+  .copy img,
+  .copy .embed-responsive {
+    width: 100%;
+    max-width: 50rem;
   }
 
-  .copy figure, .copy .embed-responsive { width: 100%; max-width: 100%; }
-  .copy img { max-width: 100%; display: block; }
+  .copy img { display: block }
+  .copy .monoimage { background: #eee }
+
+  .copy blockquote {
+    border-left: 1px solid #000;
+    padding-left: 2rem;
+  }
 
   .embed-responsive { position: relative }
   .embed-responsive > * {
@@ -136,6 +171,23 @@ var custom = `
 
   .copy figure a { border: none }
 
+  .copy .imgs-auto {
+    display: flex;
+    margin: -0.5rem;
+    width: auto;
+  }
+
+  .imgs-auto > * {
+    flex: 1;
+    margin: 0.5rem;
+  }
+
+  figcaption {
+    color: #999;
+    font-size: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
   hr {
     height: 1px;
     width: 100%;
@@ -144,7 +196,7 @@ var custom = `
     margin: 0;
   }
 
-  h1, h2 {
+  h1, h2, h3 {
     font-weight: normal;
     font-size: 1rem;
   }
@@ -234,7 +286,7 @@ var custom = `
   ol li:nth-child(6):before { content: '6' }
 
   ul.list-horiz {
-    padding-top: 2rem;
+    padding-top: 1.65rem;
     overflow: hidden;
     border-bottom: 1px solid ${colors.white};
   }
@@ -247,27 +299,51 @@ var custom = `
     transition: transform 0.25s ease;
   }
 
-  ul.list-horiz li:hover {
-    transform: translateY(-2rem);
+  ul.list-horiz li.selected,
+  ul.list-horiz li.entry:hover {
+    transform: translateY(-1.64rem);
   }
 
   ul.list-horiz li > a {
     height: 12.25rem;
     overflow: hidden;
-    margin-bottom: -2rem;
+    margin-bottom: -1.65rem;
     background: ${colors.black};
     color: ${colors.white};
     text-indent: 0;
     border-top: 1px solid ${colors.white};
   }
 
+  .entry-thumb {
+    height: 5.25rem;
+    width: auto;
+  }
+
+  @media (max-width: 900px) {
+    .entry-thumb { display: none }
+  }
+
   .wwbw { word-wrap: break-word }
+
+  .psst {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  input { outline: 0 }
+
+  ::-webkit-input-placeholder { color: #000; }
+  ::-moz-placeholder { color: #000; }
+  :-ms-input-placeholder { color: #000; }
+  :-moz-placeholder { color: #000; opacity: 1; }
+  ::-moz-placeholder { color: #000; opacity: 1; }
+  :placeholder-shown { color: #000; opacity: 1; }
 `
 
 var typography = `
   .copy > * {
-    margin-top: 1.5rem;
-    margin-bottom: 1.53rem;
+    margin-top: 1.65rem;
+    margin-bottom: 1.65rem;
   }
 
   .copy {
@@ -278,13 +354,17 @@ var typography = `
 
   .copy > * {
     width: 100%;
-    max-width: 40rem;
+    max-width: 30rem;
   }
 
   h2 {
-    border-bottom: 1px solid ${colors.grey};
+    border-bottom: 1px solid #000;
     padding-bottom: 0.5em;
     padding-top: 1.5em;
+  }
+
+  h3 {
+    color: #999;
   }
 
   .back {
@@ -314,12 +394,33 @@ var typography = `
   }
   */
 
+  .navigation {
+    transition: 250ms ease-out opacity;
+  }
+
+  .medium-zoom--open .navigation {
+    opacity: 0;
+  }
+
+  .medium-zoom--open .navigation .pea {
+    pointer-events: none;
+  }
+
   @font-face {
     font-family: 'Lars Sans';
     src: url('/assets/Lars-Light.eot');
     src: url('/assets/Lars-Light.eot?#iefix') format('embedded-opentype'),
          url('/assets/Lars-Light.woff2') format('woff2'),
          url('/assets/Lars-Light.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Lars Sans';
+    font-style: italic;
+    src: url('/assets/Lars-LightItalic.eot');
+    src: url('/assets/Lars-LightItalic.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lars-LightItalic.woff2') format('woff2'),
+         url('/assets/Lars-LightItalic.woff') format('woff');
   }
 
   @font-face {

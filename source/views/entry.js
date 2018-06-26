@@ -2,21 +2,24 @@ var md = require('../components/format')
 var ov = require('object-values')
 var html = require('choo/html')
 
-var log = require('../components/log')
 var Content = require('../components/content')
-var content = new Content()
+var libEntries = require('../lib/entries')
+var log = require('../components/log')
 
 module.exports = view
 
 function view (state, emit) {
-  var entries = state.page('/entries').pages().toArray().reverse()
   var entry = state.page().value()
+  var entries = libEntries.getAll(state)
+    .filter(function (props) {
+      return props.name !== entry.name
+    })
 
   return html`
     <div style="border-top: 1px solid transparent">
-      ${content.render(entry)} 
+      ${state.cache(Content, 'content').render(entry)} 
       <div>
-        ${log(entries, entry.url)}
+        ${log(state, emit)}
       </div>
     </div>
   `

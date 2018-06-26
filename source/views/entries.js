@@ -9,11 +9,11 @@ var content = new Content()
 module.exports = view
 
 function view (state, emit) {
-  var entries = state.page('/entries').pages().toArray().reverse()
+  var entries = state.page('/entries').pages().visible().toArray().reverse()
 
   return html`
     <div>
-      ${log(entries)}
+      ${log(entries, state.ui.listSelected, emit)}
     </div>
   `
 }

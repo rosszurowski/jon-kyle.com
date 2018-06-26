@@ -1,29 +1,70 @@
-var Nanocomponent = require('nanocomponent')
+var MonoImage = require('monoimage')
+var Nanocomponent = require('choo/component')
+var mediumZoom = require('medium-zoom')
 var html = require('choo/html')
+var dayjs = require('dayjs')
 var path = require('path')
+
 var format = require('../components/format')
 
 module.exports = class Content extends Nanocomponent {
-  constructor () {
+  constructor (name, state, emit) {
     super()
     this.props = { }
     this.text = ''
-  }
-
-  load (element) {
-    this.format()
-  }
-
-  afterupdate () {
-    this.format()
   }
 
   unload (element) {
 
   }
 
-  format () {
+  formatImages () {
     var element = this.element
+    var url = this.props.url
+    var auto = [...element.querySelectorAll('.imgs-auto p')]
+      .forEach(function (container) {
+        unwrap(container)
+      })
+    var images = [...element.querySelectorAll('.copy img')]
+      .forEach(function (image) {
+        var parent = image.parentNode
+        var src = image.getAttribute('data-src')
+        var source = isAbsolute(src) ? src : '/content' + url + '/' + src
+        var ratio = getRatio(src)
+
+        // skip if not ratio
+        if (!ratio) {
+          image.setAttribute('src', source)
+          if (image.parentNode.nodeName !== 'A') {
+            mediumZoom(image, {
+              background: 'rgba(0, 0, 0, 1)',
+              container: element
+            })
+          }
+          return
+        }
+
+        // add mono image
+        parent.insertBefore(new MonoImage().render({
+          sizes: { 100: source },
+          dimensions: { ratio: ratio },
+        }, {
+          onload: function (_img) {
+            if (_img.parentNode.nodeName === 'A') return
+            mediumZoom(_img, {
+              background: 'rgba(0, 0, 0, 1)',
+              container: element
+            })
+          }
+        }), image)
+        // remove old
+        parent.removeChild(image)
+      })
+  }
+
+  formatVideos () {
+    var element = this.element
+    var url = this.props.url
     var videos = [...element.querySelectorAll('video')]
       .forEach(function (video) {
         var el = video.parentNode
@@ -32,6 +73,9 @@ module.exports = class Content extends Nanocomponent {
         var ext = path.extname(src)
         var basename = path.basename(src, ext)
         var thumbnail = element.querySelector(`figure img[src*=${basename}]`)
+
+        // set attribute for the source
+        video.setAttribute('src', '/content' + url + '/' + src)
 
         var container = html`
           <div
@@ -67,28 +111,78 @@ module.exports = class Content extends Nanocomponent {
       })
   }
 
+  load (element) {
+    this.formatImages()
+    this.formatVideos()
+  }
+
+  afterupdate () {
+    this.formatImages()
+    this.formatVideos()
+  }
+
   createElement (props) {
+    var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
     this.props = props
     this.text = format(props.text)
     return html`
       <div class="fs1 lh1-5">
-        <div class="x xw" style="min-height: 25vh">
-          <div class="c3 p1" sm="c12">
+        <div class="x xw psr" style="min-height: 25vh">
+          <div class="c3 p1 psr" sm="c12">
             <div>${props.title}</div>
-            <div class="ffmono">${props.date}</div>
+            <div class="ffmono">
+              ${dayjs('20' + props.date).format('MMM.D,YYYY')}
+            </div>
           </div>
           <div class="c9 p1" sm="c12">
             <div class="copy">
               ${this.text}
             </div>
           </div>
+          ${thumb ? createThumb() : ''}
         </div>
       </div>
     `
+
+    function createThumb () {
+      return html`
+        <div class="psa t0 r0 p1">
+          <img src="${thumb}" class="entry-thumb">
+        </div>
+      `
+    }
   }
 
   update (props) {
-    return props.text !== this.props.text ||
+    return (
+      props.url !== this.props.url ||
       props.title !== this.props.title
+    )
+  }
+}
+
+function isAbsolute (str) {
+  var r = new RegExp('^(?:[a-z]+:)?//', 'i')
+  return r.test(str)
+}
+
+function unwrap(wrapper) {
+  var docFrag = document.createDocumentFragment()
+  while (wrapper.firstChild) {
+    var child = wrapper.removeChild(wrapper.firstChild)
+    if (child.nodeType === 1)  {
+      var container = document.createElement('div')
+      container.appendChild(child)
+      docFrag.appendChild(container)
+    }
+  }
+  wrapper.parentNode.replaceChild(docFrag, wrapper)
+}
+
+function getRatio (src) {
+  try {
+    return parseInt(src.split('_')[1].replace(/\.[^/.]+$/, ""))
+  } catch (err) {
+    return false
   }
 }

@@ -1,0 +1,21 @@
+:host {
+
+}
+
+:host input {
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
+:host input:not([value=""]):invalid {
+  color: #f00;
+}
+
+:host button {
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  border: 0;
+  padding: 0 0.5rem;
+}

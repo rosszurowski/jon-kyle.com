@@ -9,12 +9,5 @@ var content = new Content()
 module.exports = view
 
 function view (state, emit) {
-  var entries = state.page('/entries').pages().toArray().reverse()
-
-  return html`
-    <div>
-      ${log(entries)}
-    </div>
-  `
+  return log(state, emit)
 }
-

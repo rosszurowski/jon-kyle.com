@@ -1,6 +1,7 @@
 var scrollTo = require('scroll-to')
 var ov = require('object-values')
 var html = require('choo/html')
+var dayjs = require('dayjs')
 
 var format = require('../components/format')
 var libEntries = require('../lib/entries')
@@ -45,7 +46,9 @@ function log (state, emit, opts) {
               <div>
                 ${props.title}
               </div>
-              <div class="ffmono">${props.date}</div>
+              <div class="ffmono">
+                ${dayjs('20' + props.date).format('MMM.D,YYYY')}
+              </div>
             </div>
             <div class="c9 px1 excerpt">
               <div class="copy">

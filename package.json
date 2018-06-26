@@ -25,6 +25,7 @@
     "bel": "^4.6.0",
     "choo": "^6.12.1",
     "create-html": "^3.1.0",
+    "dayjs": "^1.6.10",
     "enoki": "^2.1.0",
     "escape-html": "^1.0.3",
     "fg-loadcss": "^2.0.1",

@@ -2,7 +2,9 @@ var MonoImage = require('monoimage')
 var Nanocomponent = require('choo/component')
 var mediumZoom = require('medium-zoom')
 var html = require('choo/html')
+var dayjs = require('dayjs')
 var path = require('path')
+
 var format = require('../components/format')
 
 module.exports = class Content extends Nanocomponent {
@@ -33,10 +35,12 @@ module.exports = class Content extends Nanocomponent {
         // skip if not ratio
         if (!ratio) {
           image.setAttribute('src', source)
-          mediumZoom(image, {
-            background: 'rgba(0, 0, 0, 1)',
-            container: element
-          })
+          if (image.parentNode.nodeName !== 'A') {
+            mediumZoom(image, {
+              background: 'rgba(0, 0, 0, 1)',
+              container: element
+            })
+          }
           return
         }
 
@@ -46,6 +50,7 @@ module.exports = class Content extends Nanocomponent {
           dimensions: { ratio: ratio },
         }, {
           onload: function (_img) {
+            if (_img.parentNode.nodeName === 'A') return
             mediumZoom(_img, {
               background: 'rgba(0, 0, 0, 1)',
               container: element
@@ -125,7 +130,9 @@ module.exports = class Content extends Nanocomponent {
         <div class="x xw psr" style="min-height: 25vh">
           <div class="c3 p1 psr" sm="c12">
             <div>${props.title}</div>
-            <div class="ffmono">${props.date}</div>
+            <div class="ffmono">
+              ${dayjs('20' + props.date).format('MMM.D,YYYY')}
+            </div>
           </div>
           <div class="c9 p1" sm="c12">
             <div class="copy">

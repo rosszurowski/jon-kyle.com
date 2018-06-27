@@ -4,12 +4,13 @@ module.exports = plugin
 
 function plugin (state, emitter) {
   state.ui = {
-    listSelected: ''
+    listSelected: '',
+    videoActive: ''
   }
 
-  state.events.ui = 'ui'
+  state.events.UI = 'ui'
 
-  emitter.on(state.events.ui, function (data) {
+  emitter.on(state.events.UI, function (data) {
     data = data || { }
     var shouldRender = data.render !== false
     state.ui = xtend(state.ui, data)

@@ -23,7 +23,7 @@ function main (state, emit) {
 
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
-      <div class="c12" style="min-height: 25vh">
+      <div class="c12" style="${page.padding !== false ? 'min-height: 25vh' : ''}">
         <div class="x c12 py1 psf t0 l0 r0 z3 pen navigation" sm="psa">
           <div class="c3 px1 copy-links" sm="xx">
             <a href="/" class="pea">Jon-Kyle</a>
@@ -48,11 +48,14 @@ function main (state, emit) {
 
   function navigation () {
     var links = [{
+      title: 'About',
+      url: '/about'
+    }, {
       title: 'Log',
       url: '/'
     }, {
-      title: 'About',
-      url: '/about'
+      title: 'Hangs',
+      url: '/hangs'
     }, {
       title: 'Jpgs',
       url: '/images',
@@ -79,7 +82,7 @@ function main (state, emit) {
       <div class="psr copy-links mr0-5">
         <a
           href="${props.url}"
-          class="pea tdn tc-white ${active ? 'bb1-black' : ''}"
+          class="pb0-5 pea tdn tc-white ${active ? 'bb1-white' : ''}"
         >
           ${props.title}
         </a>,
@@ -89,7 +92,7 @@ function main (state, emit) {
 
   function footer () {
     return html`
-      <div class="x xw py1 lh1-5 bg-white tc-black vhmn75">
+      <div class="x xw py1 lh1-5 bg-white tc-black">
         <div class="c6" sm="c12">
           <div class="px1 c12">
             <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>,  <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>

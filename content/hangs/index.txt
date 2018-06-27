@@ -1,0 +1,15 @@
+title: Hangs
+----
+padding: false
+----
+view: hangs
+----
+videos:
+  18-06-26:
+    title: Hardly Everything 2.0
+    poster: /assets/social.png
+    src: /assets/loop.mp4
+  18-02-26:
+    title: Enoki Beta
+    poster: /assets/social.png
+    src: /assets/ferry.mp4

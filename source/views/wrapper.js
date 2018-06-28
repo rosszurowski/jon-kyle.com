@@ -66,17 +66,15 @@ function main (state, emit) {
       active: false
     }]
 
-    return links.map(link)
+    return links
+      .filter(link => link.active !== false)
+      .map(link)
   }
 
   function link (props) {
-    var active = page.path === '/'
-      ? page.path === props.url
-      : props.url === '/'
-        ? false
-        : page.path.indexOf(props.url) >= 0
-
-    if (props.active === false) return
+    var active = props.url === '/'
+      ? state.href === '' || state.href.indexOf('/entries') === 0
+      : state.href.indexOf(props.url) === 0
 
     return html`
       <div class="psr copy-links mr0-5">

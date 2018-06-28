@@ -35,8 +35,8 @@ function view (state, emit) {
       >
         <div class="py0-5 pr0-5" style="width: 6.25rem">
           <div
-            class="bg-white"
-            style="padding-bottom: 56.25%"
+            class="bg-white bgsc"
+            style="background-image: url(${props.poster}); padding-bottom: 56.25%"
           ></div>
         </div>
         <div class="xx py0-5 pl0-5">

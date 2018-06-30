@@ -1,4 +1,4 @@
-var scrollTo = require('scroll-to')
+var Tweezer = require('tweezer.js')
 var ov = require('object-values')
 var html = require('choo/html')
 var dayjs = require('dayjs')
@@ -10,13 +10,15 @@ module.exports = log
 
 function log (state, emit, opts) {
   var entries = libEntries.getAll(state)
+  var selected = state.ui.listSelected
+
   var items = {
     entry: logEntry,
     update: logUpdate
   }
 
   return html`
-    <ul class="list-horiz lh1-5 ${state.selected ? 'pen' : ''}">
+    <ul class="list-horiz lh1-5 ${selected ? 'pen' : ''}">
       ${entries.map(props => items[props.type](props))}
     </ul>
   `
@@ -30,15 +32,15 @@ function log (state, emit, opts) {
   }
 
   function logEntry (props, i) {
-    var selected = state.selected === props.url
-    var text = props.text.slice(0).split('\n\n').slice(0, 4).join('\n\n')
+    var selected = state.ui.listSelected === props.url
+    var text = props.text.slice(0).split('\n\n').slice(0, 8).join('\n\n')
     var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
+
     return html`
       <li id="${props.url}" class="entry ${selected ? 'selected' : ''}">
         <a
           href="${props.url}"
           class="db tdn py1 oh"
-          style="height: 8.5rem;"
           onclick=${handleClick}
         >
           <div class="x pen psr">
@@ -70,30 +72,85 @@ function log (state, emit, opts) {
     }
 
     function handleClick (event) {
+      var parent = event.target.parentNode.parentNode
       var box = event.target.getBoundingClientRect()
-      var offset = window.scrollY - (window.innerHeight * 0.25) + box.top
-      var duration = (Math.floor(Math.abs(window.scrollY - (offset))) * 2)
+      var offset = Math.ceil((window.innerHeight * 0.25) - box.top)
+      var duration = (Math.floor(window.scrollY - (offset)) * 2)
+      var siblings = [...parent.children]
+      var index = siblings.indexOf(event.target.parentNode)
 
-      // skip if no offset
-      if (!offset) return
-
+      // min + max offset
       if (duration > 500) duration = 500
       if (duration < 250) duration = 250
 
-      var scroller = scrollTo(0, offset, {
-        ease: 'outQuint',
+      var screen = html`<div class="psa t0 l0 r0 vh100 vw100 bg-black bt1-white"></div>`
+      parent.insertBefore(screen, event.target.parentNode)
+      screen.style.top = window.scrollY + box.top + 'px'
+
+      // transition our element
+      if (offset) {
+        var transition = new Tweezer({
+          start: 0,
+          end: offset,
+          duration: duration
+        })
+        .on('tick', function (value) {
+          event.target.style.transform = `translate3d(0, ${value}px, 0)`
+        })
+        .on('done', function () {
+          setTimeout(() => {
+            emit('pushState', props.url)
+            window.scrollTo(0, 0)
+            emit('ui', { listSelected: '', render: false })
+          }, 0)
+        })
+        .begin()
+      } else {
+          setTimeout(() => {
+            emit('pushState', props.url)
+            window.scrollTo(0, 0)
+            emit('ui', { listSelected: '', render: false })
+          }, duration + 1)
+      }
+
+      var transition = new Tweezer({
+        start: 0,
+        end: (box.top * -1) - 7.5,
         duration: duration
       })
+      .on('tick', function (value) {
+        screen.style.transform = `translate3d(0, ${value}px, 0)`
+      })
+      .begin()
+
+      // transition any later siblings off screen
+      siblings
+        .slice(index + 1, siblings.legnth)
+        .forEach(function (el) {
+          var childBox = el.getBoundingClientRect()
+          // skip if not in viewport
+          if (childBox.top > window.scrollY + window.innerHeight) return
+
+          var transition = new Tweezer({
+            start: 0,
+            end: window.innerHeight,
+            duration: duration
+          })
+          .on('tick', function (value) {
+            el.style.transform = `translate3d(0, ${value}px, 0)`
+          })
+          .begin()
+        })
+
+      // var scroller = scrollTo(0, offset, {
+      //   ease: 'outQuint',
+      //   duration: duration
+      // })
 
       event.preventDefault()
-      emit('ui', { listSelected: props.url })
-
-      scroller.on('end', function () {
-        setTimeout(function () {
-          emit('ui', { listSelected: '' })
-          emit('pushState', props.url)
-        }, 1)
-      })
+      event.target.parentNode.classList.add('selected')
+      parent.classList.add('pen')
+      // emit('ui', { listSelected: props.url })
     }
   }
 }

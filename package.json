@@ -28,6 +28,7 @@
     "dayjs": "^1.6.10",
     "enoki": "^2.1.0",
     "escape-html": "^1.0.3",
+    "ez.js": "^1.0.3",
     "fg-loadcss": "^2.0.1",
     "fontfaceobserver": "^2.0.9",
     "gr8": "^2.1.5",
@@ -54,6 +55,7 @@
     "scroll-to": "0.0.2",
     "simplemde": "^1.11.2",
     "tags-input": "^1.1.1",
+    "tweezer.js": "^1.4.0",
     "xhr": "^2.4.0",
     "xtend": "^4.0.1"
   }

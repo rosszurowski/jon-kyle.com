@@ -8,13 +8,18 @@ var gr8css = gr8({
     md: '100px',
     sm: '650px'
   },
-  lineHeight: [1, 1.5].map(size => {
-    return { [size.toString().replace('.', '-')]: size * 1.1 }
-  }),
+  lineHeight: [1, { '1-5': 1.7 }],
+  // lineHeight: [1, 1.5].map(size => {
+  //   return { [size.toString().replace('.', '-')]: size * 1.1 }
+  // }),
   fontSize: [{ 1: 1 }],
   spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
-    return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
+    return { [size.toString().replace('.', '-')]: size * 0.75 }
   }),
+  // spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4],
+  // spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
+  //   return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
+  // }),
   responsive: true
 })
 
@@ -98,7 +103,7 @@ gr8css.add({
 
 var custom = `
   html {
-    font-size: 100% ;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings:"kern" 1; 
@@ -286,7 +291,7 @@ var custom = `
   ol li:nth-child(6):before { content: '6' }
 
   ul.list-horiz {
-    padding-top: 1.65rem;
+    padding-top: 1.75rem;
     overflow: hidden;
     border-bottom: 1px solid ${colors.white};
   }
@@ -301,21 +306,25 @@ var custom = `
 
   ul.list-horiz li.selected,
   ul.list-horiz li.entry:hover {
-    transform: translateY(-1.64rem);
+    transform: translateY(-1.75rem);
   }
 
   ul.list-horiz li > a {
-    height: 12.25rem;
+    height: 75vh;
     overflow: hidden;
-    margin-bottom: -1.65rem;
+    margin-bottom: calc(-75vh + 7rem);
     background: ${colors.black};
     color: ${colors.white};
     text-indent: 0;
     border-top: 1px solid ${colors.white};
   }
 
+  ul.list-horiz li.selected > a {
+    border-top: 1px solid rgba(0, 0, 0, 0);
+  }
+
   .entry-thumb {
-    height: 5.25rem;
+    height: 5.5rem;
     width: auto;
   }
 

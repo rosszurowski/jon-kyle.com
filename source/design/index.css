@@ -51,7 +51,7 @@
 }
 
 .plyr--video .plyr__controls {
-  background: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
 
 .plyr--full-ui input[type="range"]::-moz-range-thumb { box-shadow: none !important; }

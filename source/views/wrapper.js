@@ -1,7 +1,7 @@
 var html = require('choo/html')
 var path = require('path')
 
-var Mailinglist = require('../components/mailinglist')
+var Navigation = require('../components/navigation')
 var manifest = require('../../manifest')
 var views = require('./')
 
@@ -24,17 +24,10 @@ function main (state, emit) {
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
       <div class="c12" style="${page.padding !== false ? 'min-height: 25vh' : ''}">
-        <div class="x c12 py1 psf t0 l0 r0 z3 pen navigation" sm="psa">
-          <div class="c3 px1 copy-links" sm="xx">
-            <a href="/" class="pea">Jon-Kyle</a>
-          </div>
-          <div class="x px1">
-            ${navigation()}
-            <div class="psr copy-links pea">
-              ${state.cache(Mailinglist, 'mailinglist').render()}
-            </div>
-          </div>
-        </div>
+        ${state
+          .cache(Navigation, 'nav')
+          .render({ href: state.href })
+        }
       </div>
       <div class="xx">
         ${view(state, emit)}
@@ -45,48 +38,6 @@ function main (state, emit) {
       </div>
     </body>
   `
-
-  function navigation () {
-    var links = [{
-      title: 'About',
-      url: '/about'
-    }, {
-      title: 'Log',
-      url: '/'
-    }, {
-      title: 'Hangs',
-      url: '/hangs'
-    }, {
-      title: 'Jpgs',
-      url: '/images',
-      active: false
-    }, {
-      title: 'Projects',
-      url: '/projects',
-      active: false
-    }]
-
-    return links
-      .filter(link => link.active !== false)
-      .map(link)
-  }
-
-  function link (props) {
-    var active = props.url === '/'
-      ? state.href === '' || state.href.indexOf('/entries') === 0
-      : state.href.indexOf(props.url) === 0
-
-    return html`
-      <div class="psr copy-links mr0-5">
-        <a
-          href="${props.url}"
-          class="pb0-5 pea tdn tc-white ${active ? 'bb1-white' : ''}"
-        >
-          ${props.title}
-        </a>,
-      </div>
-    `
-  }
 
   function footer () {
     return html`

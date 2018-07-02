@@ -405,10 +405,74 @@ var typography = `
   */
 
   .navigation {
+    transform: translateY(-100%);
+    transition: 250ms ease-out opacity, 250ms ease-out transform;
+  }
+
+  .nav-active {
+    transform: translateY(0);
+  }
+
+  .nav-top {
+    background: transparent;
+  }
+
+  .nav-line {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    opacity: 0;
     transition: 250ms ease-out opacity;
   }
 
+  .nav-line:before {
+    background: #000;
+    content: '';
+    display: block;
+    height: 4px;
+    top: 0;
+    margin-top: 1rem;
+    left: 50%;
+    margin-left: -2.5rem;
+    border-radius: 2px;
+    width: 5rem;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .navigation:not(.nav-active) .nav-line {
+    opacity: 0.5;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-link:before {
+    content: '';
+    display: block;
+    top: 100%;
+    margin-top: 0.25rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 250ms ease;
+  }
+
+  .nav-link.nav-link-active:before {
+    opacity: 1;
+  }
+
   .medium-zoom--open .navigation {
+    transform: translateY(-100%);
     opacity: 0;
   }
 

@@ -1,7 +1,9 @@
+var scrollTo = require('scroll-to')
 var Tweezer = require('tweezer.js')
 var ov = require('object-values')
 var html = require('choo/html')
 var dayjs = require('dayjs')
+var { easeOutCubic } = require('ez.js')
 
 var format = require('../components/format')
 var libEntries = require('../lib/entries')
@@ -72,17 +74,39 @@ function log (state, emit, opts) {
     }
 
     function handleClick (event) {
+      var footer = document.querySelector('footer')
+      var box = footer.getBoundingClientRect()
+
+      event.preventDefault()
+
+      if (window.scrollY + window.innerHeight >= document.body.offsetHeight - box.height) {
+        var offset = document.body.offsetHeight - box.height - window.innerHeight
+        var scroller = scrollTo(0, offset, {
+          duration: 250
+        })
+        scroller.on('end', () => scrollElement(event))
+      } else {
+        scrollElement(event)
+      }
+    }
+
+    function scrollElement (event) {
+      var animating = true
       var parent = event.target.parentNode.parentNode
       var box = event.target.getBoundingClientRect()
       var offset = Math.ceil((window.innerHeight * 0.25) - box.top)
-      var duration = (Math.floor(window.scrollY - (offset)) * 2)
+      // var duration = (Math.floor(window.scrollY - (offset)) * 2)
       var siblings = [...parent.children]
       var index = siblings.indexOf(event.target.parentNode)
+      var nextBox = siblings[index + 1].getBoundingClientRect()
+      var nextOffset = Math.ceil(window.innerHeight - nextBox.top) + 1
 
       // min + max offset
-      if (duration > 500) duration = 500
-      if (duration < 250) duration = 250
+      var duration = 500
+      // if (duration > 500) duration = 500
+      // if (duration < 250) duration = 250
 
+      // move that border and cover that up
       var screen = html`<div class="psa t0 l0 r0 vh100 vw100 bg-black bt1-white"></div>`
       parent.insertBefore(screen, event.target.parentNode)
       screen.style.top = window.scrollY + box.top + 'px'
@@ -92,22 +116,27 @@ function log (state, emit, opts) {
         var transition = new Tweezer({
           start: 0,
           end: offset,
-          duration: duration
+          duration: duration,
+          // easing: easeOutCubic
         })
         .on('tick', function (value) {
           event.target.style.transform = `translate3d(0, ${value}px, 0)`
         })
         .on('done', function () {
           setTimeout(() => {
+            animating = false
             emit('pushState', props.url)
             window.scrollTo(0, 0)
+            setTimeout(cleanup, 1)
             emit('ui', { listSelected: '', render: false })
           }, 0)
         })
         .begin()
       } else {
           setTimeout(() => {
+            animating = false
             emit('pushState', props.url)
+            setTimeout(cleanup, 1)
             window.scrollTo(0, 0)
             emit('ui', { listSelected: '', render: false })
           }, duration + 1)
@@ -116,10 +145,11 @@ function log (state, emit, opts) {
       var transition = new Tweezer({
         start: 0,
         end: (box.top * -1) - 7.5,
-        duration: duration
+        duration: duration,
+        // easing: easeOutCubic
       })
       .on('tick', function (value) {
-        screen.style.transform = `translate3d(0, ${value}px, 0)`
+        if (screen) screen.style.transform = `translate3d(0, ${value}px, 0)`
       })
       .begin()
 
@@ -133,24 +163,28 @@ function log (state, emit, opts) {
 
           var transition = new Tweezer({
             start: 0,
-            end: window.innerHeight,
-            duration: duration
+            end: nextOffset,
+            duration: duration,
+            // easing: easeOutCubic
           })
           .on('tick', function (value) {
-            el.style.transform = `translate3d(0, ${value}px, 0)`
+            if (animating) el.style.transform = `translate3d(0, ${value}px, 0)`
           })
           .begin()
         })
 
-      // var scroller = scrollTo(0, offset, {
-      //   ease: 'outQuint',
-      //   duration: duration
-      // })
-
-      event.preventDefault()
       event.target.parentNode.classList.add('selected')
       parent.classList.add('pen')
-      // emit('ui', { listSelected: props.url })
+
+      function cleanup () {
+        try {
+          parent.removeChild(screen)
+          event.target.style.transform = ''
+          siblings.forEach(function (el) {
+            el.style.transform = ''
+          })
+        } catch (err) { }
+      }
     }
   }
 }

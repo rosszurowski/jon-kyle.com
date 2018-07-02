@@ -90,7 +90,7 @@ function main (state, emit) {
 
   function footer () {
     return html`
-      <div class="x xw py1 lh1-5 bg-white tc-black">
+      <footer class="x xw py1 lh1-5 bg-white tc-black">
         <div class="c6" sm="c12">
           <div class="px1 c12">
             <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>,  <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>
@@ -102,7 +102,7 @@ function main (state, emit) {
         <div class="c6 px1 wwbw" sm="c12">
           <div class="ti2 ffmono">dat://7ab5ad001ae720e877fe038ac830e2ca2b87a6beac66d56aed0549619cb2ec6e</div>
         </div>
-      </div>
+      </footer>
     `
   }
 }

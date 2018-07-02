@@ -289,6 +289,7 @@ var custom = `
   ol li:nth-child(4):before { content: '4' }
   ol li:nth-child(5):before { content: '5' }
   ol li:nth-child(6):before { content: '6' }
+  ol li:nth-child(7):before { content: '7' }
 
   ul.list-horiz {
     padding-top: 1.75rem;

@@ -118,22 +118,25 @@ module.exports = class Content extends Nanocomponent {
     links.forEach(function (link) {
       var href = link.getAttribute('href')
       // skip non-local links
-      if (href.substring(0, 1) !== '#') return
-      link.addEventListener('click', function (event) {
-        var el = element.querySelector(href)
-        // skip if no element
-        if (!el) return
-        // scroll to if exists
-        var boxY = el.getBoundingClientRect().y
-        var offsetY = boxY + window.scrollY
-        var startY = offsetY > window.scrollY
-          ? offsetY - 200
-          : offsetY + 200
+      if (href.substring(0, 1) === '#') {
+        link.addEventListener('click', function (event) {
+          var el = element.querySelector(href)
+          // skip if no element
+          if (!el) return
+          // scroll to if exists
+          var boxY = el.getBoundingClientRect().y
+          var offsetY = boxY + window.scrollY
+          var startY = offsetY > window.scrollY
+            ? offsetY - 200
+            : offsetY + 200
 
-        window.scrollTo(0, startY)
-        scrollTo(0, offsetY, { duration: 250 })
-        event.preventDefault()
-      })
+          window.scrollTo(0, startY)
+          scrollTo(0, offsetY, { duration: 250 })
+          event.preventDefault()
+        })
+      } else if (href.substring(0, 1) !== '/') {
+        link.setAttribute('target', '_blank')
+      }
     })
   }
 

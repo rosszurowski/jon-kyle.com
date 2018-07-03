@@ -1,3 +1,4 @@
+var scrollTo = require('scroll-to')
 var MonoImage = require('monoimage')
 var Nanocomponent = require('choo/component')
 var mediumZoom = require('medium-zoom')
@@ -111,14 +112,41 @@ module.exports = class Content extends Nanocomponent {
       })
   }
 
+  formatLinks () {
+    var element = this.element
+    var links = [...element.querySelectorAll('a')]
+    links.forEach(function (link) {
+      var href = link.getAttribute('href')
+      // skip non-local links
+      if (href.substring(0, 1) !== '#') return
+      link.addEventListener('click', function (event) {
+        var el = element.querySelector(href)
+        // skip if no element
+        if (!el) return
+        // scroll to if exists
+        var boxY = el.getBoundingClientRect().y
+        var offsetY = boxY + window.scrollY
+        var startY = offsetY > window.scrollY
+          ? offsetY - 200
+          : offsetY + 200
+
+        window.scrollTo(0, startY)
+        scrollTo(0, offsetY, { duration: 250 })
+        event.preventDefault()
+      })
+    })
+  }
+
   load (element) {
     this.formatImages()
     this.formatVideos()
+    this.formatLinks()
   }
 
   afterupdate () {
     this.formatImages()
     this.formatVideos()
+    this.formatLinks()
   }
 
   createElement (props) {

@@ -473,7 +473,6 @@ var typography = `
 
   .medium-zoom--open .navigation {
     transform: translateY(-100%);
-    opacity: 0;
   }
 
   .medium-zoom--open .navigation .pea {

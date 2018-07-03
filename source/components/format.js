@@ -33,6 +33,10 @@ md.use(require('markdown-it-html5-embed'), {
     }
 }})
 
+md.use(require('markdown-it-anchor'), {
+  
+})
+
 module.exports = format
 
 function format (str) {

@@ -15,13 +15,8 @@ function view (state, emit) {
       return props.name !== entry.name
     })
 
-  return html`
-    <div style="border-top: 1px solid transparent">
-      ${state.cache(Content, 'content').render(entry)} 
-      <div>
-        ${log(state, emit)}
-      </div>
-    </div>
-  `
+  return [
+    state.cache(Content, 'content').render(entry),
+    log(state, emit)
+  ]
 }
-

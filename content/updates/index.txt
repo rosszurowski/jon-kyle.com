@@ -1,4 +1,8 @@
 title: Updates
 ----
-18-06-13: Testing it out or whatever
+18-07-10: Adding some projects, and this fresh updates area.
+----
+18-07-04: Hardly Everything updated with Custom CSS for [endless personalization](https://hardlyeverything.com/blog/016-update).
+----
+18-06-13: A quick interview for the [Code Podcast](https://soundcloud.com/podcastcode/8-p2p-people-to-people) about decentralized networks.
 ----

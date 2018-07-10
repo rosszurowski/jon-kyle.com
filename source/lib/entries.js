@@ -2,14 +2,17 @@ var objectKeys = require('object-keys')
 var xtend = require('xtend')
 
 module.exports = {
-  getAll
+  getAll,
+  getProjects,
+  getUpdates,
+  getEntries
 }
 
 function getAll (state, opts) {
   opts = opts || { }
 
   var entries = getEntries(state)
-  var updates = [ ] // disable updates for now
+  var updates = projects = [ ] // disable updates for now
   // var updates = getUpdates(state)
 
   return entries
@@ -18,10 +21,14 @@ function getAll (state, opts) {
 }
 
 function getEntries (state, opts) {
+  var isAll = typeof state.query.all !== 'undefined'
   return state.page('/entries')
     .pages()
-    .visible()
     .toArray()
+    .filter(function (entry) {
+      if (isAll) return true
+      else return entry.visible !== false
+    })
     .map(function (entry) {
       entry.type = 'entry'
       return entry
@@ -40,5 +47,20 @@ function getUpdates (state, opts) {
         type: 'update',
         text: updates[key]
       }
+    })
+}
+
+function getProjects (state, opts) {
+  var isAll = typeof state.query.all !== 'undefined'
+  return state.page('/projects')
+    .pages()
+    .toArray()
+    .filter(function (props) {
+      if (isAll) return true
+      else return props.visible === true
+    })
+    .map(function (props) {
+      props.type = 'project'
+      return props
     })
 }

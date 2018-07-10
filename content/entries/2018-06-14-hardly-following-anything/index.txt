@@ -60,3 +60,7 @@ There is also a [blog](https://hardlyeverything.com/blog) collecting lists of li
 That’s about it. With the whole Twitter thing, for many of you, instead of linking directly to your Twitter profile I link to your personal homepage. I like sites and the context they provide.
 
 If you have any ideas feel free to open up an issue on [the repository](https://github.com/jondashkyle/hardlyeverything). To stay in the loop with what I’m up to subscribe to the mailing list, sent out once every month-ish at the most.
+
+---
+
+I’ve archived the [video from the release hang](/hangs), if you’d like to hear me stumble around articulating these thoughts in video form.

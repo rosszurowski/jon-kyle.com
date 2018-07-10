@@ -5,6 +5,7 @@ var choo = require('choo')
 var app = choo()
 
 css('./design/index.js')
+css('./design/index.css')
 
 // plugins
 app.use(require('enoki/choo')())

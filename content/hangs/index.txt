@@ -1,0 +1,15 @@
+title: Hangs
+----
+padding: false
+----
+view: hangs
+----
+videos:
+  18-06-26:
+    title: Hardly Everything 2.0
+    poster: https://media.jon-kyle.com/2018-06-26-hardlyeverything.png
+    src: https://media.jon-kyle.com/2018-06-26-hardlyeverything.mp4
+  18-02-26:
+    title: Enoki Beta Pre-release
+    poster: https://media.jon-kyle.com/2018-03-20-prerelease-livestream.png
+    src: https://media.jon-kyle.com/2018-03-20-prerelease-livestream.mp4

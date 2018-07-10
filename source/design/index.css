@@ -1,0 +1,130 @@
+/**
+ * utils
+ */
+
+.pss { position: static; }
+.mxa { margin-left: auto; margin-right: auto; }
+.mb2px { margin-bottom: 2px; }
+.pb2px { padding-bottom: 2px; }
+
+/**
+ * imgs
+ */
+
+.medium-zoom-overlay,
+.medium-zoom-image {
+  z-index: 3;
+}
+
+.img-border {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * projects
+ */
+
+.project-thumb {
+  transition: 150ms ease-out transform;
+}
+
+.project-thumb:hover {
+  transform: translateY(-0.25rem);
+}
+
+/**
+ * plyr
+ */
+
+.plyr,
+.plyr__video-wrapper {
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.plyr video {
+  object-fit: cover;
+}
+
+.plyr--full-ui input[type="range"] {
+  color: #fff;
+}
+
+.plyr--video .plyr__controls .plyr__control.plyr__tab-focus, .plyr--video .plyr__controls .plyr__control:hover, .plyr--video .plyr__controls .plyr__control[aria-expanded="true"] {
+  background: #000;
+}
+
+.plyr__controls .plyr__progress:first-child {
+  margin-left: 10px;
+}
+
+.plyr--video .plyr__time {
+  font-family: 'Lars Mono', monospace;
+  text-shadow: none;
+}
+
+.plyr__control {
+  transition: none;
+}
+
+.plyr__tooltip {
+  background: #fff;
+  box-shadow: none;
+  color: #000;
+  font-family: var(--mono);
+  font-size: 1rem;
+  transform: translateX(-50%);
+  transition: none;
+}
+
+.plyr__tooltip:before {
+  border-top: 4px solid #fff;
+}
+
+.plyr--video .plyr__controls {
+  background: linear-gradient(to top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+}
+
+.plyr--full-ui input[type="range"]::-moz-range-thumb { box-shadow: none !important; }
+.plyr--video .plyr--full-ui input[type="range"]::-moz-range-thumb { box-shadow: none }
+.plyr--video .plyr__progress--buffer { box-shadow: none; }
+
+.plyr--video .plyr__controls .plyr__control svg {
+  filter: none;
+}
+
+.plyr__captions {
+  animation: none;
+  font-family: var(--serif);
+  color: var(--bg);
+  pointer-events: none;
+  padding: 0 1rem;
+}
+
+.plyr__captions span {
+  background: none;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  padding: 0;
+}
+
+.plyr audio, .plyr video {
+  height: 100%;
+  width: 100%;
+}
+
+.plyr__poster {
+  background-size: cover;
+}
+
+.plyr--video .plyr__progress__buffer {
+  box-shadow: none;
+  /*background-image: linear-gradient(-45deg, var(--fg) 25%,transparent 25%,transparent 50%, var(--fg) 50%, var(--fg) 75%,transparent 75%,transparent);*/
+}
+
+.plyr--video .plyr__control--overlaid {
+  background: #000;
+  box-shadow: none;
+}

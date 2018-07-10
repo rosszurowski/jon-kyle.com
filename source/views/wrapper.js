@@ -1,7 +1,9 @@
 var html = require('choo/html')
+var dayjs = require('dayjs')
 var path = require('path')
 
-var Mailinglist = require('../components/mailinglist')
+var Navigation = require('../components/navigation')
+var format = require('../components/format')
 var manifest = require('../../manifest')
 var views = require('./')
 
@@ -23,20 +25,14 @@ function main (state, emit) {
 
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
-      <div class="c12" style="min-height: 25vh">
-        <div class="x c12 py1 psf t0 l0 r0 z3 pen navigation" sm="psa">
-          <div class="c3 px1 copy-links" sm="xx">
-            <a href="/" class="pea">Jon-Kyle</a>
-          </div>
-          <div class="x px1">
-            ${navigation()}
-            <div class="psr copy-links pea">
-              ${state.cache(Mailinglist, 'mailinglist').render()}
-            </div>
-          </div>
-        </div>
+      <div class="c12">
+        ${state
+          .cache(Navigation, 'nav')
+          .render({ href: state.href })
+        }
       </div>
-      <div class="xx">
+      <div class="w100 xx max-width mxa oh">
+        <div style="${page.padding !== false ? 'min-height: 25vh' : ''}"></div>
         ${view(state, emit)}
       </div>
       ${footer()}
@@ -46,62 +42,25 @@ function main (state, emit) {
     </body>
   `
 
-  function navigation () {
-    var links = [{
-      title: 'Log',
-      url: '/'
-    }, {
-      title: 'About',
-      url: '/about'
-    }, {
-      title: 'Jpgs',
-      url: '/images',
-      active: false
-    }, {
-      title: 'Projects',
-      url: '/projects',
-      active: false
-    }]
-
-    return links.map(link)
-  }
-
-  function link (props) {
-    var active = page.path === '/'
-      ? page.path === props.url
-      : props.url === '/'
-        ? false
-        : page.path.indexOf(props.url) >= 0
-
-    if (props.active === false) return
-
-    return html`
-      <div class="psr copy-links mr0-5">
-        <a
-          href="${props.url}"
-          class="pea tdn tc-white ${active ? 'bb1-black' : ''}"
-        >
-          ${props.title}
-        </a>,
-      </div>
-    `
-  }
-
   function footer () {
     return html`
-      <div class="x xw py1 lh1-5 bg-white tc-black vhmn75">
-        <div class="c6" sm="c12">
-          <div class="px1 c12">
-            <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>,  <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>
+      <footer class="lh1-5 max-width mxa w100">
+        <div class="mx1 bt1-white"></div>
+        <div class="x xw max-width">
+          <div class="xx p1 wwbw" sm="c12">
+            <div class="copy">
+              ${format(state.page('/').v('colophon'))}
+              <p>The source is <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-white tdn">available to you</a>.</p>
+            </div>
           </div>
-          <div class="px1 c12">
-            Updated <span class="ffmono">${formatDate(manifest.updated)}</span>
+          <div sm="c12">
+            <div class="p1 c12 tar">
+              Updated <span class="ffmono">${dayjs(manifest.updated).format('MMM.D,YYYY')}</span><br>
+              <a href="mailto:contact@jon-kyle.com" class="tc-white tdn">Email</a>
+            </div>
           </div>
         </div>
-        <div class="c6 px1 wwbw" sm="c12">
-          <div class="ti2 ffmono">dat://7ab5ad001ae720e877fe038ac830e2ca2b87a6beac66d56aed0549619cb2ec6e</div>
-        </div>
-      </div>
+      </footer>
     `
   }
 }
@@ -113,7 +72,7 @@ function formatDate (str) {
   var month = date.getMonth()
   var year = date.getFullYear().toString().substring(2)
 
-  return [year, pad(month+1), pad(day)].join('-') + ' @ ' + [pad(date.getHours()), pad(date.getMinutes()), pad(date.getSeconds())].join(':') + 'UTC'
+  return [year, pad(month+1), pad(day)].join('-')
 }
 
 function pad (n) {
@@ -143,6 +102,6 @@ function getTitle (state, page) {
   var pageTitle = page.title
   
   return siteTitle !== pageTitle
-    ? siteTitle + ' | ' + pageTitle
+    ? siteTitle + ' / ' + pageTitle
     : siteTitle
 }

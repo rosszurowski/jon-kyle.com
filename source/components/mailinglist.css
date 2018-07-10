@@ -1,11 +1,12 @@
 :host {
-
+  position: relative;
 }
 
 :host input {
   border: 0;
   box-shadow: none;
   background: none;
+  width: 100%;
 }
 
 :host input:not([value=""]):invalid {
@@ -17,5 +18,5 @@
   background: none;
   padding: 0;
   border: 0;
-  padding: 0 0.5rem;
+  padding: 0 0 0 1rem;
 }

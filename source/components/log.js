@@ -258,7 +258,7 @@ function createMore (props) {
     <li class="bg-black" onclick=${props.handleClick}>
       <div class="pb2px">
         <div class="mx1 bt1-white"></div>
-        <div class="p1 tac curp">Load next entries</div>
+        <div class="p1 tac curp">Load more entries</div>
         <div class="mx1 bt1-white mb2px"></div>
         <div class="mx1 bt1-white"></div>
       </div>

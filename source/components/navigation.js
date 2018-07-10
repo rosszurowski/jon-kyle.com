@@ -105,11 +105,11 @@ module.exports = class Navigation extends Component {
           <div class="c3 px1 copy-links" sm="xx">
             <a href="/" class="pea">Jon-Kyle</a>
           </div>
-          <div class="x px1">
+          <div class="x xx px1">
             ${this.createLinks()}
-            <div class="psr copy-links pea">
-              ${this.state.cache(Mailinglist, 'mailinglist').render()}
-            </div>
+          </div>
+          <div class="copy-links pea px1">
+            ${this.state.cache(Mailinglist, 'mailinglist').render()}
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ module.exports = class Navigation extends Component {
       .map(this.createLink)
   }
 
-  createLink (props) {
+  createLink (props, i, source) {
     var active = props.url === '/'
       ? this.state.href === '' || this.state.href === '/' || this.state.href.indexOf('/entries') === 0
       : this.state.href.indexOf(props.url) === 0
@@ -134,7 +134,7 @@ module.exports = class Navigation extends Component {
           class="pea tdn tc-white nav-link ${active ? 'nav-link-active' : ''}"
         >
           ${props.title}
-        </a>,
+        </a>${i < source.length - 1 ? ',' : ''}
       </div>
     `
   }

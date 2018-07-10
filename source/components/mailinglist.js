@@ -63,7 +63,7 @@ module.exports = class Subscribe extends Nanocomponent {
             oninput=${this.handleInput}
             required
           >
-          <div class="pr0-5" style="color: rgba(255, 255, 255, 0)">${this.state.value || 'Mailing list'}</div>
+          <div style="color: rgba(255, 255, 255, 0)">${this.state.value || 'Mailing list'}</div>
         </div>
         <button type="submit" class="lh1-5 ${this.state.value ? 'db' : 'dn'}">→</button>
         <input

@@ -16,7 +16,7 @@ function view (state, emit) {
       <div class="x xw w100">
         <div class="c3 p1 psr" sm="c12">
           <div>${props.title}</div>
-          <div class="ffmono">
+          <div class="ffmono dn">
             ${dayjs('20' + props.date).format('MMM.D,YYYY')}
           </div>
         </div>

@@ -1,4 +1,5 @@
 var html = require('choo/html')
+var dayjs = require('dayjs')
 var path = require('path')
 
 var Navigation = require('../components/navigation')
@@ -46,16 +47,16 @@ function main (state, emit) {
       <footer class="lh1-5 max-width mxa w100">
         <div class="mx1 bt1-white"></div>
         <div class="x xw max-width">
-          <div class="c3" sm="c12">
-            <div class="p1 c12">
-              Updated <span class="ffmono">${formatDate(manifest.updated)}</span><br>
-              <a href="mailto:contact@jon-kyle.com" class="tc-white tdn">Email</a>
-            </div>
-          </div>
-          <div class="c9 p1 wwbw" sm="c12">
+          <div class="xx p1 wwbw" sm="c12">
             <div class="copy">
               ${format(state.page('/').v('colophon'))}
               <p>The source is <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-white tdn">available to you</a>.</p>
+            </div>
+          </div>
+          <div sm="c12">
+            <div class="p1 c12 tar">
+              Updated <span class="ffmono">${dayjs(manifest.updated).format('MMM.D,YYYY')}</span><br>
+              <a href="mailto:contact@jon-kyle.com" class="tc-white tdn">Email</a>
             </div>
           </div>
         </div>

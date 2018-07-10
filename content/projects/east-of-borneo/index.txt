@@ -1,0 +1,17 @@
+title: East of Borneo
+----
+date: 17-08-22
+----
+view: project
+----
+visible: true
+----
+href: https://eastofborneo.org
+----
+client: [Folder Studio](https://folder.studio)
+----
+text: 
+
+Collaborative online magazine of contemporary arts and its history as considered from Los Angeles. Since 2010, the CalArts backed magazine has been publishing essays, interviews, and re-issues through its online platform. Together with submissions from its partners and the public to its Collaborative Archive, East of Borneo is building a more complete picture of the Los Angeles art perspective.
+
+Front-end development.

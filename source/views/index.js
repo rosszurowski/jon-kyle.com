@@ -5,6 +5,7 @@ module.exports = {
   entry: require('./entry'),
   home: require('./home'),
   projects: require('./projects'),
+  project: require('./project'),
   images: require('./images'),
   hangs: require('./hangs')
 }

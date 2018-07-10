@@ -21,6 +21,9 @@ module.exports = class Navigation extends Component {
         title: 'Log',
         url: '/'
       }, {
+        title: 'Projects',
+        url: '/projects'
+      }, {
         title: 'Hangs',
         url: '/hangs'
       }, {
@@ -91,20 +94,22 @@ module.exports = class Navigation extends Component {
     return html`
       <div
         class="
-          x c12 py1 psf t0 l0 r0 z3 bg-black navigation
+          c12 py1 psf t0 l0 r0 z4 bg-black navigation
           ${this.local.active ? 'nav-active' : ''}
           ${this.local.isTop ? 'nav-top' : ''}
         "
         sm="psa"
       >
-        <div class="nav-line" onmouseenter=${this.handleEnter}></div>
-        <div class="c3 px1 copy-links" sm="xx">
-          <a href="/" class="pea">Jon-Kyle</a>
-        </div>
-        <div class="x px1">
-          ${this.createLinks()}
-          <div class="psr copy-links pea">
-            ${this.state.cache(Mailinglist, 'mailinglist').render()}
+        <div class="x max-width mxa">
+          <div class="nav-line" onmouseenter=${this.handleEnter}></div>
+          <div class="c3 px1 copy-links" sm="xx">
+            <a href="/" class="pea">Jon-Kyle</a>
+          </div>
+          <div class="x px1">
+            ${this.createLinks()}
+            <div class="psr copy-links pea">
+              ${this.state.cache(Mailinglist, 'mailinglist').render()}
+            </div>
           </div>
         </div>
       </div>

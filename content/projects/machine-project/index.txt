@@ -1,0 +1,13 @@
+title: Machine Project
+----
+date: 17-08-22
+----
+view: project
+----
+visible: true
+----
+href: https://machineproject.org
+----
+client: [Folder Studio](https://folder.studio)
+----
+text: yo

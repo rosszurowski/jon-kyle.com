@@ -5,7 +5,10 @@ module.exports = plugin
 function plugin (state, emitter) {
   state.ui = {
     listSelected: '',
-    videoActive: ''
+    videoActive: '',
+    logPaginationAmount: 3,
+    logPaginationPrev: 0,
+    logPaginationNext: 0
   }
 
   state.events.UI = 'ui'

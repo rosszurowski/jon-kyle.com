@@ -2,6 +2,7 @@ var html = require('choo/html')
 var path = require('path')
 
 var Navigation = require('../components/navigation')
+var format = require('../components/format')
 var manifest = require('../../manifest')
 var views = require('./')
 
@@ -23,13 +24,14 @@ function main (state, emit) {
 
   return html`
     <body class="vhmn100 x xdc fs1 ffsans lh1-5 bg-black tc-white">
-      <div class="c12" style="${page.padding !== false ? 'min-height: 25vh' : ''}">
+      <div class="c12">
         ${state
           .cache(Navigation, 'nav')
           .render({ href: state.href })
         }
       </div>
-      <div class="xx">
+      <div class="w100 xx max-width mxa oh">
+        <div style="${page.padding !== false ? 'min-height: 25vh' : ''}"></div>
         ${view(state, emit)}
       </div>
       ${footer()}
@@ -41,17 +43,21 @@ function main (state, emit) {
 
   function footer () {
     return html`
-      <footer class="x xw py1 lh1-5 bg-white tc-black">
-        <div class="c6" sm="c12">
-          <div class="px1 c12">
-            <a href="mailto:contact@jon-kyle.com" class="tc-black tdn">Email</a>,  <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-black tdn">Source</a>
+      <footer class="lh1-5 max-width mxa w100">
+        <div class="mx1 bt1-white"></div>
+        <div class="x xw max-width">
+          <div class="c3" sm="c12">
+            <div class="p1 c12">
+              Updated <span class="ffmono">${formatDate(manifest.updated)}</span><br>
+              <a href="mailto:contact@jon-kyle.com" class="tc-white tdn">Email</a>
+            </div>
           </div>
-          <div class="px1 c12">
-            Updated <span class="ffmono">${formatDate(manifest.updated)}</span>
+          <div class="c9 p1 wwbw" sm="c12">
+            <div class="copy">
+              ${format(state.page('/').v('colophon'))}
+              <p>The source is <a href="https://github.com/jondashkyle/jon-kyle.com/tree/master/content${path.join(page.url, 'index.txt')}" target="_blank" class="tc-white tdn">available to you</a>.</p>
+            </div>
           </div>
-        </div>
-        <div class="c6 px1 wwbw" sm="c12">
-          <div class="ti2 ffmono">dat://7ab5ad001ae720e877fe038ac830e2ca2b87a6beac66d56aed0549619cb2ec6e</div>
         </div>
       </footer>
     `
@@ -65,7 +71,7 @@ function formatDate (str) {
   var month = date.getMonth()
   var year = date.getFullYear().toString().substring(2)
 
-  return [year, pad(month+1), pad(day)].join('-') + ' @ ' + [pad(date.getHours()), pad(date.getMinutes()), pad(date.getSeconds())].join(':') + 'UTC'
+  return [year, pad(month+1), pad(day)].join('-')
 }
 
 function pad (n) {
@@ -95,6 +101,6 @@ function getTitle (state, page) {
   var pageTitle = page.title
   
   return siteTitle !== pageTitle
-    ? siteTitle + ' | ' + pageTitle
+    ? siteTitle + ' / ' + pageTitle
     : siteTitle
 }

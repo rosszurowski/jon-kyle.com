@@ -40,8 +40,9 @@ md.use(require('markdown-it-anchor'), {
 module.exports = format
 
 function format (str) {
+  str = str || ''
   str = layout(str)
-  return raw(md.render(str || ''))
+  return raw(md.render(str))
 }
 
 function layout (str) {

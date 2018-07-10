@@ -5,8 +5,8 @@ module.exports = view
 
 function view (state, emit) {
   return html`
-    <div class="pt2 pb4 px3 fs1 lh1-5 copy">
-      Not found
+    <div class="p1 fs1 lh1-5 copy">
+      Not found, head back <a href="/">home</a>?
     </div>
   `
 }

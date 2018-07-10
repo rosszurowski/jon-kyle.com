@@ -1,3 +1,5 @@
 title: Projects
 ----
 view: projects
+----
+text: Select projects, for (and with) myself and sometimes others

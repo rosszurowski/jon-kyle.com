@@ -1,7 +1,7 @@
-var scrollTo = require('scroll-to')
-var MonoImage = require('monoimage')
 var Nanocomponent = require('choo/component')
 var mediumZoom = require('medium-zoom')
+var MonoImage = require('monoimage')
+var scrollTo = require('scroll-to')
 var html = require('choo/html')
 var dayjs = require('dayjs')
 var path = require('path')
@@ -157,21 +157,19 @@ module.exports = class Content extends Nanocomponent {
     this.props = props
     this.text = format(props.text)
     return html`
-      <div class="fs1 lh1-5">
-        <div class="x xw psr" style="min-height: 25vh">
-          <div class="c3 p1 psr" sm="c12">
-            <div>${props.title}</div>
-            <div class="ffmono">
-              ${dayjs('20' + props.date).format('MMM.D,YYYY')}
-            </div>
+      <div class="x xw w100 fs1 lh1-5 psr">
+        <div class="c3 p1 psr" sm="c12">
+          <div>${props.title}</div>
+          <div class="ffmono">
+            ${dayjs('20' + props.date).format('MMM.D,YYYY')}
           </div>
-          <div class="c9 p1" sm="c12">
-            <div class="copy">
-              ${this.text}
-            </div>
-          </div>
-          ${thumb ? createThumb() : ''}
         </div>
+        <div class="c9 p1 psr z2" sm="c12">
+          <div class="copy">
+            ${this.text}
+          </div>
+        </div>
+        ${thumb ? createThumb() : ''}
       </div>
     `
 

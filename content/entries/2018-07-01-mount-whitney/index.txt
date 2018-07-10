@@ -4,9 +4,9 @@ view: entry
 ----
 date: 18-07-01
 ----
-thumb: 35-jg_75.jpg
+thumb: thumb.jpg
 ----
-visible: false
+visible: true
 ----
 text:
 
@@ -110,7 +110,7 @@ As the sun continued rising so too did the heat. The base of the mountain is loc
 
 A fork in the trail went to Lone Pine Lake. Although not in the plan for today, we did intend to visit this on the return trip. The water looked incredibly inviting.
 
-<div class="imgs-auto">
+<div class="imgs-auto imgs-wide">
 
 ![Jon mid-siesta](12-2-jk_133.jpg)
 
@@ -142,7 +142,7 @@ Hours of hiking behind us, the peaks in the distance still appeared just as larg
 
 After the meadow we crested a ridge and damn, Consultation Lake is gargantuan. A little exploring was a must, and revealed several campsites along the bluff. Knowing we were near trail camp, and how that tends to get crowded, we opted to stay here for the night.
 
-<div class="imgs-auto">
+<div class="imgs-auto imgs-wide">
 
 ![Slippery steps](22-jg_133.jpg)
 
@@ -154,7 +154,7 @@ After the meadow we crested a ridge and damn, Consultation Lake is gargantuan. A
 
 </div>
 
-<div class="imgs-auto">
+<div class="imgs-auto imgs-wide">
 
 ![The view out the front door of camp, not bad](26-jg_34.8849748.jpg)
 
@@ -162,7 +162,7 @@ After the meadow we crested a ridge and damn, Consultation Lake is gargantuan. A
 
 After setting up camp there were a few hours to kill. Despite the excessive weight of a hardback book, I couldn’t resist bringing [Aereality by William Fox](http://www.counterpointpress.com/dd-product/aereality/), whose work often explores how cognition transforms land into landscape. 
 
-The book opens by describing Ansel Adam’s widely recognized photo of Mount Whitney shot from Lone Pine. {{EXPAND ON THE BOOK HERE}}
+The reflexive sense of sublimity when zoning out at landscape around us subsided only when falling asleep that night, the silence sometimes broken by the roar of jet engines overhead. Military training flights out of Edwards AFB to the south-east. First you’d hear them, and only after a few moments of of listening would you be able to estimate the direction they were heading. Spotting them required tracing that perceived path across the sky some distance to catch up with the speed at which they were moving, and if you were lucky they’d come into focus.
 
 <div class="imgs-auto">
 
@@ -203,7 +203,7 @@ A few miles later we had our first snow crossing. These areas were well packed a
 
 Seeing as yak-traks were in our packs, we paused to attach them to our shoes and gauged the quality of the snow. Very slushy, good for the traks to grip into. Jon headed off first and made it with no issues.
 
-<div class="imgs-auto">
+<div class="imgs-auto imgs-wide">
 
 ![First snow](36-jg_133.jpg)
 
@@ -266,7 +266,7 @@ The entire Whitney Trail is class one, meaning relative ease and no scrambling s
 
 There were perhaps 30 people hanging out at the top—an interesting mix. There were the climbers, who had just scaled the east face and made my little jaunt up feel extremely pedestrian, and the Instagram models posing in varying states of undress, connecting to the burst of LTE signal beamed up from Lone Pine.
 
-It was a weird scene, and I began thinking about this all as backdrop for social media. The themes I read yesterday in Aereality about the transformation of land (environment) into landscape (image) crossed my mind. Similar to how an environment like this summit is subject to the same range of ecological crisis effecting me at home despite distance, so too does the cognitive pollution and associated behavior of platform technology follow me even here.
+It was a weird scene, and I began thinking about this all as backdrop for social media. The themes I read yesterday in Aereality about the transformation of land (environment) into landscape (image) crossed my mind. Similar to how an environment like this summit is subject to the same range of ecological crisis affecting me at home despite distance, so too does the cognitive pollution and associated behavior of platform technology follow me even here.
 
 The connectedness was acute. How strange to feel so removed from my everyday, hyper-saturated by media, but find myself just as embedded within it.
 
@@ -274,21 +274,15 @@ The connectedness was acute. How strange to feel so removed from my everyday, hy
 
 After about half an hour at the summit we began our way back to camp. It felt nice to descend after two solid days of nonstop up. The change in light was noticeable, and the air had cleared up a bit. Views, though familiar, felt new with the this fresh perspective.
 
-<div class="imgs-auto">
+<div class="imgs-auto imgs-wide">
 
 ![Mt Muir](55-jk_133.jpg)
 
 ![Tectonics in slow-motion](56-jg_133.jpg)
 
-</div>
+![Interior](57-jk_75.jpg)
 
-<div class="imgs-auto">
-
-![Mt Muir](57-jk_75.jpg)
-
-![Tectonics in slow-motion](58-jg_75.jpg)
-
-![Tectonics in slow-motion](59-jg_75.jpg)
+![Approaching the PCT junction](59-jg_75.jpg)
 
 </div>
 
@@ -331,7 +325,7 @@ We turned in early after dinner, both from exhaustion and as the winds were sign
 
 We slept in a bit, ate breakfast, and broke down camp. The additional weight of the tent back in the pack didn’t feel great, but it was good to know the day was all downhill.
 
-<div class="imgs-auto">
+<div class="imgs-auto imgs-wide">
 
 ![Down past the meadow](71-jk_133.jpg)
 
@@ -353,7 +347,9 @@ As planned, we stopped by Lone Pine Lake. The water was perfect, and we spent qu
 
 </div>
 
-Upon reaching Lone Pine we stopped at Merry-Go-Round, a Chinese spot located in a wood-paneled octagonal structure with a central column clad in mirrors and a $10 afternoon buffet that I absolutely wrecked myself on. 5/5 stars.
+The last few miles went quickly. Looking around me to take in the last moments of the trip the crumbling granite appeared in motion. What looked to be still was actually falling to the valley below, albeit on a geological timescale. 
+
+After finishing the hike and reaching Lone Pine we stopped at Merry-Go-Round, a Chinese spot located in a wood-paneled octagonal structure with a central column clad in mirrors and a $10 afternoon buffet that I absolutely wrecked myself on. 5/5 stars.
 
 <div class="imgs-auto">
 
@@ -365,14 +361,18 @@ Upon reaching Lone Pine we stopped at Merry-Go-Round, a Chinese spot located in 
 
 </div>
 
-Following the aqueduct back to Los Angeles time appeared to pass both slowly and quickly simultaneously. What had been a three day trip felt like *three weeks*; the three hours back to Los Angeles like *three minutes*.
+Following the aqueduct back to Los Angeles I thought about how the time had passed simultaneously slowly and quickly. What had been a three day trip felt like both *three weeks* and *three minutes*, and continued to make me want to better understand my own sense of time passing.
 
-I‘m increasingly interested in finding ways of manipulating my own sense of time passing. Interventions such as this trip are hyper-effective, and help to inspire what I do once home.
+Back at home I spent the next few days completing an update to [Hardly Everything](https://hardlyeverything), a project meant to effect the passing of time in how it relates to our habits of consumption online by introducing cycles and cadence to the feeds we use everyday.
 
 ## Digest
 
-After this trip I reworked Hardly Everything, a project meant to effect the passing of time in how it relates to our consumption of media and content by introducing cycles and cadence to the feeds we use everyday.
+It was difficult to gauge how extensive Whitney is prior to leaving as there was a range of involvement described in trip reports leading up to our departure. People do get injured, and we said hello to a few people who did need to turn back because of complications with the altitude.
 
-Technology seems to have this capacity to condense time, an obvious fact when considering the march of progress driven by unabated optimization and convenience. 
+In general, if the snow has melted, you’re doing greater than ten mile hikes semi-regularly, and can summit over two days, I doubt you’ll encounter any issues.
 
-More writing here…
+This in mind, it was rather crowded. While the permit system does help to keep numbers down, I had an awareness of my own effects on the ecosystem around the trail. The feeling of appreciation for something you’re contributing to damaging (in aggregate) are complex to navigate. Everyone should spend time there, but if practical that would of course create irreversible harm as is already happening on a smaller scale. 
+
+No good answers there, apart from promoting best practices such as leave no trace, etc… and if you do check it out, be sure to stay on trail (or at least on granite) and pack out your wag bag ffs!
+
+Shoutout [Jon](https://jongacnik.com/) for contributing about half the photos!

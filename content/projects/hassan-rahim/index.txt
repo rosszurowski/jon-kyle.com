@@ -1,0 +1,13 @@
+title: Hassan Rahim
+----
+date: 17-08-22
+----
+view: project
+----
+visible: true
+----
+href: https://hassanrahim.com
+----
+collaborator: [Hassan Rahim](https://hassanrahim.com)
+----
+text: Programming and general assistance with the personal homepage for Hassan Rahim. No CMS, just digests plain text because *hot take*: one pagers do not need a CMS.

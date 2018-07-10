@@ -8,7 +8,7 @@ function view (state, emit) {
   var page = state.page().value()
   
   return html`
-    <div class="fs1 pb1 lh1-5">
+    <div class="fs1 pb1 lh1-5 max-width">
       <div class="x" style="min-height: 25vh">
         <div class="p1 c3" sm="dn"></div>
         <div class="p1 copy-links" sm="c12">${md(page.text)}</div>

@@ -11,7 +11,7 @@ function view (state, emit) {
   var videos = state.page().v('videos')
 
   return html`
-    <div class="x xw w100 pt3-5 px0-5 pb0-5">
+    <div class="x xw w100 pt3-5 px0-5 pb0-5 max-width">
       <div class="c8 p0-5" sm="c12">
         <div
           class="w100 psr bg-white"

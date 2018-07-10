@@ -10,4 +10,6 @@ dat.json
 # files
 Lars-*
 *.jpg
+*.png
+*.jpeg
 *.mp4

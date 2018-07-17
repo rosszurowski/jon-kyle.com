@@ -47,7 +47,7 @@ module.exports = class ProjectsInline extends Component {
       ? props.thumbnail
       : cache
       ? cache
-      : shuffle(this.state.page(props).files().toArray())[0]
+      : shuffle(this.state.page(props).images().toArray())[0]
 
     this.local.thumbnails[props.name] = file
 

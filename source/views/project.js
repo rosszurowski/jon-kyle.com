@@ -8,7 +8,7 @@ module.exports = view
 
 function view (state, emit) {
   var props = state.page().v()
-  var images = state.page().images().sortBy('name', 'asc').toArray()
+  var files = state.page().files().sortBy('name', 'asc').toArray()
   var href = state.page().v('href')
 
   return html`
@@ -25,6 +25,9 @@ function view (state, emit) {
             ${format(state.page().v('text'))}
           </div>
         </div>
+      </div>
+      <div class="p1 co3 c9" sm="c12 co0">
+        <div class="bt1-white"></div>
       </div>
       <div class="x xw w100">
         <div class="c3 px1 psr" sm="c12">
@@ -53,10 +56,42 @@ function view (state, emit) {
       </div>
       <div class="mx1 bt1-white mt1"></div>
       <div class="x xw p0-5 w100">
-        ${images.map(createImage)}
+        ${files.map(createFile)}
       </div>
     </div>
   `
+}
+
+function createFile (props) {
+  switch (props.type) {
+    case 'image': return createImage(props)
+    default: return createThumbnail(props)
+  }
+}
+
+function createThumbnail (props) {
+  return html`
+    <div class="p0-5 c4">
+      <div class="img-border psr" style="padding-bottom: 100%">
+        <a href="${getHref()}" target="_blank" class="tc-white tdn psa t0 l0 r0 b0 x xjc xac tac">
+          ${props.filename}
+        </a>
+      </div>
+    </div>
+  `
+
+  function getHref () {
+    try  {
+      return [
+        window.location.protocol,
+        '//',
+        window.location.host,
+        props.path
+      ].join('')
+    } catch (err) {
+      return '#'
+    }
+  }
 }
 
 function createImage (props) {

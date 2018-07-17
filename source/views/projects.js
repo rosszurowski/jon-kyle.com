@@ -17,7 +17,7 @@ function view (state, emit) {
   `
 
   function createProject (props) {
-    var file = state.page(props).files().toArray()[0]
+    var file = state.page(props).images().toArray()[0]
     return html`
       <div class="c3 py3-5 px0-5" sm="c6">
         <a href="${props.url}" class="db tdn tc-white project-thumb">

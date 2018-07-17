@@ -10,12 +10,8 @@ function parseImageFilename (str) {
       .split('_')
     var opts = parts.map(str => str.substring(0, 1))
     return {
-      sizes: {
-        500: filename
-      },
-      dimensions: {
-        ratio: getRatio(parts, opts)
-      },
+      sizes: { 500: filename },
+      dimensions: { ratio: getRatio(parts, opts) },
       border: getBorder(parts, opts)
     }
   } catch (err) {
@@ -24,7 +20,7 @@ function parseImageFilename (str) {
 }
 
 function getBorder (parts, opts) {
-  var index = opts.map(str => str.substring(0, 1)).indexOf('B')
+  var index = opts.indexOf('B')
   return index >= 0
 }
 

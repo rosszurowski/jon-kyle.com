@@ -273,9 +273,8 @@ function logUpdates (state) {
       <li id="update" class="bg-black">
         <div class="bt1-white mx1"></div>
         <div class="p1">
-          <span class="mr1">Recent things, briefly</span>
-          ${updates.map(function (props) {
-            return html`<span class="inline-children anchors mr0-5"><div class="circle"></div><span class="ffmono">${dayjs('20' + props.date).format('MMM.D')}</span>, ${format(props.text)}</span>`
+          <span class="mr1">Recent things, briefly</span>${updates.map(function (props) {
+            return html`<span class="inline-children anchors mr0-5"><span class="ffmono mr0-5">(${dayjs('20' + props.date).format('MMM.D')})</span> ${format(props.text)}</span>`
           })}
         </div>
       </li>

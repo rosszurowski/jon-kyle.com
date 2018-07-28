@@ -11,8 +11,12 @@ var format = require('../components/format')
 module.exports = class Content extends Nanocomponent {
   constructor (name, state, emit) {
     super()
+    this.state = state
+    this.emit = emit
     this.props = { }
     this.text = ''
+
+    this.handleAnchorScroll = this.handleAnchorScroll.bind(this)
   }
 
   unload (element) {
@@ -113,27 +117,14 @@ module.exports = class Content extends Nanocomponent {
   }
 
   formatLinks () {
+    var self = this
     var element = this.element
     var links = [...element.querySelectorAll('a')]
     links.forEach(function (link) {
       var href = link.getAttribute('href')
       // skip non-local links
       if (href.substring(0, 1) === '#') {
-        link.addEventListener('click', function (event) {
-          var el = element.querySelector(href)
-          // skip if no element
-          if (!el) return
-          // scroll to if exists
-          var boxY = el.getBoundingClientRect().y
-          var offsetY = boxY + window.scrollY
-          var startY = offsetY > window.scrollY
-            ? offsetY - 200
-            : offsetY + 200
-
-          window.scrollTo(0, startY)
-          scrollTo(0, offsetY, { duration: 250 })
-          event.preventDefault()
-        })
+        link.addEventListener('click', self.handleAnchorScroll)
       } else if (href.substring(0, 1) !== '/') {
         link.setAttribute('target', '_blank')
       }
@@ -144,6 +135,8 @@ module.exports = class Content extends Nanocomponent {
     this.formatImages()
     this.formatVideos()
     this.formatLinks()
+
+    if (window.location.hash) this.handleAnchorScroll()
   }
 
   afterupdate () {
@@ -187,6 +180,29 @@ module.exports = class Content extends Nanocomponent {
       props.url !== this.props.url ||
       props.title !== this.props.title
     )
+  }
+
+  handleAnchorScroll (event) {
+    var href = event
+      ? event.target.getAttribute('href')
+      : window.location.hash
+    var el = this.element.querySelector(href)
+    // skip if no element
+    if (!el) return
+    // scroll to if exists
+    var boxY = el.getBoundingClientRect().y
+    var offsetY = boxY + window.scrollY
+    var startY = offsetY > window.scrollY
+      ? offsetY - 200
+      : offsetY + 200
+
+    window.scrollTo(0, startY)
+    scrollTo(0, offsetY, { duration: 250 })
+    if (event) {
+      event.preventDefault()
+      if (history.pushState) history.pushState(null, null, href)
+      else window.location.hash = href
+    }
   }
 }
 

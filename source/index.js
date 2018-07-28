@@ -2,7 +2,9 @@ var loadCss = require('fg-loadcss').loadCSS
 var html = require('choo/html')
 var css = require('sheetify')
 var choo = require('choo')
-var app = choo()
+var app = choo({
+  hash: false
+})
 
 css('./design/index.js')
 css('./design/index.css')

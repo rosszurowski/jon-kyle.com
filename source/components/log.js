@@ -43,7 +43,7 @@ function log (state, emit, opts) {
     position += (state.ui.logPaginationNext * amount)
     activeIndex -= (state.ui.logPaginationPrev * amount)
     if (activeIndex < 0) activeIndex = 0
-    if (activeIndex > entriesAmount) entriesAmount 
+    if (activeIndex > entriesAmount - amount) activeIndex = entriesAmount - amount
     entries = entries.slice(activeIndex, activeIndex + position)
   }
 
@@ -141,7 +141,8 @@ function log (state, emit, opts) {
       // var duration = (Math.floor(window.scrollY - (offset)) * 2)
       var siblings = [...parent.children]
       var index = siblings.indexOf(event.target.parentNode)
-      var nextBoxTop = siblings[index + 1].getBoundingClientRect().top
+      var nextEl = siblings[index + 1]
+      var nextBoxTop = nextEl ? nextEl.getBoundingClientRect().top : 0
       var nextOffset = Math.ceil(window.innerHeight - nextBoxTop) + 1
 
       // min + max offset
@@ -209,8 +210,7 @@ function log (state, emit, opts) {
           var transition = new Tweezer({
             start: 0,
             end: nextOffset,
-            duration: duration,
-            // easing: easeOutCubic
+            duration: duration
           })
           .on('tick', function (value) {
             if (animating) el.style.transform = `translate3d(0, ${value}px, 0)`

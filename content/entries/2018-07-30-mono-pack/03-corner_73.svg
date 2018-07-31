@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480px" height="350px" viewBox="0 0 480 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>pattern copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M69,138 C107.107648,138 138,107.107648 138,69 C138,30.8923523 107.107648,0 69,0 C30.8923523,0 0,30.8923523 0,69 C0,107.107648 30.8923523,138 69,138 Z" id="path-1"></path>
+        <path d="M69,138 C107.107648,138 138,107.107648 138,69 C138,30.8923523 107.107648,0 69,0 C30.8923523,0 0,30.8923523 0,69 C0,107.107648 30.8923523,138 69,138 Z" id="path-3"></path>
+    </defs>
+    <g id="pattern-copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#EEEEEE" x="0" y="0" width="480" height="350"></rect>
+        <g id="Group-4" transform="translate(87.000000, 106.000000)">
+            <g id="Group-3">
+                <path d="M69,138 C107.107648,138 138,107.107648 138,69 C138,30.8923523 107.107648,0 69,0 C30.8923523,0 0,30.8923523 0,69 C0,107.107648 30.8923523,138 69,138 Z" id="Oval" stroke-opacity="0.3" stroke="#000000" fill="#FFFFFF" stroke-dasharray="2,2"></path>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Oval"></g>
+                <g id="Group-2" mask="url(#mask-2)">
+                    <g transform="translate(-150.000000, -76.000000)">
+                        <g id="Group" stroke="none" fill="none" fill-rule="evenodd" transform="translate(96.000000, 64.000000)" stroke-linecap="square">
+                            <path d="M0.5,0.5 L124.504032,124.504032" id="Line-6" stroke="#000000"></path>
+                            <path d="M127.5,0.5 L255.008823,128.008823" id="Line-6" stroke="#000000" transform="translate(191.500000, 64.500000) scale(-1, 1) translate(-191.500000, -64.500000) "></path>
+                        </g>
+                        <rect id="Rectangle-3" stroke="#000000" fill="#FFFFFF" fill-rule="evenodd" x="214.5" y="55.5" width="9" height="137"></rect>
+                        <path d="M214.5,181.25 L234.5,181.25" id="Line" stroke="#000000" fill="none" stroke-linecap="square" stroke-dasharray="2,2"></path>
+                    </g>
+                </g>
+            </g>
+            <g id="Group-3" transform="translate(168.000000, 0.000000)">
+                <path d="M69,138 C107.107648,138 138,107.107648 138,69 C138,30.8923523 107.107648,0 69,0 C30.8923523,0 0,30.8923523 0,69 C0,107.107648 30.8923523,138 69,138 Z" id="Oval" stroke-opacity="0.3" stroke="#000000" fill="#FFFFFF" stroke-dasharray="2,2"></path>
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Oval"></g>
+                <g id="Group-2" mask="url(#mask-4)">
+                    <g transform="translate(-150.000000, -76.000000)">
+                        <g id="Group" stroke="none" fill="none" fill-rule="evenodd" transform="translate(96.000000, 64.000000)" stroke-linecap="square">
+                            <path d="M0.5,0.5 L124.504032,124.504032" id="Line-6" stroke="#000000"></path>
+                            <path d="M127.5,0.5 L255.008823,128.008823" id="Line-6" stroke="#000000" transform="translate(191.500000, 64.500000) scale(-1, 1) translate(-191.500000, -64.500000) "></path>
+                        </g>
+                        <rect id="Rectangle-3" stroke="#000000" fill="#FFFFFF" fill-rule="evenodd" x="214.5" y="55.5" width="9" height="137"></rect>
+                        <rect id="Rectangle-3" stroke="#000000" fill="none" opacity="0.300000012" x="217.5" y="150.5" width="14" height="31"></rect>
+                        <path d="M201.5,170.208333 L244.5,170.208333" id="Line" stroke="#000000" fill="none" stroke-linecap="square" stroke-dasharray="2,2"></path>
+                        <path d="" id="Path-3" stroke="#979797" fill="none"></path>
+                    </g>
+                </g>
+            </g>
+            <text id="Cut-here" font-family="Lars-Mono, Lars" font-size="16" font-weight="normal" fill="#000000">
+                <tspan x="31" y="174">Cut here</tspan>
+            </text>
+            <path id="Line-7" d="M79.404438,116.609157 L84.9668283,109.3078 L84.1036156,109.187352 L87.4548694,117.732473 L87.6374238,118.197956 L88.5683886,117.832847 L88.3858342,117.367364 L85.0345804,108.822243 L84.7100392,107.994719 L84.1713678,108.701795 L78.6089775,116.003152 L78.3059748,116.400882 L79.1014353,117.006888 L79.404438,116.609157 Z M83.9356995,109.926104 L82.9771637,116.795611 L78.0047976,152.430902 L77.9356995,152.926104 L78.9261044,153.0643 L78.9952024,152.569098 L83.9675686,116.933807 L84.9261044,110.0643 L84.9952024,109.569098 L84.0047976,109.430902 L83.9356995,109.926104 Z" fill="#000000" fill-rule="nonzero"></path>
+        </g>
+        <rect id="Rectangle-4" fill="#FFFFFF" x="311" y="212" width="43" height="18"></rect>
+        <path d="M318.5,211.5 L339.5,211.5" id="Line-8" stroke="#000000" stroke-linecap="square"></path>
+        <text id="Insert-grosgrain" font-family="Lars-Mono, Lars" font-size="16" font-weight="normal" fill="#000000">
+            <tspan x="247.7" y="280">Insert grosgrain</tspan>
+        </text>
+        <path id="Line-7" d="M323.435788,225.245131 L327.935788,217.245131 L327.064212,217.245131 L331.564212,225.245131 L331.809343,225.680918 L332.680918,225.190657 L332.435788,224.754869 L327.935788,216.754869 L327.5,215.980136 L327.064212,216.754869 L322.564212,224.754869 L322.319082,225.190657 L323.190657,225.680918 L323.435788,225.245131 Z M327,218 L327,225 L327,258.5 L327,259 L328,259 L328,258.5 L328,225 L328,218 L328,217.5 L327,217.5 L327,218 Z" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg>

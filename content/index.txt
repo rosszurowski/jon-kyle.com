@@ -4,4 +4,4 @@ view: home
 ----
 colophon:
 
-This page is set in Lars Light by [Bold Decisions](https://bold-decisions.biz). It is published to the peer-to-peer web with [Dat](http://datproject.org), permanently seeded with [Homebase](https://github.com/beakerbrowser/dathttpd), and mirrored by [#_hashbase](http://hashbase.io) and generous friends.
+This site is built with [Enoki](https://enoki.site). It is set in Lars Light by [Bold Decisions](https://bold-decisions.biz). It is published to the peer-to-peer web with [Dat](http://datproject.org), permanently seeded with [Homebase](https://github.com/beakerbrowser/dathttpd), and mirrored by [#_hashbase](http://hashbase.io) and generous friends.

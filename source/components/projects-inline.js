@@ -32,7 +32,7 @@ module.exports = class ProjectsInline extends Component {
               Select projects, randomized, for (and with) myself and sometimes others
             </div>
             <div>
-              <a href="/projects" class="tdn tc-white">View All</a>
+              <a href="/projects" class="tdn tc-white wsnw">View All</a>
             </div>
           </div>
           ${this.local.projects.slice(0, 6).map(this.createProject)}

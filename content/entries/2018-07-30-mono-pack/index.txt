@@ -20,9 +20,9 @@ I dislike backpacks because I’m never carrying enough to fill the pack, which 
 
 ![Sources of inspiration](sources_56.25.jpg)
 
-Although many things almost checked all the boxes, nothing seemed quite right. Either too brand-heavy, shoddy material, complicated structure, or something else. On the other side, plenty of people are making their own packs using quality material. So this left one just option; *make the damn thing*.
+Although many off the shelf options checked several boxes, nothing seemed quite right. Either too branded, or shoddy material, or complicated structure, or something else. On the other hand, plenty of people are making their own packs using quality material. So this left one just option; *make the damn thing*.
 
-## Finished Project
+## Finished project
 
 ![Zipped up](side-on_66.jpg)
 
@@ -36,16 +36,16 @@ Although many things almost checked all the boxes, nothing seemed quite right. E
 
 ## Design
 
-After looking into patterns others had used, I designed something based on some ideas which appeared useful and some of the experiences I had while following the [Ray Way pack](http://www.rayjardine.com/ray-way/Backpack-Kit/index.htm) and [Yama Net-Tent](https://www.yamamountaingear.com/net-tent-kit/) kits.
+After looking into patterns others had used, I designed something based on some ideas which appeared useful and some of the experiences I had while following the [Ray Way Backpack](http://www.rayjardine.com/ray-way/Backpack-Kit/index.htm) and [Yama Net-Tent](https://www.yamamountaingear.com/net-tent-kit/) kits.
 
-Essentially, the pack beings with a simple zipper bag with the addition of a few tie-out points on the corners. This allows modularly extending the pack by attaching a belt with buckle, other small items, or even securing it to the exterior of a backpack for increased storage capacity.
+Essentially, the pack is constructed with a simple zipper bag as the foundation. The addition of a tie-out points on the corners allows modularly extending the pack by attaching a belt with buckle, other small items, or even securing it to the exterior of a backpack for increased storage capacity.
 
 Two videos which clearly explain the assembly process for the core structure are this [DIY Backpacking Ditty Bag](https://www.youtube.com/watch?v=ZM-5z5tbxVE)
 and this [Zipper Bag Tutorial](https://www.youtube.com/watch?v=en4pScOLZ9E), which I suggest watching if you’re planning to try or use this project as a basis for your own pack.
 
 ## Material
 
-The pack should be water proof (including the zipper) and as light as possible. Using the same materials as I had in previous ultralight projects was the obvious choice for weight and durability. Everything was purchased through [Ripstop By The Roll](https://ripstopbytheroll.com/) for around $60.
+The qualifiers are basic. The pack should be water proof (including the zipper) and as light as possible. It should also look appealing. Using the same materials as I had in previous ultralight projects was the obvious choice for weight and durability. X-Pac looks great thanks to the structure of the material.
 
 - [1" Nylon Grosgrain Ribbon](https://ripstopbytheroll.com/products/mil-spec-nylon-grosgrain-ribbon) (5 yards)
 - [1/2" Nylon Grosgrain Ribbon](https://ripstopbytheroll.com/products/mil-spec-nylon-grosgrain-ribbon) (5 yards)
@@ -57,15 +57,17 @@ The pack should be water proof (including the zipper) and as light as possible. 
 - [Belt Flat Clip](https://ripstopbytheroll.com/products/belt-flat-clip) (x1)
 - [Gutermann MARA 70 thread](https://ripstopbytheroll.com/products/gutermann-mara-70)
 
+Everything was purchased through [Ripstop By The Roll](https://ripstopbytheroll.com/) for around $60. The only X-Pac fannypack I found was $145, much smaller, and did not have any of the modularity.
+
 ## Pattern
 
 The pack utilizes a single piece of material for the core structure. Because of the simple geometry, a printed pattern is unnecessary. Instead, simply begin with the instructions below.
 
-The dimensions below are based off the size of a 12" Macbook. A good rule of thumb is to pad 5" around the footprint of the largest object you’d like to fit in the pack.
+The dimensions below are based off the size of a 12" Macbook, but you can easily customize for your requirements. A good rule of thumb is to pad 5" around the footprint of the largest object you’d like to fit in the pack.
 
 ## Cut the material
 
-- Lay out your X-PAC and ensure the finished (coarse) side is up. Fold the bottom edge up and over to the reverse (shiny) side. Pull it up 11". Draw the outline of the primary pattern directly on the material.<br><br>
+- Lay out your X-Pac and ensure the finished (coarse) side is up. Fold the bottom edge up and over to reveal the reverse (shiny) side. Pull it up 11.5". Draw the outline of the primary pattern directly on the material.<br><br>
 
 - Pro-tip: Instead of pinning, it’s handy to use scotch tape with the X-Pac to hold things together.
 
@@ -77,17 +79,17 @@ The dimensions below are based off the size of a 12" Macbook. A good rule of thu
 
 </div>
 
-- The top of the form has a subtle catenary-like curve. This creates additional volume in the pack along the zipper. For each inch expect around 3 inches of additional height once assembled. Consider adjusting this depending upon the depth of what you’d like to carry.<br><br>
+- The top of the form has a subtle catenary-like curve. This creates additional volume in the pack along the zipper. Each inch beyond that of the top edge of the rectangle accounts for roughly 3" of extra height once assembled. Consider adjusting this depending upon the depth of your contents.<br><br>
 
-- Cut along the edges, ensuring you’re cutting both the top and bottom layers of fabric. When cutting the top imagine the straight line being curved, and follow along that arc. Since we are cutting through both sides of the material at once any adjustments you make to this will be mirrored and match on the reverse side.
+- Cut along the edges, ensuring you’re cutting both layers of fabric. When cutting the top edge imagine the straight lines being curved, and follow along that arc. Since we are cutting through both sides of the material at once any adjustments you make to this will be mirrored on the reverse side.
 
 ## Attach the zipper
 
-- Unfold the body material and place it finished (coarse) side up. Select one half of your zipper and ensure the teeth are facing down (shiny side up), ensuring it will be weather proof.<br><br>
+- Unfold the body material and place it finished (coarse) side up. Select one half of your zipper and ensure the teeth are facing down (shiny side up). This feels wrong, but the weather proofing is on this side.<br><br>
 
-- Fold the top edge of the body material down 1/4" as if to hem. Place it above the material attached to the zipper, and leave around 1" of zipper hanging off the edge.<br><br>
+- Fold the top edge of the body material down 1/4" as if to hem. Place it above the material attached to the zipper, and leave around 1" of zipper hanging off the side edge of the body. (Illustration in next step)<br><br>
 
-- Single-stitch along the length of the material to attach the zipper to the body. For all of these stitches make sure to reverse direction for a moment when starting and stopping to prevent the stitch coming undone over time. Repeat this for the opposite side, too.
+- Single-stitch along the length of the material to attach the zipper to the body. For all of these stitches make sure to reverse direction for a moment when starting and stopping to prevent the stitch from coming undone over time. Repeat this for the opposite side, too.
 
 ## Sew the body
 
@@ -97,7 +99,7 @@ The dimensions below are based off the size of a 12" Macbook. A good rule of thu
 
 - Once there, measure from the folded edge to the center of the zipper on either side to ensure this is correct. For this pattern that distance should be 5.25", or half the height of the body material when measured from the edge.<br><br>
 
-- Cut two 4" lengths of the 1" grosgrain webbing. Use some scotch tape to hold the loose ends of loop together.Place these on opposite sides along the edges at the center of the body and beneath the zipper.
+- Cut two 4" lengths of the 1" grosgrain webbing. Use some scotch tape to hold the loose ends of loop together. Place these on opposite sides along the edges at the center of the body and beneath the zipper.
 
 <div class="imgs-auto">
 
@@ -121,7 +123,7 @@ The dimensions below are based off the size of a 12" Macbook. A good rule of thu
 
 <div class="imgs-auto">
 
-![The corner with scotch tape before removal](03-corner.jpg)
+![The corner with scotch tape before removal](03-corner_100.jpg)
 
 ![How to insert the grosgrain](03-corner_73.svg)
 
@@ -135,7 +137,7 @@ At this point you can flip the pack inside out. It looks like a real thing. Nice
 
 ## Create the strap
 
-- Cut two lengths of 1" grosgrain webbing. One should be 8", other 32".<br><br>
+- Cut two lengths of 1" grosgrain webbing. One should be 8", other 32", although you may want to try experimenting with what feels right depending upon your build.<br><br>
 
 - Take one of the lengths and loop the end around on itself twice. Flatten this out and ensure there is extra 1/2" of open loop at the end. Sew over this a few times to secure in place. Repeat this on the other length, too.
 
@@ -151,11 +153,11 @@ At this point you can flip the pack inside out. It looks like a real thing. Nice
 
 - After feeding that through, repeat the loop process described above to create a stopper to prevent the belt from being pulled through the buckle, again with the folds facing down.<br><br>
 
-- Take the clip side of the buckle and feed the remaining short length through. Make sure to not
+- Take the clip side of the buckle and feed the remaining short length through. Fold the webbing back in on itself as described above to secure the clip to the end of the belt.
 
 ## Attach everything
 
-- Cut four 7" lengths of MINI cord. Take two of them and loop them twice through the center 1" grosgrain loops and tie them off with a line form [fisherman's knot](https://en.wikipedia.org/wiki/Fisherman%27s_knot). If that doesn’t hold try a [double](https://en.wikipedia.org/wiki/Double_fisherman%27s_knot).<br><br>
+- Cut four 7" lengths of MINI cord. Take two of them and loop them twice through the center 1" grosgrain loops and tie them off with a line form [fisherman's knot](https://en.wikipedia.org/wiki/Fisherman%27s_knot). If that doesn’t hold try using a [double](https://en.wikipedia.org/wiki/Double_fisherman%27s_knot).<br><br>
 
 - Take the remaining two lengths of MINI cord. Do the same thing, only this time loop through the looped ends of the buckle straps and add a mitten hook. Something <a href="/content/entries/2018-07-30-mono-pack/ribbon_75.jpg" target="_blank" rel="noopener noreferrer">like this</a>.<br><br>
 
@@ -168,23 +170,27 @@ Because of the modularity, this pack is quite extendable. The belt can be attach
 
 Another variation is to attach the belt to two corners on the short side, cinch the belt a ways, and use more like a tote.
 
+It’s also possible to line the inside of the pack, however I did not do this both to reduce weight and as I like the appearance of the raw unfinished X-Pac. If leaving raw it’s also possible hem the interior seams with grosgrain, but this was also excluded for weight.
+
 ## Digest
 
 In written form this all seems a little detailed, however this project was mostly improvised. After locating instructions openly shared elaborating the creation of a simple zipper pack the rest fell into place thanks to the few other projects I previously made.
 
 This is to say, although it’s time consuming to learn something unfamiliar, and inherently “inconvenient” relative purchasing a product off the shelf, there is both a definite joy in actively creating something, and usefulness in understanding the means of production in how it later informs and inspires solutions to problems down the line.
 
-Although there were products I found which ticked a few of the boxes, nothing solved them all. Having a path instead of a wall in-front of me and being forced to compromise on paying more for something less than ideals is a small price to pay in time spent learning a few projects ago.
+Although there were products I found which ticked a few of the boxes, nothing solved them all. Having a path instead of a wall in-front of me and being forced to compromise on paying more for something less than ideal is a small price to pay in time spent. The time “investment” of the first project, where I learned how to use a sewing machine and the basics, quickly dilutes across the number of projects in which those skills are applied. 
 
 This said, I am slightly embarrassed when someone asks who made the pack and I mention having made it myself. It appears a bit tacky, like caring a bit too much. “Oh…” Even isolated from branding, offloading labor creates the appearance of “premium.” If I had simply designed the bag but had it produced elsewhere, this elevates it in a certain way. “I had them make it…”
 
-I’m reading [Tools for Conviviality](http://www.preservenet.com/theory/Illich/IllichTools.html) by Ivan Illich as part of extended research around the notion of appropriate technology. In it he details concepts overlapping with [Genuine Progress Indication](https://en.wikipedia.org/wiki/Genuine_progress_indicator) or GPI. That is to say, when factoring the relative value of, say, a car, we factor in the obvious expenditures such as fuel, insurance, maintenance, and interest if taking out a loan. This helps to understand if a car is affordable.
+I’m reading [Tools for Conviviality](http://www.preservenet.com/theory/Illich/IllichTools.html) by Ivan Illich as part of extended research around the notion of appropriate technology. In it he details concepts overlapping with [Genuine Progress Indication](https://en.wikipedia.org/wiki/Genuine_progress_indicator) or GPI. That is to say, when factoring the relative value of, say, a car, we consider the obvious expenditures such as fuel, insurance, maintenance, and interest if taking out a loan. This helps to inform if a car is financially affordable.
 
-However, if you also included the sum total of time and energy spent in traffic, time focusing on not running over people or into things, hours at the desk to afford a car, how would you factor this into the *speed* of the car? The thought is to attain the real utility of the object by combining into a sum signifier things that are incommensurable.
+However, if you also included the sum total of time and energy spent in traffic, time focusing on not running over people or into things, hours at the desk to afford a car, etc… The thought is to attain the real utility of the object by summing things that are incommensurable. In the case of the car, the primary affordance is speed—to expedite the time it takes to get from point A to point B. How does one factor these humanistic considerations into the *true speed* of the car provided the values and perception of the individual car owner?
 
 So perhaps, the only premium we have is time, and it is this choosing to make the *time* to create your own thing, and not simply abstract away the speed through commodity transaction, which is creating the discomfort. “*I wish I had the time to do that*…”
 
-No real point I’m trying to make here right now. The thought requires more time. Simply something which has crossed my mind while working on these projects and dropping here lest it’s entirely lost to the void.
+Additionally, Illich’s suggestions of “deprofessionalization” are interesting. Clearly this pack has nothing to do with what I *do*, but it still feels important to share as common knowledge for others who are in need of reference. These sort of casual unexpected encounters are what made the early internet so nice, and why I’m attempting to return this site which bares my name to more of a “personal homepage” and less of an oversized scrolling banner.
+
+Anyway, it’s easy to lose the meaning of these sorts of personal insights when transposing from subjective experience into cultural provocation by projecting them onto society at large. “*If only everyone thought/behaved like this…*” In truth, I have very little interest or confidence in doing that, and instead am simply dropping a few related thoughts that have crossed my mind lest they’re lost to the void, you know?
 
 ## Resources
 

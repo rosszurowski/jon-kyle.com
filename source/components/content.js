@@ -8,13 +8,14 @@ var path = require('path')
 
 var format = require('../components/format')
 
+var footnoteNumerals = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨']
+
 module.exports = class Content extends Nanocomponent {
   constructor (name, state, emit) {
     super()
     this.state = state
     this.emit = emit
     this.props = { }
-    this.text = ''
 
     this.handleAnchorScroll = this.handleAnchorScroll.bind(this)
   }
@@ -86,9 +87,7 @@ module.exports = class Content extends Nanocomponent {
           <div
             class="embed-responsive embed-responsive-16by9 curp op0"
             onclick=${handleClick}
-          >
-            ${video}
-          </div>
+          >${video}</div>
         `
 
         if (thumbnail) {
@@ -120,11 +119,18 @@ module.exports = class Content extends Nanocomponent {
     var self = this
     var element = this.element
     var links = [...element.querySelectorAll('a')]
+    var footnoteIndex = 0
     links.forEach(function (link) {
       var href = link.getAttribute('href')
       // skip non-local links
       if (href.substring(0, 1) === '#') {
         link.addEventListener('click', self.handleAnchorScroll)
+        // format footnotes
+        if (link.parentNode.classList.contains('footnote-ref')) {
+          link.innerHTML = footnoteNumerals[footnoteIndex]
+          footnoteIndex += 1
+        }
+      // external links open in new tabs
       } else if (href.substring(0, 1) !== '/') {
         link.setAttribute('target', '_blank')
       }
@@ -148,18 +154,17 @@ module.exports = class Content extends Nanocomponent {
   createElement (props) {
     var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
     this.props = props
-    this.text = format(props.text)
     return html`
       <div class="x xw w100 fs1 lh1-5 psr">
         <div class="c3 p1 psr" sm="c12">
-          <div>${props.title}</div>
+          <div class="ti1">${props.title}</div>
           <div class="ffmono">
             ${dayjs('20' + props.date).format('MMM.D,YYYY')}
           </div>
         </div>
         <div class="c9 p1 psr z2" sm="c12">
           <div class="copy">
-            ${this.text}
+            ${format(props.text)}
           </div>
         </div>
         ${thumb ? createThumb() : ''}
@@ -191,13 +196,14 @@ module.exports = class Content extends Nanocomponent {
     if (!el) return
     // scroll to if exists
     var boxY = el.getBoundingClientRect().y
-    var offsetY = boxY + window.scrollY
+    var offsetY = boxY + window.scrollY - (window.innerHeight * 0.25)
     var startY = offsetY > window.scrollY
       ? offsetY - 200
       : offsetY + 200
 
     window.scrollTo(0, startY)
     scrollTo(0, offsetY, { duration: 250 })
+
     if (event) {
       event.preventDefault()
       if (history.pushState) history.pushState(null, null, href)

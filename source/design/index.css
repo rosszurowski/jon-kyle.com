@@ -6,6 +6,7 @@
 .mxa { margin-left: auto; margin-right: auto; }
 .mb2px { margin-bottom: 2px; }
 .pb2px { padding-bottom: 2px; }
+.oxa { overflow-x: auto; }
 
 /**
  * imgs
@@ -33,6 +34,98 @@
 }
 
 /**
+ * hangs
+ */
+
+.message-icon {
+  background-image: url(/assets/message-icon.svg);
+  background-position: center;
+  background-size: 1.75rem;
+  background-color: #000;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0 0.1rem #fff;
+  right: 0;
+  bottom: 0;
+  margin: 0.1rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  z-index: 6;
+}
+
+.message-input {
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #000;
+  border-radius: 1.25rem;
+  border: 0;
+  padding: 0.25rem 2.5rem 0.5rem 1rem;
+  resize: none;
+  outline: 0;
+}
+
+.message-input::-webkit-input-placeholder { color: #000; }
+.message-input::-moz-placeholder { color: #000; }
+.message-input:-ms-input-placeholder { color: #000; }
+.message-input:-moz-placeholder { color: #000; opacity: 1; }
+.message-input::-moz-placeholder { color: #000; opacity: 1; }
+.message-input:placeholder-shown { color: #000; opacity: 1; }
+
+.message-fake {
+  padding: 0.25rem 2.5rem 0.5rem 1rem;
+}
+
+.message-button {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  border: 0;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2.25rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  margin: 0.1rem;
+}
+
+.message-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.message-visible .message-form {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.message-visible .message-icon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.live-blink {
+  background: #f00;
+  display: inline-block;
+  border-radius: 50%;
+  height: 0.5rem;
+  margin-left: 0.1rem;
+  width: 0.5rem;
+  margin-top: 0.2rem;
+  vertical-align: top;
+}
+
+.blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/**
  * plyr
  */
 
@@ -45,7 +138,7 @@
 }
 
 .plyr video {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .plyr--full-ui input[type="range"] {
@@ -116,7 +209,7 @@
 }
 
 .plyr__poster {
-  background-size: cover;
+  background-size: contain;
 }
 
 .plyr--video .plyr__progress__buffer {

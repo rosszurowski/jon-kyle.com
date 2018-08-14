@@ -33,16 +33,13 @@ md.use(require('markdown-it-html5-embed'), {
     }
 }})
 
-md.use(require('markdown-it-anchor'), {
-  
-})
+md.use(require('markdown-it-anchor'))
+md.use(require('markdown-it-footnote'))
 
 module.exports = format
 
 function format (str) {
-  str = str || ''
-  str = layout(str)
-  return raw(md.render(str))
+  return raw(md.render(layout(str || '')))
 }
 
 function layout (str) {

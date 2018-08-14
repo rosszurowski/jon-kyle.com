@@ -1,0 +1,2 @@
+# resize images
+mogrify -resize 2000x2000 -strip -quality 95 -format jpg *.jpg

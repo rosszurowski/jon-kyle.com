@@ -3,23 +3,18 @@ var gr8 = require('gr8')
 var recsst = require('recsst')
 var lilcss = require('lilcss')
 
+var spacing = [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
+  return { [size.toString().replace('.', '-')]: size * 0.75 }
+})
+
 var gr8css = gr8({
   breakpoints: {
     md: '100px',
     sm: '650px'
   },
   lineHeight: [1, { '1-5': 1.7 }],
-  // lineHeight: [1, 1.5].map(size => {
-  //   return { [size.toString().replace('.', '-')]: size * 1.1 }
-  // }),
   fontSize: [{ 1: 1 }],
-  spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
-    return { [size.toString().replace('.', '-')]: size * 0.75 }
-  }),
-  // spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4],
-  // spacing: [0, 0.5, 1, 1.5, 2, 3, 3.5, 4].map(size => {
-  //   return { [size.toString().replace('.', '-')]: (size * 1.1 * 1.5) / 2 }
-  // }),
+  spacing: spacing,
   responsive: true
 })
 
@@ -129,8 +124,19 @@ var custom = `
     }
   }
 
+  .excerpt [data-src*="_56"] {
+    background: #eee;
+    height: 0;
+    padding-bottom: 56%;
+  }
+
   .max-width {
     max-width: 67rem;
+  }
+
+  .ti1 {
+    padding-left: ${spacing[2]['1']}rem;
+    text-indent: -${spacing[2]['1']}rem;
   }
 
   .copy-links a {
@@ -145,6 +151,19 @@ var custom = `
     border-bottom: 1px solid ${colors.white};
     padding-bottom: 0.2rem;
   }
+
+  .footnote-ref a {
+    border-bottom: 0;
+    font-size: 0.8rem;
+    font-family: 'Lars Mono', monospace;
+    padding: 0;
+  }
+
+  .footnote-ref a:hover {
+
+  }
+
+  a.footnote-backref { border-bottom: 0 }
 
   figure { margin: 0; }
 
@@ -312,6 +331,10 @@ var custom = `
   ol li:nth-child(6):before { content: '6' }
   ol li:nth-child(7):before { content: '7' }
 
+  .footnotes-list > li + li {
+    margin-top: 1.5rem;
+  }
+
   ul.list-horiz {
     padding-top: 1.75rem;
   }
@@ -374,6 +397,7 @@ var custom = `
   @media (max-width: 600px) {
     .entry-thumb {
       display: block;
+      height: 3.25rem;
     }
   }
 

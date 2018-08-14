@@ -11,6 +11,7 @@ module.exports = class Navigation extends Component {
     this.emit = emit
 
     this.local = {
+      hangLive: false,
       scrollY: 0,
       isTop: true,
       active: true,
@@ -94,11 +95,11 @@ module.exports = class Navigation extends Component {
     return html`
       <div
         class="
-          c12 py1 psf t0 l0 r0 z4 bg-black navigation
+          c12 py1 psf t0 l0 r0 z4 bg-black navigation wsnw w100
           ${this.local.active ? 'nav-active' : ''}
           ${this.local.isTop ? 'nav-top' : ''}
         "
-        sm="psa"
+        sm="psa oxs"
       >
         <div class="x max-width mxa">
           <div class="nav-line" onmouseenter=${this.handleEnter}></div>
@@ -125,6 +126,7 @@ module.exports = class Navigation extends Component {
   createLink (props, i, source) {
     var active = props.url === '/'
       ? this.state.href === '' || this.state.href === '/' || this.state.href.indexOf('/entries') === 0
+      : this.state.href === '/hang' && props.url === '/hangs' ? true // remap hang to hangs
       : this.state.href.indexOf(props.url) === 0
 
     return html`
@@ -132,14 +134,15 @@ module.exports = class Navigation extends Component {
         <a
           href="${props.url}"
           class="pea tdn tc-white nav-link ${active ? 'nav-link-active' : ''}"
-        >
-          ${props.title}
-        </a>${i < source.length - 1 ? ',' : ''}
+        >${props.title}</a>${i < source.length - 1 ? ',' : ''}${props.url === '/hangs' && this.local.hangLive ? html`<a class="live-blink ${this.state.href === '/hangs' ? '': 'blink'}"></a>` : ''}
       </div>
     `
   }
 
   update (props) {
-    return props.href !== this.local.href
+    return (
+      props.href !== this.local.href ||
+      props.hangeLive !== this.local.hangLive
+    )
   }
 }

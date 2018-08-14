@@ -90,7 +90,7 @@ function log (state, emit, opts) {
         >
           <div class="x xw pen max-width ${active ? 'op25' : ''}">
             <div class="c3 p1" sm="c12">
-              <div class="list-title">${props.title}</div>
+              <div class="list-title ti1">${props.title}</div>
               <div class="ffmono">
                 ${dayjs('20' + props.date).format('MMM.D,YYYY')}
               </div>
@@ -273,7 +273,7 @@ function logUpdates (state) {
       <li id="update" class="bg-black">
         <div class="bt1-white mx1"></div>
         <div class="p1">
-          <span class="mr1">Recent things, briefly</span>${updates.map(function (props) {
+          <span class="mr1">Recent things, briefly</span><span class="mr1">→</span>${updates.map(function (props) {
             return html`<span class="inline-children anchors mr0-5"><span class="ffmono mr0-5">(${dayjs('20' + props.date).format('MMM.D')})</span> ${format(props.text)}</span>`
           })}
         </div>

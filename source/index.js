@@ -1,11 +1,16 @@
-var loadCss = require('fg-loadcss').loadCSS
-var html = require('choo/html')
+// globals
+require('fetch-polyfill')
+
+// modules
 var css = require('sheetify')
 var choo = require('choo')
+
+// app
 var app = choo({
   hash: false
 })
 
+// styles
 css('./design/index.js')
 css('./design/index.css')
 

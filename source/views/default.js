@@ -5,9 +5,11 @@ module.exports = view
 
 function view (state, emit) {
   return html`
-    <div class="p1 fs1 lh1-5 copy">
-      Not found, head back <a href="/">home</a>?
-    </div>
+    <body>
+      <div class="p1 fs1 lh1-5 copy">
+        Not found, head back <a href="/">home</a>?
+      </div>
+    </body>
   `
 }
 

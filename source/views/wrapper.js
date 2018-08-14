@@ -29,14 +29,17 @@ function main (state, emit) {
       <div class="c12">
         ${state
           .cache(Navigation, 'nav')
-          .render({ href: state.href })
+          .render({
+            hangLive: state.ui.hang.live,
+            href: state.href
+          })
         }
       </div>
       <div class="w100 xx max-width mxa oh">
         <div style="${page.padding !== false ? 'min-height: 25vh' : ''}"></div>
         ${view(state, emit)}
       </div>
-      ${footer()}
+      ${page.footer !== false ? footer() : ''}
       <div class="psa t0 r0 op0 ff-mono">
         mono load
       </div>
@@ -55,7 +58,7 @@ function main (state, emit) {
             </div>
           </div>
           <div sm="c12">
-            <div class="p1 c12 tar">
+            <div class="p1 c12 tar" sm="tal">
               Updated <span class="ffmono">${dayjs(manifest.updated).format('MMM.D,YYYY')}</span><br>
               <a href="mailto:contact@jon-kyle.com" class="tc-white tdn">Email</a>
             </div>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="225px" viewBox="0 0 400 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title> </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M100,100.5 L0.359375,198.324219 L0.359375,0.859375 L100,100.5 Z M100,100.5 L197.564453,2.93554688 L197.564453,199.859375 L100,100.5 Z" id="path-1"></path>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(101.000000, 13.000000)">
+            <g id="Group-2">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape"></g>
+                <g id="Group" mask="url(#mask-2)" stroke="#FFFFFF" stroke-width="4">
+                    <g transform="translate(10.000000, 11.000000)" id="Oval">
+                        <circle cx="90" cy="90" r="30"></circle>
+                        <circle cx="90" cy="90" r="45"></circle>
+                        <circle cx="90" cy="90" r="60"></circle>
+                        <circle cx="90" cy="90" r="75"></circle>
+                        <circle cx="90" cy="90" r="90"></circle>
+                    </g>
+                </g>
+            </g>
+            <circle id="Oval" fill="#FFFFFF" cx="100" cy="101" r="15"></circle>
+        </g>
+    </g>
+</svg>

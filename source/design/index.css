@@ -149,8 +149,15 @@
   background: #000;
 }
 
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true]
+
 .plyr__controls .plyr__progress:first-child {
   margin-left: 10px;
+}
+
+.plyr--video .plyr__control:hover {
+  background: #000;
+  margin-left: 2px;
 }
 
 .plyr--video .plyr__time {

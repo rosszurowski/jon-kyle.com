@@ -267,7 +267,9 @@ function createMore (props) {
 }
 
 function logUpdates (state) {
-  var updates = libEntries.getUpdates(state)
+  var updates = libEntries
+    .getUpdates(state)
+    .splice(0, 4)
 
   return html`
       <li id="update" class="bg-black">

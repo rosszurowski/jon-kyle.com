@@ -2,6 +2,7 @@
   "name": "starter-kit",
   "version": "1.0.0",
   "description": "",
+  "repository": "https://github.com/jondashkyle/jon-kyle.com.git",
   "main": "index.js",
   "scripts": {
     "content": "enoki content",

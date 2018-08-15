@@ -17,7 +17,7 @@ function plugin (state, emitter) {
   }
 
   state.ui.hang = {
-    source: 'https:///live.jon-kyle.com/live/hello/index.m3u8',
+    source: 'https://live.jon-kyle.com/hls/stream.m3u8',
     messageActive: false,
     loaded: false,
     messages: { },

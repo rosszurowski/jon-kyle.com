@@ -122,11 +122,14 @@ module.exports = class IntroVideo extends Component {
       if (!this.hls) this.hls = hls
       var video = self.element.querySelector('video')
       hls.attachMedia(video)
-      hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+      hls.on(Hls.Events.MEDIA_ATTACHED, function (err) {
         // console.log('video and hls.js are now bound together!')
         hls.loadSource(self.local.stream)
         hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
-          video.play()
+          setTimeout(function () {
+            video.play()
+              .catch(noop)
+          }, 100)
           // console.log("manifest loaded, found " + data.levels.length + " quality level");
         })
       })
@@ -138,3 +141,5 @@ module.exports = class IntroVideo extends Component {
     delete this.player
   }
 }
+
+function noop () { }

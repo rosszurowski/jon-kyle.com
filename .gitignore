@@ -6,6 +6,7 @@ dist
 dat.json
 .dat
 .log
+shrinkwrap.yaml
 
 # files
 Lars-*

@@ -55,7 +55,10 @@ module.exports = class Navigation extends Component {
 
   frame (event) {
     if (this.local.scrollY !== window.scrollY) {
-      if (this.local.scrollY > window.scrollY) {
+      if (
+        this.local.scrollY < 10 ||
+        this.local.scrollY > window.scrollY
+      ) {
         if (!this.local.active) {
           this.element.classList.add('nav-active')
           this.local.active = true

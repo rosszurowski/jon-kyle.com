@@ -153,8 +153,9 @@ var custom = `
   }
 
   .footnote-ref a {
+    color: inherit;
     border-bottom: 0;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     font-family: 'Lars Mono', monospace;
     padding: 0;
   }
@@ -183,6 +184,7 @@ var custom = `
 
   .copy img { display: block }
   .copy .monoimage { background: #eee }
+  .copy .imgs-transparent .monoimage { background: none }
 
   .copy blockquote {
     border-left: 1px solid #000;

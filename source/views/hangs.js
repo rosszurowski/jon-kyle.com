@@ -48,6 +48,7 @@ function view (state, emit) {
           <div style="width: calc(calc(100vw - 67rem) / 2)"></div>
           ${videosArr.map(createThumb)} 
         </div>
+        <div class="bb1-white"></div>
       </div>
       ${state.href === '/hangs' && state.ui.hang.live
         ? createMessage()

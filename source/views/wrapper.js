@@ -40,8 +40,9 @@ function main (state, emit) {
         ${view(state, emit)}
       </div>
       ${page.footer !== false ? footer() : ''}
-      <div class="psa t0 r0 op0 ff-mono">
-        mono load
+      <div class="psa t0 r0 op0">
+        <span class="ff-mono">j</span>
+        <span style="font-style: italic">k</span>
       </div>
     </body>
   `

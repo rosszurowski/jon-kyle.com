@@ -126,10 +126,10 @@ module.exports = class Content extends Nanocomponent {
       if (href.substring(0, 1) === '#') {
         link.addEventListener('click', self.handleAnchorScroll)
         // format footnotes
-        if (link.parentNode.classList.contains('footnote-ref')) {
-          link.innerHTML = footnoteNumerals[footnoteIndex]
-          footnoteIndex += 1
-        }
+        // if (link.parentNode.classList.contains('footnote-ref')) {
+          // link.innerHTML = footnoteNumerals[footnoteIndex]
+          // footnoteIndex += 1
+        // }
       // external links open in new tabs
       } else if (href.substring(0, 1) !== '/') {
         link.setAttribute('target', '_blank')

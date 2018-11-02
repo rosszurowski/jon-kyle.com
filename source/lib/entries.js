@@ -14,10 +14,14 @@ function getAll (state, opts) {
   var entries = getEntries(state)
   var updates = projects = [ ] // disable updates for now
   // var updates = getUpdates(state)
-
+  
   return entries
     .concat(updates)
-    .sort((a, b) => a.date < b.date)
+    .sort((a, b) => {
+      a = a.date
+      b = b.date
+      return a > b ? -1 : a < b ? 1 : 0
+    })
 }
 
 function getEntries (state, opts) {

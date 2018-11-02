@@ -78,7 +78,8 @@ function log (state, emit, opts) {
   function logEntry (props, i) {
     var selected = state.ui.listSelected === props.url
     var active = props.url === state.href
-    var text = props.text.slice(0).split('\n\n').slice(0, 8).join('\n\n')
+    var text = formatText(props.text)
+    // var text = props.text
     var thumb = props.thumb ? '/content' + props.url + '/' + props.thumb : false
 
     return html`
@@ -281,4 +282,20 @@ function logUpdates (state) {
         </div>
       </li>
   `
+}
+
+function formatText (str) {
+  var total = 8
+  var output = str.slice(0).split('\n\n')
+  var footnote = output.reduce((res, cur, i) => {
+    if (!res && cur.indexOf('[^1]:') === 0) res = i
+    return res
+  }, 0)
+  if (footnote) {
+    var removed = output.splice(total, footnote - total)
+  } else {
+    output = output.slice(0, total)
+  }
+  console.log(output)
+  return output.join('\n\n')
 }

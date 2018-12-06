@@ -1,0 +1,210 @@
+title: Having Fun with Music Videos and the User Interfaces
+----
+visible: false
+----
+date: 2018-11-03
+----
+view: entry
+----
+text:
+
+Vince Staples’ new record dropped the other day, and I hadn’t had a moment to give it a listen.[^1] These days my first listen to anything is prompted by a headline somewhere, or something, and rarely a moment proceeded by counting down the days. Media works differently today. Less about scheduling and more about the binge. More about a drop. It’s sped up, the hype cycles pulling in on themselves. The inertia of “new”. Angular momentum.
+
+The single is called “[*FUN!*](https://www.youtube.com/watch?v=vz9-pXuvFEU)” and the video’s establishing shot is familiar; Google Earth zoomed out to encapsulate the whole planet. The interface communicates this more immediately than the logo. Zoom in, zoom out, street view.[^2]
+
+![](vince-1_56.25.png)
+
+We begin zooming in, centered on Long Beach, where Vince was raised. A cursor navigates to the street view icon, which is dragged into position over an address. The zoom itself is accurate and feels familiar, the interface of Google Maps almost occupying space in our brain approximating that of a cognitive phantom limb.
+
+A girl is running along the sidewalk, frozen in the moment as captured by the Google Maps car. You can picture it, the octagonal apparatus of cameras and sensors mounted to the roof. Of course, this is fictitious—the car is an invisible actor in the production.
+
+The interface becomes representational now. “Fake” icons. Material Design would never allow for such a border-radius as applied to the indicated current position in the bottom-left.
+
+<div class="imgs-auto imgs-wide">
+
+![](vince-2_56.25.png)
+
+![](vince-3_56.25.png)
+
+![](vince-4_56.25.png)
+
+</div>
+
+We zoom down the street, following the girl as she runs across the block and past Staples, crouching above a memorial, friends and neighbors gathered around. The still becomes a video. The street view world is stationary, environment composed of static imagery. One could imagine video being introduced in a future update, followed by the obvious addition of livestreaming. The framing and cropping accurately maps to the voyeuristic experience of virtually lurking outside someone’s house on Google Maps.
+
+<div class="imgs-auto">
+
+![](vince-5_56.25.png)
+
+![](vince-7_56.25.png)
+
+</div>
+
+The lyrics here tell a story, one having taken place at specific locations, and that story is being spatialized by placing it in two parallel environments: the material landscape of Longbeach, and the immaterial *tilescape* of Google Maps. Of course at a certain point these are one in the same. If you’re driving through Longbeach you see through the glass of the windshield and the glass of the phone, Google Maps dealing out directions.
+
+![](vince-8_56.25.png)
+
+One visual trick responsible for making this video feel so authentic is the representation of camera stitching glitches, as seen in the frame above. This occurs when there is an object in motion during capture of the cameras mounted to the street view car. Digital video artifacts and glitching has been popular for almost as long as digital video encoding.
+
+<div class="imgs-auto">
+
+![[Source](https://www.tout-sur-google-earth.com/t8852-street-view-bugs-collages-dfauts-dans-l-image)](street-view-glitch_56.25.jpg)
+
+![[Source](https://qz.com/624202/these-google-maps-glitches-are-the-stuff-of-nightmares/)](no-face_56.25.png)
+
+</div>
+
+Often these forms of glitches are highly stylistic and used to aesthetic ends. The video for Travis Scott’s [*SICKO MODE*](https://www.youtube.com/watch?v=6ONRf7h3Mdk)[^3], directed by [Dave Meyers](https://davemeyers.com), also released in the past week or two, is a good example of this. It heavily uses pixelsorting[^4] and datamoshing, total visual cliches in isolation, but context matters here in how these effects are juxtaposed with hyper-psychedelic imagery, something introduced into contemporary rap video milieu by the [Gaspar Noé](https://www.youtube.com/watch?v=JJkPLYmUyzg) inspired video for A$AP Rocky’s[^5] [LOVE x $EX x DREAMS (LSD)](https://www.youtube.com/watch?v=yEG2VTHS9yg), directed by [Dexter Navy](http://www.dexternavy.com).
+
+<div class="imgs-auto imgs-wide">
+
+![Travis Scott, SICKO MODE](scott-2_56.25.png)
+
+![A$AP Rocky, LSD](rocky-1_56.25.png)
+
+</div>
+
+There’s something in the gradation here. The psychedelic imagery of A$AP and LSD, strictly *trip*. The combinatory psychedelia and glitch of Scott and SICKO MODE, congealed *glitch trip*. What’s so striking about the FUN! video is the banality of these visual glitches—they almost go unnoticed, subsuming into the interface and our expectations through familiarity. Without the visual artifacts the video does not exist inside Google Maps but a facsimile.
+
+Knowing the historical roots of the internet, perhaps we have license to read the videos in a way suggesting something we all agree on: *the internet is a fucking trip*.[^6]
+
+The processes for film (music videos included) and tech platforms are becoming increasingly similar. Directors, product managers. Both create alternate realities in which narrative takes place. In filmmaking this holistic approach to *everything* is a methodology known as [world building](https://en.wikipedia.org/wiki/Worldbuilding), and it’s increasingly relevant in big tech. The character, the user. It’s all the same. Experience design— you’re the lead actor in a story set in a world where the product is essential.
+
+Airbnb isn’t building an app that makes it easy to book and list vacation rentals. It’s building a world where domesticity is Airbnb[^7]. Google isn’t building a simple map. It’s creating the foundation of an [alternate/virtual reality](https://www.justinobeirne.com/new-apple-maps/), and this is what makes FUN! so compelling. It’s a clear evolution of the product roadmap.
+
+<div class="imgs-auto imgs-wide">
+
+![Clams Casino x Vince Staples, *All Night*](allnight-1_56.25.png)
+
+![](allnight-2_56.25.png)
+
+</div>
+
+While looking for the name of the director, an omission in the Youtube description, I thought to check the credits for another Vince video, the Clams Casino collaboration [*All Night*](https://www.youtube.com/watch?v=8zGVJaFwOyo) also featuring environmental shots of Longbeach[^8]. Clams also produced a lot of early A$AP. Fortunately the name is clearly listed: [Ryan Staake](https://ryanstaake.com), owner of NY based production studio [Pomp&Clout](https://pompandclout.com).
+
+Ryan also directed an insane nostalgiafest of a video for Charli XCX’s track [*1999*](https://www.youtube.com/watch?v=6-v1b9waHWY)[^9], also released in the past few weeks. In it Charli assumes the character of a number of iconic moments the era. Spice Girls, TLC, Sketchers ads, Titanic, Marilyn Manson and Rose McGowan at the VMAs.
+
+<div class="imgs-auto">
+
+![Charli XCX, *1999*](1999-1_56.25.png)
+
+![](1999-2_56.25.png)
+
+</div>
+
+What stood out for me was the opening shot of Steve Jobs holding a turquoise iMac 3G complete with a totally accurate representation OS9 and AIM. There are a number of other tech references, like Geocities, The Sims, The matrix, and dancing baby. The video even closes on a series of “[wrong logos](https://www.are.na/anastasia-davydova-lewis/wrong-logo)”, the final being Netscape as *Ninenty Nine* and the AOL sign off sound *goodbye!*
+
+A quick look at [his bio](https://ryanstaake.com/About) reveals:
+
+> Originally trained in graphic design at Carnegie Mellon University and RISD, Ryan spent the late 2000s working as a Human Interface Designer at Apple, contributing to the iPhone, iPad, and Mac OS.
+
+He also holds [five patents](https://www.google.com/search?tbm=pts&q=ryan+staake&cad=h) from his time at Apple, and even designed the original interface and logo for reCAPTCHA. Undoubtably a fascinating trajectory, but the context jump from working in the *real world* of product design to creating *virtual worlds* in music video (and vice versa) is not as rare as it may seem[^10].
+
+This leads us back to music videos and Charli XCX, who previously worked with [PC Music](https://en.wikipedia.org/wiki/PC_Music). This is a can of worms that I’m not going to open, but the label’s artists are all highly manufactured and “inspired by cyberculture”. Breakout artists from the label who have include [SOPHIE](http://www.papermag.com/sophie-pride-2579165152.html), who has worked with both [Charli](https://www.youtube.com/watch?v=qfAqtFuGjWM) and [Vince](https://www.youtube.com/watch?v=C6iAzyhm0p0), and who’s video for [*Faceshopping*](https://www.youtube.com/watch?v=es9-P1SOeHU)[^11] comments on the culture of self-branding, but could easily be misconstrued as an analog of Apple’s “[Pay with your face](https://www.youtube.com/watch?v=Hn89qD03Tzc)” mantra when promoting Apple Pay’ Face ID integration.
+
+<div class="imgs-auto imgs-wide">
+
+![SOPHIE, *Faceshopping*](sophie-5_56.25.png)
+
+![](sophie-3_56.25.png)
+
+![](sophie-4_56.25.png)
+
+</div>
+
+Speaking generally, music videos have provided a medium for cultural speculation, interface included, from the Red Hot Chilipepers’ [*Californication*](https://www.youtube.com/watch?v=YlUKcNNmywk) parody video-game-as-video to one of my all time favorites, Bjork’s sci-fi cybernetic make-out session in [*All is Full of Love*](https://www.youtube.com/watch?v=AjI2J2SQ528), directed by [Chris Cunningham](https://en.wikipedia.org/wiki/Chris_Cunningham).
+
+<div class="imgs-auto">
+
+![Red Hot Chilli Peppers, *Californication*](rhcp_75.png)
+
+![Bjork, *All is Full of Love*](bjork_56.25.png)
+
+</div>
+
+It’s worth clarifying we’re not making these connections just for the abstract *fun* of it, although it is fun, but to chase down why the video for Staple’s *FUN!* evokes a certain response from the viewer, or possesses an uncanny quality absent in the videos for Bjork or RHCP. They all have technological imagery in common, but perhaps this difference can be attributed to fictionalization. The video for *Californication* with its video game aesthetics of that period is fictional. *All is Full of Love* is clearly set sometime in the future. *FUN!* is accurate in it’s portrayal of the present moment down the the smallest nuances.
+
+Refocusing on the present day and familiar interfaces, artist Jon Rafman has captured a number of exceptionally striking streetview images, and has directed music videos such as OPN’s clusterfuck of a video [*Sticky Drama*](https://www.youtube.com/watch?v=td-e4i2BL_Q&list=PL_klrOneTjGiuJi6KGSJvGFdDVz4YKMr0&index=2), itself relying on a lot of visual glitch cliches like data moshing. His screenshots bear a striking resemblance to the world of *FUN!*
+
+<div class="imgs-auto">
+
+![Jon Rafman Streetview screenshot](rafman-1_56.25.png)
+
+![Vince Stapes, *FUN!*](vince-9_56.25.png)
+
+</div>
+
+This imagery[^12] illustrates *FUN!* existing not in an alternate reality crafted for the video but our own. The video is *not* a story told through a stylized technological lens but a look at our current condition, and interface is a necessary tool to do so.
+
+This is painfully evident in other recent videos which utilize popular interfaces to stylistic ends with none of the consideration, become cliche just like glitch, the cheesiness factor equaling that of advertising copy overusing emojis.
+
+A “*the fuck is this?*” standout is Eminem’s video for [*Fall*](https://www.youtube.com/watch?v=MfTbHITdhEI), where in the opening scene Slim sheds tears while getting trolled by the haters in augmented reality style Apple notifications. The [smoke monster from *Lost*](https://www.youtube.com/watch?v=jo7B1-yNmWk) emerges from his iPad and spoils his evening.
+
+<div class="imgs-auto">
+
+![Eminem, *Fall*](em-1_56.25.png)
+
+![](em-2_56.25.png)
+
+![](em-3_56.25.png)
+
+</div>
+
+Another place where user interfaces has exerted an effect is the *vertically oriented music video*, experimental attempts to accommodate mobile devices responsible for so many views today, often titled *vertical version*. Horizontal video is a compromised experience, requiring either extreme letterboxing or cropping out most of the frame. 
+
+<div class="imgs-auto">
+
+![Taylor Swift, *Delicate*](swift_177.png)
+
+![Selena Gomez, *Delicate*](gomez-1_177.png)
+
+![](gomez-2_177.png)
+
+</div>
+
+Like many of these vertical videos, Taylor Swift’s [*Delicate (Vertical Version)*](https://www.youtube.com/watch?v=MBR2kxt7RK8) was shot specifically for mobile in lieu of repurposing existing footage from the original and obviously having a fraction of the budget. Where this could be a limitation, the restriction lends to a creative solution: shooting the video as though Taylor is holding phone too, just like you, awkwardly low angles included.
+
+The video for Selena Gomezs’ [*Wolves (Vertical Video)*](https://www.youtube.com/watch?v=nVzA1uWTydQ) takes this in a natural direction— the establishing shot being a text message between the producer of the track and Gomez. “So we should probably make a video for this track” leads to a Facetime Video call, and Selna proceeds to dance around (her?) house, positioning the phone strategically at *spontaneous unchoreographed* moments.
+
+Benny Blanco’s [*Eastside (Vertical Video)*](https://www.youtube.com/watch?v=J22LND58HUU)[^13] is the most successful variation of this format yet, and takes it to the most extreme.
+
+<div class="imgs-auto imgs-wide">
+
+![Benny Blanco, *Eastside*](blanco-1_215.png)
+
+![](blanco-2_215.png)
+
+![](blanco-3_215.png)
+
+![](blanco-4_215.png)
+
+![](blanco-5_215.png)
+
+</div>
+
+It begins with the same trope as utilized in Gomez’s video. A text message, “Manager guy” says “Eastside vertical video was due this morning. Please tell me you didn’t forget this one…” In a panic, Blanco texts his collaborators asking for ideas. Cue the animoji™, and we begin *using* the phone, switching applications rapidly. A call from “manager guy” is declined. Opening Instagram a message is sent, “how do i make a vertical video??? i know ur only 11 but ur the only person i trust”. A text from mom. An alarm goes off that the phone is dropped. The screen cracks. A text from manager guy. The phone is switched off.
+
+The piece is undeniably well produced, clearly meta, and pretty cute. Comparison to our connecting thread, Staple’s *FUN!*, would be a little unfair, as they are fundamentally different, but maybe it’s worth highlighting what is, in my view, the primary difference. 
+
+*FUN!* forces us to confront areas of conflict: the murder, the street fight, the burglary, the prositute, the drug deal, the police; the surveillance, the polarization, the detachment, the dependency, the platform.
+
+![Vince Stapes, *FUN!*](vince-10_56.25.png)
+
+The pervasive attitude of tech platforms and the products they create is matched by that of the characters in the video and the [refrain of the chorus](https://genius.com/Vince-staples-fun-lyrics):
+
+> We just wanna have fun<br>
+> We don't wanna fuck up nothin'
+
+[^1]: Update: I have since had a listen and shit slaps.
+[^2]: The credit for the tile layer is even visible, attributed to *Norfy*, a reference to Northside Longbeach aka [Norf Norf](https://www.youtube.com/watch?v=mb6Jc4juSF8) from Summertime ‘06. This video is also centered in Longbeach, and it’s easy to watch it from the vantage of Street View, all of the events depicted also happening in parallel.
+[^3]: There are subtler cultural cues to some of the effects, such as the shake-stabalized clip of Drake in the intro. You see this sort of thing frequently in meme gifs.
+[^4]: I attribute the popularization of this to [Kim Assendorf](http://kimasendorf.com).
+[^5]: The video for A$AP Rocky and Tyler the Creator’s [*Potato Salad*](https://www.youtube.com/watch?v=93M1QtYDtpU) is very fun and full of *typografie* for u nerds. “It’s ain’t a purse it’s a satchel.”
+[^6]: 🙃
+[^7]: Take for example the [Airbnb apartment complexes](https://www.bloomberg.com/news/articles/2017-10-12/airbnb-branded-apartment-buildings-are-coming-to-the-u-s), such as this one just [opened in Nashville](https://www.bloomberg.com/news/articles/2018-08-14/airbnb-and-niido-to-open-as-many-as-14-home-sharing-apartment-complexes-by-2020).
+[^8]: I’m really into how this video involves time and highlights the infrastructure around the Port of Longbeach and San Pedro. [The director’s breakdown video](https://www.youtube.com/watch?v=ICkFUdBy-EM) reveals the process clearly, requiring them to shoot scenes from the same location at multiple points over 24 hour periods. This is also the best track off that Clams record.
+[^9]: Charli would’ve been 7 at the time, and Troy Sivan 4, so this nostalgia is probably not their own. This video also uses Deepfakes to face swap dancers’ faces with Charli’s, something possible with extensive post production before but now achieved for a fraction of the price with a tool of complex origin. The process explained on [The Verge](https://www.theverge.com/2018/10/11/17963166/charli-xcx-1999-video-spice-girls-deepfakes-ryan-staake).
+[^10]: Alex McDowell founded the World Building Institute at the University of Southern California and *Experimental.deisgn*, a cross-discipline narrative design studio working with technology companies to apply world building methodology in the ways I described above. He got his start working with the Sex Pistols and leading production design on music videos for Iggy Pop, The Clash, Depeche Mode, and more before moving to feature films like Fight Club, Fear and Loathing in Las Vegas, Minority Report, and *many* more.
+[^11]: *Faceshopping* features a lightning-fast cut of a mouse hovering above a reCAPTCHA box, a logo director Ryan Staake designed. “I’m not a robot”, says cyber-bjork.
+[^12]: I only now noticed the full on PC monitor and phone next to the bikes in this frame.
+[^13]: The official (non-vertical) video for [*Eastside*](https://www.youtube.com/watch?v=56WBK4ZK_cw) is good too, a biographical look at the life of Benny and his collaborators growing up in suburbia, the schools they went to, etc… It’s all pretty understated and might have actually been less of a production than the vertical video.

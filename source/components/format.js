@@ -39,7 +39,9 @@ md.use(require('markdown-it-footnote'))
 module.exports = format
 
 function format (str) {
-  return raw(md.render(layout(str || '')))
+  var output = md.render(layout(str || ''))
+    .replace(/\[(\d+)\]/g, '($1)')
+  return raw(output)
 }
 
 function layout (str) {

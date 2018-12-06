@@ -332,6 +332,11 @@ var custom = `
   ol li:nth-child(5):before { content: '5' }
   ol li:nth-child(6):before { content: '6' }
   ol li:nth-child(7):before { content: '7' }
+  ol li:nth-child(8):before { content: '8' }
+  ol li:nth-child(9):before { content: '9' }
+  ol li:nth-child(10):before { content: '10' }
+  ol li:nth-child(11):before { content: '11' }
+  ol li:nth-child(12):before { content: '12' }
 
   .footnotes-list > li + li {
     margin-top: 1.5rem;

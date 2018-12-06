@@ -26,7 +26,8 @@ module.exports = class Navigation extends Component {
         url: '/projects'
       }, {
         title: 'Hangs',
-        url: '/hangs'
+        url: '/hangs',
+        active: false
       }, {
         title: 'Jpgs',
         url: '/images',

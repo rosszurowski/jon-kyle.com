@@ -14,11 +14,17 @@ const store = new Vuex.Store({
     },
     content: {
       entries: { }
+    },
+    ui: {
+      count: 4
     }
   },
   mutations: {
     setApi (state, payload = { }) {
       state.api = Object.assign({ }, state.api, payload)
+    },
+    setUi (state, payload = { }) {
+      state.ui = Object.assign({ }, state.ui, payload)
     },
     setEntry (state, payload = { }) {
       const data = matter(payload.data)

@@ -1,17 +1,41 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Entry from './views/Entry'
+import Index from './views/Index'
+import Home from './views/Home'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
   routes: [
     {
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: Index,
+    },
+    {
+      path: '/entries',
+      name: 'entries',
+      component: Home,
+    },
+    {
+      path: '/entries/:entry',
+      name: 'entry',
+      component: Entry,
     },
     {
       path: '/about',
@@ -22,4 +46,4 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
   ],
-});
+})

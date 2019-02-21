@@ -1,5 +1,7 @@
 <template>
-  <FeedEntries />
+  <div>
+    <FeedEntries />
+  </div>
 </template>
 
 <script>
@@ -7,9 +9,8 @@ import FeedEntries from '@/components/FeedEntries.vue'
 
 export default {
   name: 'home',
-  components: { FeedEntries },
+  components: {
+    FeedEntries,
+  }
 }
 </script>
-
-<style scoped>
-</style>

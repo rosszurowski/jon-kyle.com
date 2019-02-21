@@ -1,29 +1,7 @@
-# what
+# Jon-Kyle
 
-## Project setup
-```
-npm install
-```
+https://jon-kyle.com
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Content
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Content is pulled from [`jondashkyle/archive`](https://github.com/jondashkyle/archive).

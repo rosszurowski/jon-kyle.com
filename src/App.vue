@@ -158,6 +158,7 @@ code {
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 1rem;
   grid-column: 1 / -1;
+  word-break: break-word;
 }
 
 @media (max-width: 950px) {
@@ -185,6 +186,14 @@ code {
   grid-column: var(--col);
 }
 
+.copy pre {
+  overflow: auto;
+  grid-column: 3 / 11;
+  background: rgba(var(--fg), 0.1);
+  padding: 1rem;
+  max-height: 20rem;
+}
+
 .copy figure {
   grid-column: 3 / 11;
   width: 100%;
@@ -202,6 +211,7 @@ code {
 
 .copy .footnote-ref a { font-family: var(--mono); text-decoration: none; }
 .copy .footnotes-sep { display: none }
+.copy .footnotes { margin-top: 1rem; }
 
 .copy a[href*="http"]:after {
   content: '→';

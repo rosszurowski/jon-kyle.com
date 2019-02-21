@@ -1,7 +1,9 @@
 <template>
   <div class="content-entry copy">
-    <h2 v-if="title">{{title}}</h2>
-    <p><router-link :to="entry.url"><time :datetime="entry.date">{{entry.dateFormatted}}</time></router-link></p>
+    <section>
+      <h2 v-if="title">{{title}}</h2>
+      <router-link :to="entry.url"><time :datetime="entry.date">{{entry.dateFormatted}}</time></router-link>
+    </section>
     <ol v-if="!truncate && index">
       <li v-for="text in index" v-html="text"></li>
     </ol>
@@ -134,6 +136,8 @@ export default {
           .replace(/id="(.*?)/g, 'id="' + name + '-$1')
 
         output = output
+          .replace(/\n<p>\s*<\/p>\n/g, '')
+          .replace(/<p>\s*(<figure class="video">([\s\S]*|$)<\/figure>)\s*<\/p>/g, '$1')
           .replace(
             /<figure><img alt="c:([\S]*) r:([\S]*)" data-src="([\S|.]*)"/g,
             '<figure class="ratio" style="grid-column: $1"><div style="padding-bottom: $2%;"></div><img data-src="$3" '
@@ -208,6 +212,9 @@ export default {
     addListeners () {
       this.links = this.$el.getElementsByTagName('a')
       for (let i = 0; i < this.links.length; i++) {
+        if (this.links[i].getAttribute('href').substring(0, 4) === 'http') {
+          this.links[i].setAttribute('target', '_blank')
+        }
         this.links[i].addEventListener('click', this.navigate, false)
       }
     },

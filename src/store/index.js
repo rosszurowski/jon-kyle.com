@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     api: {
       location: 'https://raw.githubusercontent.com/jondashkyle/archive/',
       branch: process.env.VUE_APP_BRANCH || 'master',
-      endpoint: '/.netlify/functions/'
+      endpoint: '/.netlify/functions'
     },
     content: {
       entries: { }

@@ -132,6 +132,7 @@ export default {
         let output = md
           .render(content, { url: this.entry.url })
           .replace(/\[(.*?)\]/g, '($1)')
+          .replace(/(\(\^.*?\))/g, '')
           .replace(/href="#(.*?)/g, 'href="#' + name + '-$1')
           .replace(/id="(.*?)/g, 'id="' + name + '-$1')
 
@@ -150,6 +151,7 @@ export default {
             /<figure><img alt="r:([\S]*)" data-src="([\S|.]*)"./g,
             '<figure class="ratio"><div style="padding-bottom: $1%;"></div><img data-src="$2">'
           )
+          .replace(/(?=.*?<figure class=")(?=.*?png).*?(class=")/gm, '<figure class="transparent ')
 
         return output
       } 

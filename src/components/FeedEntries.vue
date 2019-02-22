@@ -8,11 +8,11 @@
     />
     <paginate
       v-model="page"
-      :page-count="entries.length / count"
+      :page-count="Math.ceil(entries.length / count)"
       :click-handler="handleClick"
       :page-range="count"
-      :prev-text="'← Prev'"
-      :next-text="'Next →'"
+      :prev-text="'← Present'"
+      :next-text="'Past →'"
       :prev-link-class="'icon-button-arrow left'"
       :next-link-class="'icon-button-arrow right'"
       :container-class="'pagination a-hover'"
@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .container-feed > div:not(:first-child) {
-  margin-top: 25vh;
+  margin-top: 5rem;
 }
 
 .pagination {

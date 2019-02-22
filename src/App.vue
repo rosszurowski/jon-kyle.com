@@ -156,6 +156,7 @@ code {
   --col: 4 / 10;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  align-items: start;
   grid-gap: 1rem;
   grid-column: 1 / -1;
   word-break: break-word;
@@ -206,7 +207,8 @@ code {
 }
 
 .copy figure img:not([src]) { opacity: 0 }
-.copy figure.ratio { position: relative; background: rgba(var(--fg), 0.2); }
+.copy figure.ratio { position: relative  }
+.copy figure:not(.transparent):not(.video) { background: rgba(var(--fg), 0.2) }
 .copy figure.ratio img { height: 0; position: absolute; top: 0; left: 0; height: 100%; width: 100%; }
 
 .copy .footnote-ref a { font-family: var(--mono); text-decoration: none; }

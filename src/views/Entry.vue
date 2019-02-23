@@ -22,7 +22,7 @@ export default {
   name: 'home',
   mixins: [ mixin ],
   components: {
-   ContentEntry,
+   ContentEntry
   },
   computed: {
     entries () {

@@ -7,13 +7,14 @@
     <ol v-if="!truncate && index">
       <li v-for="text in index" v-html="text"></li>
     </ol>
-    <div v-if="entry._loaded" class="copy" ref="copy" v-html="copy"></div>
-    <div v-else class="copy"><p>Loading…</p></div>
+    <div v-if="entry._loaded" class="copy" ref="copy" v-html="copy" />
+    <PlaceholderText v-else class="copy" />
   </div>
 </template>
 
 <script>
 import implicitFigures from 'markdown-it-implicit-figures'
+import PlaceholderText from '@/components/PlaceholderText'
 import namedHeadings from 'markdown-it-named-headings'
 import modifyToken from 'markdown-it-modify-token'
 import html5Embed from 'markdown-it-html5-embed'
@@ -70,6 +71,7 @@ const md = markdownIt({
 
 export default {
   name: 'ContentEntry',
+  components: { PlaceholderText },
   props: {
     entry: {
       type: Object,

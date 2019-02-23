@@ -187,6 +187,44 @@ code {
   grid-column: var(--col);
 }
 
+.copy ul li,
+.copy ol li {
+  position: relative;
+  list-style: none;
+  text-indent: -1rem;
+  padding-left: 3rem;
+}
+
+.copy ul li:before {
+  content: '○';
+  position: absolute;
+  left: 0;
+  top: -0.05em;
+  font-size: 1.5em;
+  line-height: 1;
+  text-indent: 0;
+}
+
+.copy ol li:before {
+  position: absolute;
+  text-indent: 0;
+  top: 0;
+  left: 0;
+}
+
+.copy ol li:nth-child(1):before { content: '1' }
+.copy ol li:nth-child(2):before { content: '2' }
+.copy ol li:nth-child(3):before { content: '3' }
+.copy ol li:nth-child(4):before { content: '4' }
+.copy ol li:nth-child(5):before { content: '5' }
+.copy ol li:nth-child(6):before { content: '6' }
+.copy ol li:nth-child(7):before { content: '7' }
+.copy ol li:nth-child(8):before { content: '8' }
+.copy ol li:nth-child(9):before { content: '9' }
+.copy ol li:nth-child(10):before { content: '10' }
+.copy ol li:nth-child(11):before { content: '11' }
+.copy ol li:nth-child(12):before { content: '12' }
+
 .copy pre {
   overflow: auto;
   grid-column: 3 / 11;
@@ -220,16 +258,14 @@ code {
   display: inline-block;
   transform: rotate(-45deg);
   font-family: var(--mono);
+  text-indent: 0;
 }
 
 .copy blockquote {
+  position: relative;
+  margin-left: 0.4rem;
+  padding-left: 1.6rem;
   border-left: 1px solid rgb(var(--fg));
-}
-
-.copy ul,
-.copy ol,
-.copy blockquote {
-  padding-left: 1rem;
 }
 
 .video {

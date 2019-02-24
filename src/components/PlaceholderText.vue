@@ -30,5 +30,5 @@ p {
   color: rgba(var(--fg), 0.1);
 }
 
-span { margin-right: 1ch; white-space: nowrap; }
+span { margin-right: 1ch; display: inline-block; }
 </style>

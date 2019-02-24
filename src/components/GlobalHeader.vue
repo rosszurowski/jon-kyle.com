@@ -7,24 +7,23 @@
     <div>
       <router-link to="/index">Index</router-link>
     </div>
-    <form class="mailinglist" @submit="onSubmit">
-      <input type="" name="" placeholder="Mailinglist" v-model="email">
-    </form>
+    <MailingList />
   </header>
 </template>
 
 <script>
+import MailingList from './MailingList'
+
 export default {
   name: 'GlobalHeader',
+  components: { MailingList },
   data () {
     return {
       email: ''
     }
   },
   methods: {
-    onSubmit (event) {
-      event.preventDefault()
-    }
+
   }
 }
 </script>
@@ -39,25 +38,5 @@ header {
 
 header a.router-link-exact-active {
   text-decoration: none;
-}
-
-.mailinglist {
-  position: relative;
-}
-
-.mailinglist span {
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-input {
-  font-size: inherit;
-  font-family: var(--sans);
-  border: 0;
-  background: none;
-  outline: 0;
-  width: 100%;
-  line-height: 1;
 }
 </style>

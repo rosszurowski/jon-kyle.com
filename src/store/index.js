@@ -16,7 +16,7 @@ const store = new Vuex.Store({
       entries: { }
     },
     ui: {
-      count: 4
+      range: 4
     }
   },
   mutations: {

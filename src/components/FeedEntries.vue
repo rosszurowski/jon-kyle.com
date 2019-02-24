@@ -8,9 +8,10 @@
     />
     <paginate
       v-model="page"
-      :page-count="Math.ceil(entries.length / count)"
+      v-if="range > 1"
+      :page-count="count"
       :click-handler="handleClick"
-      :page-range="count"
+      :page-range="range"
       :prev-text="'← Present'"
       :next-text="'Past →'"
       :prev-link-class="'icon-button-arrow left'"
@@ -48,10 +49,13 @@ export default {
     visible () {
       const page = this.page - 1
       return this.entries
-        .slice((page * this.count), ((page * this.count) + this.count))
+        .slice((page * this.range), ((page * this.range) + this.range))
+    },
+    range () {
+      return this.$store.state.ui.range
     },
     count () {
-      return this.$store.state.ui.count
+      return Math.ceil(this.entries.length / this.range)
     }
   },
   methods: {

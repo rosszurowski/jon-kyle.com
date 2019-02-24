@@ -12,12 +12,14 @@ const store = new Vuex.Store({
       branch: process.env.VUE_APP_BRANCH || 'master',
       endpoint: '/.netlify/functions'
     },
-    content: {
-      entries: { }
-    },
     ui: {
       range: 4
-    }
+    },
+    options: {
+      night: false,
+      subscribed: false
+    },
+    content: { }
   },
   mutations: {
     setApi (state, payload = { }) {
@@ -25,6 +27,10 @@ const store = new Vuex.Store({
     },
     setUi (state, payload = { }) {
       state.ui = Object.assign({ }, state.ui, payload)
+    },
+    setOptions (state, payload = { }) {
+      state.options = Object.assign({ }, state.options, payload)
+      window.localStorage.setItem('options', JSON.stringify(state.options))
     },
     setEntry (state, payload = { }) {
       const data = matter(payload.data)
@@ -46,6 +52,10 @@ const store = new Vuex.Store({
     }
   },
   actions: {
+    fetchOptions ({ commit, state }) {
+      const data = window.localStorage.getItem('options')
+      commit('setOptions', JSON.parse(data))
+    },
     fetchEntry ({ commit, state }, url = '') {
       const path = url.replace('/readme', '').replace('.md', '')
       if (!url) return
@@ -55,7 +65,7 @@ const store = new Vuex.Store({
         .catch(err => console.warn(err))
     },
     fetchEntries({ commit, state }) {
-      fetch(state.api.endpoint + '/entries?ref=' + state.api.branch)
+      fetch(state.api.endpoint + '/state?ref=' + state.api.branch)
         .then(response => response.json())
         .then(data => commit('setEntries', data))
         .catch(err => console.warn(err))

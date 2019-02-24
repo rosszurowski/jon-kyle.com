@@ -8,7 +8,7 @@
     />
     <paginate
       v-model="page"
-      v-if="range > 1"
+      v-if="count > 1"
       :page-count="count"
       :click-handler="handleClick"
       :page-range="range"

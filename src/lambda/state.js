@@ -18,6 +18,7 @@ const cache = {
 export function handler (event, context, callback) {
   const now = dayjs()
   const ref = event.queryStringParameters.ref || 'master'
+
   if (cache[ref].length && dayjs(updated[ref]).add(5, 'minutes').isAfter(now)) {
     console.log('Cached entries')
     callback(null, {

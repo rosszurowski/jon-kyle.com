@@ -172,7 +172,7 @@ export default {
         const els = [...this.$refs.copy.querySelectorAll('[data-src]')]
         els.forEach(el => {
           const watcher = scrollMonitor.create(el, 200)
-          mediumZoom(el, { background: 'rgb(var(--fg))' })
+          mediumZoom(el, { background: '#000' })
           watcher.on('enterViewport', () => {
             if (!el.getAttribute('src')) {
               el.setAttribute('src', el.getAttribute('data-src'))

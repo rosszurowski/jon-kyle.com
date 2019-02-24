@@ -17,6 +17,7 @@ export default {
   components: { GlobalHeader },
   mounted () {
     this.$store.dispatch('fetchEntries')
+    this.$store.dispatch('fetchOptions')
     if (!this.$store.state.content['/']) {
       this.$store.dispatch('fetchEntry', '/readme.md')
     }
@@ -73,7 +74,10 @@ export default {
       titleTemplate: (titleChunk) => {
         return titleChunk ? `${titleChunk} / Jon-Kyle` : 'Jon-Kyle';
       },
-      meta: metaTags
+      meta: metaTags,
+      style: [{
+        cssText: this.$store.state.options.night ? ':root { --fg: 255, 255, 255; --bg: 0, 0, 0 }' : ''
+      }]
     }
   }
 }
@@ -187,6 +191,13 @@ code {
   grid-column: var(--col);
 }
 
+.copy h2:not(:first-child),
+.copy h3:not(:first-child) {
+  text-indent: -1rem;
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
+
 .copy ul li,
 .copy ol li {
   position: relative;
@@ -225,6 +236,12 @@ code {
 .copy ol li:nth-child(11):before { content: '11' }
 .copy ol li:nth-child(12):before { content: '12' }
 
+.copy hr {
+  grid-column: 1 / -1;
+  border: 0;
+  height: 2rem;
+}
+
 .copy pre {
   overflow: auto;
   grid-column: 3 / 11;
@@ -250,8 +267,9 @@ code {
 .copy figure.ratio img { height: 0; position: absolute; top: 0; left: 0; height: 100%; width: 100%; }
 
 .copy .footnote-ref a { font-family: var(--mono); text-decoration: none; }
-.copy .footnotes-sep { display: none }
-.copy .footnotes { margin-top: 1rem; }
+.copy a.footnote-backref { text-decoration: none; color: rgba(var(--fg), 0.2) }
+.copy a.footnote-backref:hover { color: rgba(var(--fg), 1) }
+.copy .footnotes blockquote { margin-left: -1rem; text-indent: 0; padding-left: 1rem; }
 
 .copy a[href*="http"]:after {
   content: '→';

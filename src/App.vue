@@ -46,7 +46,7 @@ export default {
       }
     ]
 
-    if (this.page && this.page.content) {
+    if (this.page && this.page.content && this.$route.name === 'entry') {
       const description = this.page.content
         .split('\n')
         .slice(0, 6)

@@ -23,6 +23,7 @@
     "markdown-it-named-headings": "^1.1.0",
     "medium-zoom": "^1.0.3",
     "node-fetch": "^2.3.0",
+    "remove-markdown": "^0.3.0",
     "scrollmonitor": "^1.2.4",
     "vue": "^2.5.22",
     "vue-meta": "^1.5.8",

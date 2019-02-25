@@ -42,6 +42,7 @@ export default {
       return this.$store.state.content[this.entries.pages[index + 1]]
     },
     title () {
+      if (!this.page) return
       const { dateFormatted, content } = this.page
       if (content && content.substring(0, 2) === '# ') {
         return content.substring(2, content.indexOf('\n'))

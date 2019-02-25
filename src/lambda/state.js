@@ -19,17 +19,18 @@ const state = {
 }
 
 export function handler (event, context, callback) {
-  const events = {
-    '/state': fetchEntries
-  }
+  // const events = {
+  //   '/state': fetchEntries
+  // }
 
-  if (typeof events[event.path] === 'function') {
-    events[event.path](event, context, callback)
-  } else {
-    callback(null, {
-      statusCode: 404
-    })
-  }
+  // if (typeof events[event.path] === 'function') {
+    // events[event.path](event, context, callback)
+  // } else {
+    // callback(null, {
+      // statusCode: 404
+    // })
+  // }
+  return fetchEntries(event, context, callback)
 }
 
 function fetchEntries (event, context, callback) {

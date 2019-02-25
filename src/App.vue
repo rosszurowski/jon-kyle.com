@@ -35,6 +35,14 @@ export default {
         property: 'og:type',
         content: 'website',
         vmid: 'og:type'
+      },
+      {
+        'property': 'og:title',
+        content: this.page ? this.page.title || this.page.dateFormatted : false,
+        template: (titleChunk) => {
+          return titleChunk ? `${titleChunk} / Jon-Kyle` : 'Jon-Kyle';
+        },
+        'vmid': 'og:title'
       }
     ]
 

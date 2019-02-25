@@ -14,8 +14,25 @@ const cache = {
   master: [ ],
   drafts: [ ]
 }
+const state = {
+
+}
 
 export function handler (event, context, callback) {
+  const events = {
+    '/state': fetchEntries
+  }
+
+  if (typeof events[event.path] === 'function') {
+    events[event.path](event, context, callback)
+  } else {
+    callback(null, {
+      statusCode: 404
+    })
+  }
+}
+
+function fetchEntries (event, context, callback) {
   const now = dayjs()
   const ref = event.queryStringParameters.ref || 'master'
 

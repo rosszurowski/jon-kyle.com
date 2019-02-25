@@ -1,9 +1,16 @@
 <template>
   <header>
-    <div><h1><router-link to="/about">Jon-Kyle</router-link></h1></div>
+    <div class="title"><router-link to="/about">Jon-Kyle</router-link></div>
     <nav>
       <div><router-link to="/">Feed</router-link>,</div>
       <div><router-link to="/index">Index</router-link>,</div>
+      <form @submit="onSearchSubmit">
+        <div>
+          <input placeholder="Search" v-model="search" />
+          <div class="filler">{{search.replace(/ /g, '&nbsp;') || 'Search'}}</div>
+        </div>
+        <span :class="{ commaActive: search }" v-if="mailingListVisible">,</span>
+      </form>
       <MailingList v-if="mailingListVisible" />
     </nav>
     <div :class="['toggle-light', { night: isNight }]" @click="toggleLight">
@@ -24,14 +31,20 @@ import MailingList from './MailingList'
 export default {
   name: 'GlobalHeader',
   components: { MailingList },
+  watch: {
+    '$route.name': function (name) {
+      if (name !== 'search') this.search = ''
+      else return this.search = this.$route.query.query || ''
+    }
+  },
   data () {
     return {
+      search: (this.$route.query.query || ''),
       email: ''
     }
   },
   computed: {
     mailingListVisible () {
-      return true
       return this.$store.state.options.subscribed === false
     },
     isNight () {
@@ -39,6 +52,14 @@ export default {
     }
   },
   methods: {
+    onSearchSubmit (event) {
+      event.preventDefault()
+      if (this.search && this.search.length >= 3) {
+        this.$router.push({ path: '/search', query: { query: this.search } })
+      } else {
+        this.$router.push({ path: '/' })
+      }
+    },
     toggleLight () {
       this.$store.commit('setOptions', { night: !this.$store.state.options.night })
     }
@@ -50,7 +71,7 @@ export default {
 header {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: repeat(12, 1fr);
   padding: 1rem 1rem 4rem 1rem;
   margin-top: -0.3rem;
 }
@@ -59,8 +80,13 @@ header a.router-link-exact-active {
   text-decoration: none;
 }
 
+.title {
+  grid-column: 1/4;
+}
+
 nav {
   display: flex;
+  grid-column: 4 / 13;
 }
 
 nav > * {
@@ -122,6 +148,38 @@ svg path {
 .toggle-light.night #orb {
   transform: scale(1.3) translate(30px, 30px);
   transition-delay: 125ms;
+}
+
+form { display: flex; }
+form > div { position: relative; }
+
+.filler {
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input {
+  color: inherit;
+  background: none;
+  font-size: inherit;
+  font-family: inherit;
+  border: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  outline: 0;
+}
+
+form span {
+  color: rgba(var(--fg), 0.4);
+}
+
+form span.commaActive {
+  color: rgba(var(--fg), 1);
 }
 
 </style>

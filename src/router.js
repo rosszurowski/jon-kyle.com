@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import Search from './views/Search'
 import Entry from './views/Entry'
 import Index from './views/Index'
 import Home from './views/Home'
@@ -31,6 +33,11 @@ export default new Router({
       path: '/entries',
       name: 'entries',
       component: Home,
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search,
     },
     {
       path: '/entries/:entry',

@@ -2,13 +2,13 @@
   <div>
     <ContentEntry :entry="page" v-if="page" :key="page.name" />
     <div class="footer">
-      <div v-if="prev">
-        Previous<br>
-        <router-link :to="prev.url">{{prev.dateFormatted}}</router-link>
-      </div>
       <div v-if="next">
         Next<br>
         <router-link :to="next.url">{{next.dateFormatted}}</router-link>
+      </div>
+      <div v-if="prev">
+        Previous<br>
+        <router-link :to="prev.url">{{prev.dateFormatted}}</router-link>
       </div>
     </div>
   </div>

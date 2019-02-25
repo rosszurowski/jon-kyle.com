@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as matter from 'gray-matter'
-import dayjs from 'dayjs'
+import * as lib from './lib'
 
 Vue.use(Vuex)
 
@@ -19,7 +19,8 @@ const store = new Vuex.Store({
       night: false,
       subscribed: false
     },
-    content: { }
+    content: { },
+    search: { }
   },
   mutations: {
     setApi (state, payload = { }) {
@@ -45,10 +46,25 @@ const store = new Vuex.Store({
     setEntries (state, payload = [ ]) {
       Vue.set(state.content, '/entries', { pages: [ ] })
       payload.forEach(entry => {
-        const meta = getEntryMeta(entry)
+        const meta = lib.getEntryMeta(entry)
         state.content['/entries'].pages.push(meta.url)
         Vue.set(state.content, meta.url, meta)
       })
+    },
+    setSearch (state, payload = { }) {
+      const entries = payload.items
+        .map((entry, i, arr, src) => {
+          const parts = entry.path.split('/')
+          if (parts[0] !== 'entries') return false
+          const meta = lib.getEntryMeta({
+            name: entry.path.replace('entries/', ''),
+            path: [parts[0], parts[1]].join('/')
+          })
+          return meta.url
+        })
+        .filter(key => key)
+        .filter((elem, index, self) => (index === self.indexOf(elem)))
+      Vue.set(state.search, payload.query, entries)
     }
   },
   actions: {
@@ -69,6 +85,13 @@ const store = new Vuex.Store({
         .then(response => response.json())
         .then(data => commit('setEntries', data))
         .catch(err => console.warn(err))
+    },
+    fetchSearch ({ commit, state }, query) {
+      if (!query) return
+      fetch(state.api.endpoint + '/search?query=' + query)
+        .then(response => response.json())
+        .then(data => commit('setSearch', { query, items: data.items }))
+        .catch(err => console.warn(err))
     }
   },
 })
@@ -81,20 +104,5 @@ const mixin = {
   }
 }
 
-function getEntryMeta (entry) {
-    const name = entry.name.replace(/.md/g, '')
-    const date = name.substring(0, 10)
-    const url = '/' + entry.path.replace(/.md/g, '')
-    const src = '/' + formatEntrySrc(entry.path)
-    const dateFormatted = dayjs(date).format('MMM DD,YYYY')
-    return { name, date, src, url, dateFormatted }
-}
-
 export { mixin }
 export default store
-
-function formatEntrySrc (str)  {
-  return str.substring(str.length - 2, str.length) === 'md'
-    ? str
-    : str + '/readme.md'
-}

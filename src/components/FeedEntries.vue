@@ -10,7 +10,7 @@
       v-model="page"
       v-if="count > 1"
       :page-count="count"
-      :click-handler="handleClick"
+      :click-handler="onPaginationClick"
       :page-range="range"
       :prev-text="'← Present'"
       :next-text="'Past →'"
@@ -33,33 +33,32 @@ export default {
       this.page = parseInt(page) || 1
     }
   },
+  props: {
+    entries: {
+      type: Array,
+      default: () => ([])
+    }
+  },
   data () {
     return {
       page: parseInt(this.$route.query.page) || 1
     }
   },
   computed: {
-    entries () {
-      const entries = this.$store.state.content['/entries']
-      if (!entries) return [ ]
-      return entries.pages
-        .map(key => this.$store.state.content[key])
-        .sort((a, b) => (b.date.replace(/-/g, '') - a.date.replace(/-/g, '')))
-    },
-    visible () {
-      const page = this.page - 1
-      return this.entries
-        .slice((page * this.range), ((page * this.range) + this.range))
-    },
     range () {
       return this.$store.state.ui.range
     },
     count () {
       return Math.ceil(this.entries.length / this.range)
+    },
+    visible () {
+      const page = this.page - 1
+      return this.entries
+        .slice((page * this.range), ((page * this.range) + this.range))
     }
   },
   methods: {
-    handleClick (page) {
+    onPaginationClick (page) {
       let newQuery = Object.assign({}, this.$route.query, { page: page })
       if (page === 1) delete newQuery.page
       this.$router.push({ path: this.$route.path, query: newQuery })

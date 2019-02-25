@@ -69,7 +69,6 @@ export default {
 .mailinglist {
   display: flex;
   position: relative;
-  margin-left: -0.1rem;
 }
 
 button {
@@ -78,6 +77,7 @@ button {
   background: none;
   border: none;
   padding: 0 0.5rem;
+  margin-top: -0.2em;
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;

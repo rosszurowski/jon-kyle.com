@@ -12,6 +12,9 @@ const md = new markdownIt()
 export default {
   name: 'About',
   mixins: [ mixin ],
+  metaInfo () {
+    return { title: 'About' }
+  },
   mounted () {
     if (!this.page) {
       this.$store.dispatch('fetchEntry', '/about.md')

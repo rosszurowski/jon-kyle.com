@@ -24,6 +24,9 @@ export default {
   components: {
    ContentEntry
   },
+  metaInfo () {
+    return { title: this.title }
+  },
   computed: {
     entries () {
       return this.$store.state.content['/entries']
@@ -37,6 +40,14 @@ export default {
       if (!this.entries || !this.page) return
       const index = this.entries.pages.indexOf(this.page.url)
       return this.$store.state.content[this.entries.pages[index + 1]]
+    },
+    title () {
+      const { dateFormatted, content } = this.page
+      if (content && content.substring(0, 2) === '# ') {
+        return content.substring(2, content.indexOf('\n'))
+      } else {
+        return dateFormatted
+      }
     }
   }
 }

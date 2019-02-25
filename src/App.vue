@@ -24,41 +24,41 @@ export default {
   },
   metaInfo () {
     // let meta = this.site ? Object.assign({ }, this.site.meta) : { }
-    let meta = { }
+    let meta = { image: '/' }
 
     let metaTags = [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-        vmid: 'og:card'
-      },
-      {
-        name: 'twitter:image',
-        content: meta.image,
-        vmid: 'og:image'
-      },
-      {
-        name: 'description',
-        content: meta.description,
-        vmid: 'description'
-      },
-      {
-        property: 'og:description',
-        content: meta.description,
-        vmid: 'og:description'
-      },
-      {
-        property: 'og:type',
-        content: 'website',
-        vmid: 'og:type'
-      },
-      {
-        property: 'og:image',
-        content: meta.image,
-        vmid: 'og:image'
-      }
+      // {
+      //   name: 'twitter:card',
+      //   content: 'summary_large_image',
+      //   vmid: 'og:card'
+      // },
+      // {
+      //   name: 'twitter:image',
+      //   content: meta.image,
+      //   vmid: 'og:image'
+      // },
+      // {
+      //   name: 'description',
+      //   content: meta.description,
+      //   vmid: 'description'
+      // },
+      // {
+      //   property: 'og:description',
+      //   content: meta.description,
+      //   vmid: 'og:description'
+      // },
+      // {
+      //   property: 'og:type',
+      //   content: 'website',
+      //   vmid: 'og:type'
+      // },
+      // {
+      //   property: 'og:image',
+      //   content: meta.image,
+      //   vmid: 'og:image'
+      // }
     ]
 
     if (this.isNotFound) {
@@ -70,7 +70,7 @@ export default {
     }
 
     return {
-      title: this.page ? this.page.title : false,
+      title: this.page ? this.page.title || this.page.dateFormatted : false,
       titleTemplate: (titleChunk) => {
         return titleChunk ? `${titleChunk} / Jon-Kyle` : 'Jon-Kyle';
       },

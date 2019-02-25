@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="empty" v-if="!entries.length">
+    <div v-if="!entries" class="empty">
+      Loading…
+    </div>
+    <div class="empty" v-else-if="!entries.length">
       No results<br>
       Try again maybe?<br><br>
       🙃
@@ -37,7 +40,7 @@ export default {
   computed: {
     entries () {
       const entries = this.$store.state.search[this.query]
-      if (!entries) return [ ]
+      if (!entries) return false
       return entries.map(key => this.$store.state.content[key])
     }
   }

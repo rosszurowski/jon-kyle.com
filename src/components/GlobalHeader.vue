@@ -1,18 +1,20 @@
 <template>
   <header>
     <div class="title">Jon-Kyle</div>
-    <nav>
-      <div><router-link to="/about">About</router-link>,</div>
-      <div><router-link to="/entries">Feed</router-link>,</div>
+    <div><router-link to="/about">About</router-link></div>
+    <div>
+      <router-link to="/">Feed</router-link><br>
+      <router-link to="/index">Index</router-link>
+    </div>
+    <div>
       <form @submit="onSearchSubmit">
         <div>
           <input placeholder="Search" v-model="search" />
           <div class="filler">{{search.replace(/ /g, '&nbsp;') || 'Search'}}</div>
         </div>
-        <span :class="{ commaActive: search }" v-if="mailingListVisible">,</span>
       </form>
       <MailingList v-if="mailingListVisible" />
-    </nav>
+    </div>
     <div :class="['toggle-light', { night: isNight }]" @click="toggleLight">
       <svg width="100px" height="100px" viewBox="0 0 100 100">
           <g id="orb">
@@ -45,7 +47,8 @@ export default {
   },
   computed: {
     mailingListVisible () {
-      return this.$store.state.options.subscribed === false
+      return true
+      // return this.$store.state.options.subscribed === false
     },
     isNight () {
       return this.$store.state.options.night 
@@ -80,17 +83,8 @@ header a.router-link-exact-active {
   text-decoration: none;
 }
 
-.title {
-  grid-column: 1/4;
-}
-
-nav {
-  display: flex;
-  grid-column: 4 / 13;
-}
-
-nav > * {
-  margin-right: 0.3em;
+header > div {
+  grid-column: span 3;
 }
 
 .toggle-light {

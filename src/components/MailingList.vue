@@ -102,7 +102,7 @@ input {
   background: none;
   outline: 0;
   width: 100%;
-  padding: 0.1rem;
+  padding: 0.1rem 0;
   position: absolute;
   top: 0;
   left: 0;

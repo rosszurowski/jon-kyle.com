@@ -1,9 +1,9 @@
 <template>
   <header>
-    <div class="title"><router-link to="/about">Jon-Kyle</router-link></div>
+    <div class="title">Jon-Kyle</div>
     <nav>
-      <div><router-link to="/">Feed</router-link>,</div>
-      <div><router-link to="/index">Index</router-link>,</div>
+      <div><router-link to="/about">About</router-link>,</div>
+      <div><router-link to="/entries">Feed</router-link>,</div>
       <form @submit="onSearchSubmit">
         <div>
           <input placeholder="Search" v-model="search" />

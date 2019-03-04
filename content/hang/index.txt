@@ -1,7 +1,0 @@
-title: Hang
-----
-padding: false
-----
-footer: false
-----
-view: hangs

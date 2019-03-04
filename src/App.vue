@@ -145,11 +145,18 @@ body {
 ::selection { background: rgba(127, 127, 127, 0.5) }
 
 main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
-  padding-bottom: 5rem;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 /* Copy */
 

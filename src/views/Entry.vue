@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ContentEntry :entry="page" v-if="page" :key="page.name" />
+    <ContentEntry :entry="page" :key="page.name" />
     <div class="footer">
       <div v-if="next">
         Next<br>
@@ -16,6 +16,7 @@
 
 <script>
 import ContentEntry from '@/components/ContentEntry'
+import FeedEntries from '@/components/FeedEntries'
 import { mixin } from '../store'
 
 export default {

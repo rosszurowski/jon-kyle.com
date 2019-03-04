@@ -1,10 +1,12 @@
 <template>
-  <div class="about">
+  <div class="about" v-if="content">
     <section v-for="section in content" v-html="section"></section>
   </div>
+  <LoadingIndicator v-else />
 </template>
 
 <script>
+import LoadingIndicator from '@/components/LoadingIndicator'
 import markdownIt from 'markdown-it'
 import { mixin } from '../store'
 const md = new markdownIt()
@@ -12,6 +14,7 @@ const md = new markdownIt()
 export default {
   name: 'About',
   mixins: [ mixin ],
+  components: { LoadingIndicator },
   metaInfo () {
     return { title: 'About' }
   },
